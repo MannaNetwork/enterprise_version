@@ -1,0 +1,27 @@
+System Requirements: PHP 7.0+ (it will NOT work on lower versions)
+
+The manna network "system" is designed to be installed at the website's "root" level and installation anywhere else will, at this time anyway, require a number of code changes to paths codes spread throughout the software. 
+
+So, to install, upload the zipped file to the same level as your website's "home page" and extract it there. 
+
+It will create four folders:
+1) agent-dir
+2) manna-configs
+3) manna-network
+4) mannanetwork-dir
+
+As GENERAL rules, each folder is designed to remain in certain "roles" that this new agent's website will play in the network. 
+
+The first role, the Agent role, refers to this new site's role as a distributor of the advertisers' ads to their visitors and that role is handled by the agent-dir folder. Think of the agent-dir directory as a proxy version of the mannanetwork-dir (that the regular members operate from) designed for use by the agent.
+
+The second role is as a distributor of the advertisers' ads to their members and downlines and that role is handled by the mannanetwork-dir folder. Think of the mannanetwork-dir directory as a node of the "inner circle" of the manna network that the regular members operate from. put another way, the agent's website is an ad server to the member's website (who then display the ads to their visitors). The exception to this is, again, the agent-dir visitor who is visiting the agent's own website. There, the visitor is being shown the same as what visitors on a member's site would see (i.e. the agent is operating at a membership level to their own visitors). 
+
+CONFIGURE the settings in manna-configs/db_cfg/agent_config.php
+
+Then, visit the manna-network/admin/install/index.php page for full instructions to install (pretty much automatically) all the databases, tables and users that the network needs. NOTE: it will use the database login credentials you entered above to create and set up two separate databases and four distinct users (two users for each db) and with differing permission levels (for security reasons). After installation, RETURN to the configuration file above and remove thos administrative level credentials (for an added level of security).
+
+Then (AND REALLY IMPORTANT) you need to add your own website as the first registered user and website. 
+
+
+
+

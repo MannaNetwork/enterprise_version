@@ -1,0 +1,21 @@
+The Manna Network system is a software-as-a-service and cooperative ad network created to maximize the returns on the web traffic marketed through it by its members. 
+
+It is a "crypto-currency-only system, is heavy in the use of "smart contracts" that execute the crediting and accounting and delivery.
+
+It requires that members register at Manna-network.cash to receive 1) an agent_ID and 2) a network authorization key in order for the software to work and for the member(s) and agent to receive proper credit and/or payment. NOTE: FAILURE to register and properly install the membership credentials as outlined below voids the membership privileges and contract offered to any installer!
+
+INSTALLATION: The manna network "system" is designed to be installed at the member website's "root" level and installation anywhere else will, at this time anyway, require a number of code changes to paths codes spread throughout the software (so don't). Upload the zipped file to the same level as your website's "home page" and extract it there. 
+
+It will create four folders:
+1) agent-dir
+2) manna-configs
+3) manna-network
+4) mannanetwork-dir
+
+In GENERAL, each folder is designed to operate in certain "roles" that this new agent's website will play in the network. 
+
+The first role, the Agent role, refers to this new site's being a distributor of the advertisers' ads to their own visitors and that role is handled by the agent-dir folder. 
+
+The second role is as a distributor of the advertisers' ads to their members and downlines that have registered at their site. That role is handled by the mannanetwork-dir folder. Think of the mannanetwork-dir directory as a node and member of the "inner circle" of the manna network that the regular members connect to. Put another way, the agent's website is an ad server to the member's website (who then display the ads to their visitors). The exception to this is, again, the agent-dir directory where the visitor is visiting the agent's own website. 
+
+
