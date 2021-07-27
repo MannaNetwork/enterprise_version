@@ -1,0 +1,210 @@
+<style>
+
+
+DIV.table 
+{
+    display:table;
+width: 700px ;
+  margin-left: auto ;
+  margin-right: auto ;
+}
+FORM.tr, DIV.tr
+{
+    display:table-row;
+}
+
+SPAN.td
+{
+    display:table-cell;
+width: 300px ;
+  margin-left: auto ;
+  margin-right: auto ;
+}
+.mn_btn{
+  color:#000000;
+  background:rgba(0, 0, 0, 0.5);
+opacity:.6;
+  padding:10px 20px;
+  font-size:12px;
+  text-decoration:none;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.mn_btn:hover{
+  border:none;
+  background:rgba(0, 0, 0, 0.4);
+  background:#ffffff;
+  padding:20px 20px; 
+  color:#1b1b1b;
+}
+.mn_btn td{
+text-align:center;
+}
+
+        
+.top {
+    position:absolute;
+    left:0; right:0;
+    height: 92px;
+}
+.left {
+    position:absolute;
+    left:0; top:92px; bottom: 0;
+    width: 178px;
+}
+.main {
+    position: absolute;
+    left:178px; top:92px; right:0; bottom:0;
+}
+div#full-width {
+  /* 1/3 of 60% = the 20% margin on either side */
+  margin-left: -33.33%;
+  margin-right: -33.33%;
+}
+
+div#mn_main_cats_container{
+/*the top level - add url login etc menu*/
+ width: 700px ;
+  margin-left: auto ;
+  margin-right: auto ;
+/*background-color: #000000;
+color:black;
+opacity: 0.2; */
+
+}
+div#mn_main_container{
+/*the top level - add url login etc menu*/
+ width: 1000px ;
+  margin-left: auto ;
+  margin-right: auto ;
+
+/*background-color: #000000;
+color:black;*/
+}
+div#mn_main_menu_container{
+/*the top level - add url login etc menu*/
+ width: 700px ;
+  margin-left: auto ;
+  margin-right: auto ;
+/*background-color: #000000;
+color:black;*/
+}
+div#mn_subcat_container{
+/*the top level - add url login etc menu*/
+ width: 700px ;
+  margin-left: auto ;
+  margin-right: auto ;
+/*background-color: #000000;
+color:black;*/
+}
+div#mn_location_container{
+/*the top level - add url login etc menu*/
+ width: 700px ;
+  margin-left: auto ;
+  margin-right: auto ;
+/*background-color: #000000;
+color:black;*/
+}
+div#mn_results_table{
+/*the top level - add url login etc menu*/
+ width: 500px ;
+  margin-left: auto ;
+  margin-right: auto ;
+/*background-color: #000000;
+color:black;*/
+}
+
+div#mn_paginator_menu_container{
+/*the top of results pages with more than 20 links in results Page 1, Page 2 etc*/
+ width: 500px ;
+  margin-left: auto ;
+  margin-right: auto ;
+  table-layout: fixed ;
+  width: 100% ;
+  border-collapse: collapse ;
+  border: 1px black solid ;
+}
+table#mn_paginator_menu_table {
+/*dropdown 2nd page*/
+  table-layout: fixed ;
+  width: 100% ;
+  border-collapse: collapse ;
+  border: 1px black solid ;
+}
+table#mn_paginator_menu_table td {
+ /* width: 50% ;  There will be a variable number of Pages and <tds> but only one row so putting the width and styling in the code*/
+  border: 1px black solid ;
+  padding: 10px ;
+}
+table#mn_mn_paginator_menu_table caption {
+  font-style: italic ;
+} 
+
+
+table#mn_subcat_table {
+/*dropdown 2nd page*/
+  table-layout: inherit ;
+  width: 100% ;
+  border-collapse: collapse ;
+  border: 1px black solid ;
+}
+table#mn_subcat_table td {
+    border: 1px black solid ;
+  padding: 10px ;
+}
+table#mn_subcat_table caption {
+  font-style: italic ;
+} 
+
+table#mn_location_table {
+/*dropdown 2nd page*/
+  table-layout: inherit ;
+  width: 100% ;
+  border-collapse: collapse ;
+  border: 1px black solid ;
+}
+
+table#mn_location_table td {
+  border: 1px black solid ;
+  padding: 10px ;
+/*color:red;*/
+}
+table#mn_location_table caption {
+  font-style: italic ;
+} 
+
+table#mn_main_cats_table {
+/*1st page category list*/
+  table-layout: fixed ;
+  width: 100% ;
+  border-collapse: collapse ;
+  border: 1px black solid ;
+}
+table#mn_main_cats_table td {
+  width: 50% ;
+  border: 1px black solid ;
+  padding: 10px ;
+}
+table#mn_main_cats_table caption {
+  font-style: italic ;
+} 
+
+table#mn_results_table {
+/*2nt page results/ads list*/
+  table-layout: fixed ;
+  width: 100% ;
+  border-collapse: collapse ;
+  border: 1px black solid ;
+}
+table#mn_results_table td {
+  width: 50% ;
+  border: 1px black solid ;
+  padding: 10px ;
+}
+table#mn_results_table caption {
+  font-style: italic ;
+} 
+
+</style>
+

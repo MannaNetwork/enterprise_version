@@ -1,0 +1,22 @@
+dev Notes - while going through code to get all data submissions to be utf8 (I had been working on the AddURL class hack of this Registration class) I came back to this registration class to reiew the utf8 code and found it lacking in the second function (line 207). The method I found in forums to get it encoded was different than the one already used in the first function (line 174)
+
+Am not sure if the differences matter and not even sure what the second function does or even if it is still used (it is a hack of the firt funtion)
+
+
+
+
+line 174 (is the "database connection" function
+$this->db_connection = new PDO('mysql:host='.$servername.';dbname='. $dbname, $username, $password, 
+  array(
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+    PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+
+AND/OR
+
+line 207 is the database connection limited function
+
+$pdo = new PDO('mysql:host='.$servername.';dbname='.$dbname, $username, $password.';charset=utf8');
+      $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);    
+      $pdo->setAttribute( PDO::ATTR_EMULATE_PREPARES, false );          
+      $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+                return true;

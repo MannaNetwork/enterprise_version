@@ -1,0 +1,188 @@
+[20-Nov-2015 17:16:56 UTC] PHP Notice:  Undefined variable: lft in /home/bungeebo/public_html/members/ajaxchained_dd/index.php on line 152
+[20-Nov-2015 17:16:56 UTC] PHP Notice:  Undefined variable: rgt in /home/bungeebo/public_html/members/ajaxchained_dd/index.php on line 152
+[20-Nov-2015 17:20:43 UTC] PHP Notice:  Undefined variable: lft in /home/bungeebo/public_html/members/ajaxchained_dd/index.php on line 152
+[20-Nov-2015 17:20:43 UTC] PHP Notice:  Undefined variable: rgt in /home/bungeebo/public_html/members/ajaxchained_dd/index.php on line 152
+[20-Nov-2015 17:20:46 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 67
+[20-Nov-2015 17:20:46 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 68
+[20-Nov-2015 17:20:46 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 69
+[20-Nov-2015 17:20:46 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 70
+[20-Nov-2015 17:28:27 UTC] PHP Notice:  Undefined variable: lft in /home/bungeebo/public_html/members/ajaxchained_dd/index.php on line 152
+[20-Nov-2015 17:28:27 UTC] PHP Notice:  Undefined variable: rgt in /home/bungeebo/public_html/members/ajaxchained_dd/index.php on line 152
+[20-Nov-2015 17:28:36 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 67
+[20-Nov-2015 17:28:36 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 68
+[20-Nov-2015 17:28:36 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 69
+[20-Nov-2015 17:28:36 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 70
+[20-Nov-2015 17:28:43 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 67
+[20-Nov-2015 17:28:43 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 68
+[20-Nov-2015 17:28:43 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 69
+[20-Nov-2015 17:28:43 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 70
+[20-Nov-2015 17:29:41 UTC] PHP Notice:  Undefined variable: lft in /home/bungeebo/public_html/members/ajaxchained_dd/index.php on line 152
+[20-Nov-2015 17:29:41 UTC] PHP Notice:  Undefined variable: rgt in /home/bungeebo/public_html/members/ajaxchained_dd/index.php on line 152
+[20-Nov-2015 17:29:44 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 67
+[20-Nov-2015 17:29:44 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 68
+[20-Nov-2015 17:29:44 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 69
+[20-Nov-2015 17:29:44 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 70
+[20-Nov-2015 17:29:57 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 67
+[20-Nov-2015 17:29:57 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 68
+[20-Nov-2015 17:29:57 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 69
+[20-Nov-2015 17:29:57 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 70
+[20-Nov-2015 17:30:03 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 67
+[20-Nov-2015 17:30:03 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 68
+[20-Nov-2015 17:30:03 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 69
+[20-Nov-2015 17:30:03 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 70
+[20-Nov-2015 17:31:09 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 65
+[20-Nov-2015 17:31:09 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 66
+[20-Nov-2015 17:31:09 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 67
+[20-Nov-2015 17:31:09 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 68
+[20-Nov-2015 17:31:12 UTC] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'root'@'localhost' (using password: NO) in /home/bungeebo/public_html/members/ajaxchained_dd/findState.php on line 10
+[20-Nov-2015 18:01:04 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 65
+[20-Nov-2015 18:01:04 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 66
+[20-Nov-2015 18:01:04 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 67
+[20-Nov-2015 18:01:04 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 68
+[20-Nov-2015 18:01:11 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 65
+[20-Nov-2015 18:01:11 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 66
+[20-Nov-2015 18:01:11 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 67
+[20-Nov-2015 18:01:11 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 68
+[20-Nov-2015 18:01:13 UTC] PHP Notice:  Undefined variable: AJAXinfo in /home/bungeebo/public_html/members/ajaxchained_dd/findState.php on line 10
+[20-Nov-2015 18:01:13 UTC] PHP Fatal error:  Call to a member function getRegionById() on a non-object in /home/bungeebo/public_html/members/ajaxchained_dd/findState.php on line 10
+[20-Nov-2015 18:02:15 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 65
+[20-Nov-2015 18:02:15 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 66
+[20-Nov-2015 18:02:15 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 67
+[20-Nov-2015 18:02:15 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 68
+[20-Nov-2015 18:02:18 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 65
+[20-Nov-2015 18:02:18 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 66
+[20-Nov-2015 18:02:18 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 67
+[20-Nov-2015 18:02:18 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 68
+[20-Nov-2015 18:02:18 UTC] PHP Notice:  Undefined variable: cstate_arrays_children in /home/bungeebo/public_html/members/ajaxchained_dd/findState.php on line 15
+[20-Nov-2015 18:02:18 UTC] PHP Notice:  Undefined variable: state_arrays_children in /home/bungeebo/public_html/members/ajaxchained_dd/findState.php on line 16
+[20-Nov-2015 18:02:18 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bungeebo/public_html/members/ajaxchained_dd/findState.php on line 21
+[20-Nov-2015 18:02:22 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 65
+[20-Nov-2015 18:02:22 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 66
+[20-Nov-2015 18:02:22 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 67
+[20-Nov-2015 18:02:22 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 68
+[20-Nov-2015 18:02:25 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 65
+[20-Nov-2015 18:02:25 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 66
+[20-Nov-2015 18:02:25 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 67
+[20-Nov-2015 18:02:25 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 68
+[20-Nov-2015 18:02:25 UTC] PHP Notice:  Undefined variable: cstate_arrays_children in /home/bungeebo/public_html/members/ajaxchained_dd/findState.php on line 15
+[20-Nov-2015 18:02:25 UTC] PHP Notice:  Undefined variable: state_arrays_children in /home/bungeebo/public_html/members/ajaxchained_dd/findState.php on line 16
+[20-Nov-2015 18:02:25 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bungeebo/public_html/members/ajaxchained_dd/findState.php on line 21
+[20-Nov-2015 18:03:27 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 65
+[20-Nov-2015 18:03:27 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 66
+[20-Nov-2015 18:03:27 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 67
+[20-Nov-2015 18:03:27 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 68
+[20-Nov-2015 18:03:29 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 65
+[20-Nov-2015 18:03:29 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 66
+[20-Nov-2015 18:03:29 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 67
+[20-Nov-2015 18:03:29 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 68
+[20-Nov-2015 18:03:29 UTC] PHP Notice:  Undefined variable: cstate_arrays_children in /home/bungeebo/public_html/members/ajaxchained_dd/findState.php on line 16
+[20-Nov-2015 18:03:29 UTC] PHP Notice:  Undefined variable: state_arrays_children in /home/bungeebo/public_html/members/ajaxchained_dd/findState.php on line 17
+[20-Nov-2015 18:03:29 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bungeebo/public_html/members/ajaxchained_dd/findState.php on line 22
+[20-Nov-2015 18:05:14 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 65
+[20-Nov-2015 18:05:14 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 66
+[20-Nov-2015 18:05:14 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 67
+[20-Nov-2015 18:05:14 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 68
+[20-Nov-2015 18:05:14 UTC] PHP Notice:  Undefined variable: cstate_arrays_children in /home/bungeebo/public_html/members/ajaxchained_dd/findState.php on line 16
+[20-Nov-2015 18:05:14 UTC] PHP Notice:  Undefined variable: state_arrays_children in /home/bungeebo/public_html/members/ajaxchained_dd/findState.php on line 17
+[20-Nov-2015 18:05:14 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bungeebo/public_html/members/ajaxchained_dd/findState.php on line 22
+[20-Nov-2015 18:06:57 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 65
+[20-Nov-2015 18:06:57 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 66
+[20-Nov-2015 18:06:57 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 67
+[20-Nov-2015 18:06:57 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 68
+[20-Nov-2015 18:06:57 UTC] PHP Notice:  Undefined variable: cstate_arrays_children in /home/bungeebo/public_html/members/ajaxchained_dd/findState.php on line 17
+[20-Nov-2015 18:06:57 UTC] PHP Notice:  Undefined variable: state_arrays_children in /home/bungeebo/public_html/members/ajaxchained_dd/findState.php on line 18
+[20-Nov-2015 18:06:57 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bungeebo/public_html/members/ajaxchained_dd/findState.php on line 23
+[20-Nov-2015 18:07:14 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 65
+[20-Nov-2015 18:07:14 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 66
+[20-Nov-2015 18:07:14 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 67
+[20-Nov-2015 18:07:14 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 68
+[20-Nov-2015 18:07:14 UTC] PHP Notice:  Undefined variable: cstate_arrays_children in /home/bungeebo/public_html/members/ajaxchained_dd/findState.php on line 17
+[20-Nov-2015 18:07:14 UTC] PHP Notice:  Undefined variable: state_arrays_children in /home/bungeebo/public_html/members/ajaxchained_dd/findState.php on line 18
+[20-Nov-2015 18:07:14 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bungeebo/public_html/members/ajaxchained_dd/findState.php on line 23
+[20-Nov-2015 18:08:39 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 66
+[20-Nov-2015 18:08:39 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 67
+[20-Nov-2015 18:08:39 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 68
+[20-Nov-2015 18:08:39 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 69
+[20-Nov-2015 18:08:39 UTC] PHP Notice:  Undefined variable: cstate_arrays_children in /home/bungeebo/public_html/members/ajaxchained_dd/findState.php on line 17
+[20-Nov-2015 18:08:39 UTC] PHP Notice:  Undefined variable: state_arrays_children in /home/bungeebo/public_html/members/ajaxchained_dd/findState.php on line 18
+[20-Nov-2015 18:08:39 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bungeebo/public_html/members/ajaxchained_dd/findState.php on line 23
+[20-Nov-2015 18:13:21 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 66
+[20-Nov-2015 18:13:21 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 67
+[20-Nov-2015 18:13:21 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 68
+[20-Nov-2015 18:13:21 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 69
+[20-Nov-2015 18:13:25 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 66
+[20-Nov-2015 18:13:25 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 67
+[20-Nov-2015 18:13:25 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 68
+[20-Nov-2015 18:13:25 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 69
+[20-Nov-2015 18:18:55 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 66
+[20-Nov-2015 18:18:55 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 67
+[20-Nov-2015 18:18:55 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 68
+[20-Nov-2015 18:18:55 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 69
+[20-Nov-2015 18:18:55 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 70
+[20-Nov-2015 18:18:57 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 66
+[20-Nov-2015 18:18:57 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 67
+[20-Nov-2015 18:18:57 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 68
+[20-Nov-2015 18:18:57 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 69
+[20-Nov-2015 18:18:57 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 70
+[20-Nov-2015 18:19:06 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 66
+[20-Nov-2015 18:19:06 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 67
+[20-Nov-2015 18:19:06 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 68
+[20-Nov-2015 18:19:06 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 69
+[20-Nov-2015 18:19:06 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 70
+[20-Nov-2015 18:19:06 UTC] PHP Notice:  Undefined variable: cstate_arrays_children in /home/bungeebo/public_html/members/ajaxchained_dd/findState.php on line 17
+[20-Nov-2015 18:19:06 UTC] PHP Notice:  Undefined variable: state_arrays_children in /home/bungeebo/public_html/members/ajaxchained_dd/findState.php on line 18
+[20-Nov-2015 18:19:06 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bungeebo/public_html/members/ajaxchained_dd/findState.php on line 23
+[20-Nov-2015 18:20:24 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 66
+[20-Nov-2015 18:20:24 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 67
+[20-Nov-2015 18:20:24 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 68
+[20-Nov-2015 18:20:24 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 69
+[20-Nov-2015 18:20:24 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 70
+[20-Nov-2015 18:20:28 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 66
+[20-Nov-2015 18:20:28 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 67
+[20-Nov-2015 18:20:28 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 68
+[20-Nov-2015 18:20:28 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 69
+[20-Nov-2015 18:20:28 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 70
+[20-Nov-2015 18:20:30 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 66
+[20-Nov-2015 18:20:30 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 67
+[20-Nov-2015 18:20:30 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 68
+[20-Nov-2015 18:20:30 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 69
+[20-Nov-2015 18:20:30 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 70
+[20-Nov-2015 18:20:30 UTC] PHP Notice:  Undefined variable: state_arrays_children in /home/bungeebo/public_html/members/ajaxchained_dd/findState.php on line 17
+[20-Nov-2015 18:20:30 UTC] PHP Notice:  Undefined variable: state_arrays_children in /home/bungeebo/public_html/members/ajaxchained_dd/findState.php on line 18
+[20-Nov-2015 18:20:30 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bungeebo/public_html/members/ajaxchained_dd/findState.php on line 23
+[20-Nov-2015 18:24:21 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 66
+[20-Nov-2015 18:24:21 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 67
+[20-Nov-2015 18:24:21 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 68
+[20-Nov-2015 18:24:21 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 69
+[20-Nov-2015 18:24:21 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 70
+[20-Nov-2015 18:24:24 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 66
+[20-Nov-2015 18:24:24 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 67
+[20-Nov-2015 18:24:24 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 68
+[20-Nov-2015 18:24:24 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 69
+[20-Nov-2015 18:24:24 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 70
+[20-Nov-2015 18:24:29 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 66
+[20-Nov-2015 18:24:29 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 67
+[20-Nov-2015 18:24:29 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 68
+[20-Nov-2015 18:24:29 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 69
+[20-Nov-2015 18:24:29 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 70
+[20-Nov-2015 18:26:35 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 67
+[20-Nov-2015 18:26:35 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 68
+[20-Nov-2015 18:26:35 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 69
+[20-Nov-2015 18:26:35 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 70
+[20-Nov-2015 18:26:35 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 71
+[20-Nov-2015 18:26:37 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 67
+[20-Nov-2015 18:26:37 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 68
+[20-Nov-2015 18:26:37 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 69
+[20-Nov-2015 18:26:37 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 70
+[20-Nov-2015 18:26:37 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 71
+[20-Nov-2015 18:27:01 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 67
+[20-Nov-2015 18:27:01 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 68
+[20-Nov-2015 18:27:01 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 69
+[20-Nov-2015 18:27:01 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 70
+[20-Nov-2015 18:27:01 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 71
+[20-Nov-2015 18:31:51 UTC] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'root'@'localhost' (using password: NO) in /home/bungeebo/public_html/members/ajaxchained_dd/findCity.php on line 10
+[19-Sep-2016 16:49:33 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 64
+[19-Sep-2016 16:49:33 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 65
+[19-Sep-2016 16:49:33 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 66
+[19-Sep-2016 16:49:33 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 67
+[19-Sep-2016 16:49:33 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/bungeebo/public_html/classes/ajax_dd_class.php on line 68

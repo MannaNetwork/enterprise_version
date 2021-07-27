@@ -1,0 +1,156 @@
+/* -----------------------
+Base styles
+------------------------*/
+
+
+a:link { color: royalblue; }
+a:visited { color: purple; }
+a:focus { color: black; }
+a:hover { color: green; }
+a:active { color: red; }
+
+/* -----------------------
+Layout styles
+------------------------*/
+.btnlnkedit :h5 { font-size: 1em; } /* 16px */
+.btnlnkedit :h6 { font-size: .875em; } /* 14px */
+.bb_lnk_container
+{
+	max-width: 80em;
+	margin: 0 auto;
+padding: .1em .1em;
+}
+
+.bb_lnk_dspl_hdr
+{
+	color: #fff;
+	background: #555;
+	padding: .1em .1em;
+}
+
+.bb_lnk_dspl_hdr-heading { margin: 0; }
+
+
+
+.bb_lnk_content
+{
+	overflow: hidden;
+	padding: .05em .05em;
+	background-color: #ddd;
+}
+
+.col1,.col2,.col3
+{
+	margin-bottom: .05em;
+}
+
+.btnlnkedit
+{
+	color: #fff !important;
+	background-color: #554545;
+	border-color: #222;
+	display: inline-block;
+	padding: .25em .25em;
+	margin-bottom: 0;
+	font-weight: 400;
+	line-height: 1;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	border: 1px solid transparent;
+	border-radius: .9em;
+	text-decoration: none;
+}
+#deactivate:hover {
+color: #fff !important;
+    background-color: red;
+} 
+.btnlnkedit:hover
+{
+
+	color: #fff !important;
+	background-color: yellow;
+}
+
+.btnlnkedit:focus
+{
+	color: #fff !important;
+	background-color: black;
+}
+
+.btnlnkedit:active
+{
+	color: #fff !important;
+	background-color: red;
+}
+.btn
+{
+	color: #fff !important;
+	background-color: #554545;
+	border-color: #222;
+	display: inline-block;
+	padding: .25em .25em;
+	margin-bottom: 0;
+	font-weight: 400;
+	line-height: 1;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	border: 1px solid transparent;
+	border-radius: .9em;
+	text-decoration: none;
+}
+
+.btn:hover
+{
+	color: #fff !important;
+	background-color: green;
+}
+
+.btn:focus
+{
+	color: #fff !important;
+	background-color: black;
+}
+
+.btn:active
+{
+	color: #fff !important;
+	background-color: red;
+}
+
+
+
+
+/* -----------------------
+Wide styles
+------------------------*/
+
+@media (min-width: 60em)
+{
+	.bb_lnk_dspl_hdr { padding: .55em 1em; }
+		.bb_lnk_content { padding: .5em .5em; }
+
+	.col1
+	{
+		float: left;
+		width: 26%;
+		margin-right: 4%;
+	}
+
+	.col2
+	{
+		float: left;
+		width: 48%;
+		margin-right: 4%;
+	}
+
+	.col3
+	{
+		float: left;
+		width: 18%;
+	}
+
+}

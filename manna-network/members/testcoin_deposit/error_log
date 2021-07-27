@@ -1,0 +1,24 @@
+[18-Mar-2015 15:03:15 America/Chicago] PHP Fatal error:  Cannot redeclare BitcoinSystem::validateAddress() in /home/bungeebo/public_html/members/testcoin_deposit/includes/BitcoinSystem.class.php on line 76
+[18-Mar-2015 15:05:00 America/Chicago] PHP Warning:  fopen(http://...@rpc.blockchain.info:80) [<a href='function.fopen'>function.fopen</a>]: failed to open stream: operation failed in /home/bungeebo/public_html/members/testcoin_deposit/includes/jsonRPCClient.class.php on line 157
+[18-Mar-2015 15:05:00 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Unable to connect to http://0efc43cd-5563-47ae-b25f-c701c4142b83:Y1e2s3h4u5a6***###@rpc.blockchain.info:80: ' in /home/bungeebo/public_html/members/testcoin_deposit/includes/jsonRPCClient.class.php:166
+Stack trace:
+#0 /home/bungeebo/public_html/members/testcoin_deposit/includes/BitcoinSystem.class.php(48): jsonRPCClient->__call('getbalance', Array)
+#1 /home/bungeebo/public_html/members/testcoin_deposit/includes/BitcoinSystem.class.php(48): jsonRPCClient->getbalance()
+#2 /home/bungeebo/public_html/members/testcoin_deposit/test_bitcoin.php(19): BitcoinSystem->getBalance()
+#3 {main}
+  thrown in /home/bungeebo/public_html/members/testcoin_deposit/includes/jsonRPCClient.class.php on line 166
+[18-Mar-2015 15:08:27 America/Chicago] PHP Warning:  fopen(https://...@rpc.blockchain.info:443) [<a href='function.fopen'>function.fopen</a>]: failed to open stream: operation failed in /home/bungeebo/public_html/members/testcoin_deposit/includes/jsonRPCClient.class.php on line 157
+[18-Mar-2015 15:08:27 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Unable to connect to https://0efc43cd-5563-47ae-b25f-c701c4142b83:Y1e2s3h4u5a6***###@rpc.blockchain.info:443: ' in /home/bungeebo/public_html/members/testcoin_deposit/includes/jsonRPCClient.class.php:166
+Stack trace:
+#0 /home/bungeebo/public_html/members/testcoin_deposit/includes/BitcoinSystem.class.php(48): jsonRPCClient->__call('getbalance', Array)
+#1 /home/bungeebo/public_html/members/testcoin_deposit/includes/BitcoinSystem.class.php(48): jsonRPCClient->getbalance()
+#2 /home/bungeebo/public_html/members/testcoin_deposit/test_bitcoin.php(19): BitcoinSystem->getBalance()
+#3 {main}
+  thrown in /home/bungeebo/public_html/members/testcoin_deposit/includes/jsonRPCClient.class.php on line 166
+[08-Sep-2015 12:59:04 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 86
+[08-Sep-2015 12:59:04 UTC] PHP Notice:  Undefined variable: moniker in /home/bungeebo/public_html/960top.php on line 77
+[08-Sep-2015 12:59:04 UTC] PHP Notice:  Undefined index: Submit in /home/bungeebo/public_html/members/views/not_logged_in.php on line 18
+[08-Sep-2015 12:59:19 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 86
+[08-Sep-2015 12:59:19 UTC] PHP Notice:  Undefined index: user_rememberme in /home/bungeebo/public_html/members/classes/Login.php on line 127
+[08-Sep-2015 12:59:34 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 86
+[08-Sep-2015 13:01:08 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 86

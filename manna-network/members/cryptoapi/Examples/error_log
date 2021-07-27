@@ -1,0 +1,2 @@
+[15-Dec-2015 22:25:19 UTC] PHP Fatal error:  Cannot redeclare cryptobox_new_payment() (previously declared in /home/bungeebo/public_html/members/cryptoapi/Examples/example_basic.php:146) in /home/bungeebo/public_html/members/cryptoapi/cryptobox.class.php on line 1265
+[15-Dec-2015 22:25:27 UTC] PHP Fatal error:  Cannot redeclare cryptobox_new_payment() (previously declared in /home/bungeebo/public_html/members/cryptoapi/Examples/example_basic.php:146) in /home/bungeebo/public_html/members/cryptoapi/cryptobox.class.php on line 1265

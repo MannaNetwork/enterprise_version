@@ -1,0 +1,246 @@
+<html><head><TITLE>Link Submissions Instructions</TITLE><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml2/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+
+<!--<script type="text/javascript" src="http://BungeeBones.com/bungee_jumpers/reg_form/ddaccordion.js">-->
+<script type="text/javascript" src="ddaccordion.js">
+/***********************************************
+* Accordion Content script- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* Visit http://www.dynamicDrive.com for hundreds of DHTML scripts
+* This notice must stay intact for legal use
+***********************************************/
+
+</script>
+
+
+<style type="text/css">
+
+.mypets{ /*header of 1st demo*/
+cursor: hand;
+cursor: pointer;
+padding: 2px 5px;
+border: 1px solid gray;
+background: #E1E1E1;
+}
+
+.openpet{ /*class added to contents of 1st demo when they are open*/
+background: yellow;
+}
+
+.technology{ /*header of 2nd demo*/
+cursor: hand;
+cursor: pointer;
+font: bold 14px Verdana;
+margin: 10px 0;
+}
+
+
+.openlanguage{ /*class added to contents of 2nd demo when they are open*/
+color: green;
+}
+
+.closedlanguage{ /*class added to contents of 2nd demo when they are closed*/
+color: red;
+}
+
+</style>
+
+<script type="text/javascript">
+
+//Initialize first demo:
+ddaccordion.init({
+	headerclass: "mypets", //Shared CSS class name of headers group
+	contentclass: "thepet", //Shared CSS class name of contents group
+	revealtype: "mouseover", //Reveal content when user clicks or onmouseover the header? Valid value: "click", "clickgo", or "mouseover"
+	mouseoverdelay: 200, //if revealtype="mouseover", set delay in milliseconds before header expands onMouseover
+	collapseprev: true, //Collapse previous content (so only one open at any time)? true/false 
+	defaultexpanded: [0], //index of content(s) open by default [index1, index2, etc]. [] denotes no content.
+	onemustopen: false, //Specify whether at least one header should be open always (so never all headers closed)
+	animatedefault: false, //Should contents open by default be animated into view?
+	persiststate: true, //persist state of opened contents within browser session?
+	toggleclass: ["", "openpet"], //Two CSS classes to be applied to the header when it's collapsed and expanded, respectively ["class1", "class2"]
+	togglehtml: ["none", "", ""], //Additional HTML added to the header when it's collapsed and expanded, respectively  ["position", "html1", "html2"] (see docs)
+	animatespeed: "fast", //speed of animation: integer in milliseconds (ie: 200), or keywords "fast", "normal", or "slow"
+	oninit:function(expandedindices){ //custom code to run when headers have initalized
+		//do nothing
+	},
+	onopenclose:function(header, index, state, isuseractivated){ //custom code to run whenever a header is opened or closed
+		//do nothing
+	}
+})
+
+//Initialize 2nd demo:
+ddaccordion.init({
+	headerclass: "technology", //Shared CSS class name of headers group
+	contentclass: "thelanguage", //Shared CSS class name of contents group
+	revealtype: "click", //Reveal content when user clicks or onmouseover the header? Valid value: "click", "clickgo", or "mouseover"
+	mouseoverdelay: 200, //if revealtype="mouseover", set delay in milliseconds before header expands onMouseover
+	collapseprev: false, //Collapse previous content (so only one open at any time)? true/false 
+	defaultexpanded: [], //index of content(s) open by default [index1, index2, etc]. [] denotes no content.
+	onemustopen: false, //Specify whether at least one header should be open always (so never all headers closed)
+	animatedefault: false, //Should contents open by default be animated into view?
+	persiststate: false, //persist state of opened contents within browser session?
+	toggleclass: ["closedlanguage", "openlanguage"], //Two CSS classes to be applied to the header when it's collapsed and expanded, respectively ["class1", "class2"]
+	togglehtml: ["prefix", "<img src='http://bungeebones.com/bungee_jumpers/reg_form/images/6tpc4td.gif' style='width:13px; height:13px' /> ", "<img src='http://bungeebones.com/bungee_jumpers/reg_form/images/80mxwlz.gif' style='width:13px; height:13px' /> "], //Additional HTML added to the header when it's collapsed and expanded, respectively  ["position", "html1", "html2"] (see docs)
+	animatespeed: "fast", //speed of animation: integer in milliseconds (ie: 200), or keywords "fast", "normal", or "slow"
+	oninit:function(expandedindices){ //custom code to run when headers have initalized
+		//do nothing
+	},
+	onopenclose:function(header, index, state, isuseractivated){ //custom code to run whenever a header is opened or closed
+		//do nothing
+	}
+})
+
+</script></head><body>
+
+
+
+<a href="#" onClick="ddaccordion.collapseall('technology'); return false">Collapse all</a>  | <a href="#" onClick="ddaccordion.expandall('technology'); return false">Expand all</a> 
+
+
+<div class="technology">Step 1 Select A Subcategory (optional)
+</div>
+<div class="thelanguage">
+	<div class="acc-section">
+		<div class="acc-content">
+			<ul class="acc" id="nested">
+			<li>
+			Moving a link into a lower, less populated category is the simplest way to insure it will continue being a free link 
+			</li>
+<li>
+			Adding a link to a subcategory can get it into a more descriptive and relevant category. Upper categories are more general while subcategories get more and more specific</li>
+			<li>
+			Listing in a subcategory gets your link out and away from "the pack".</li><li>
+			
+			</li>
+			<li>
+			We are very free and liberal with subcategory creation. If you want a subcategory added then continue to add your link to the best one available and then drop us a note with our contact form (top menu). Include your link, your current location and the name and location you would like the new subcategory added. If we approve it, we can then move your link into it at no charge.
+			</li>
+<a href="#" onClick="ddaccordion.collapseall('technology'); return false">Collapse all</a>  | <a href="#" onClick="ddaccordion.expandall('technology'); return false">Expand all</a> 
+			
+
+</ul>
+		</div>
+	</div>
+</div>
+
+<div class="technology">Step 2 Add Regional Filters (optional)
+</div>
+<div class="thelanguage">
+	<div class="acc-section">
+		<div class="acc-content">
+			<ul class="acc" id="nested">
+			<li>
+			Adding regional information about your link can get it displayed more prominently. The number of links in that region and category is less than the Global level so you avoid the competition and are more likely to be on the first page</li>
+<li>
+			Adding regional information about certain types of local oriented businesses such as hairdressers, barbers, coffee shops, tire shops etc ends up saving everyones's time and resources with lower cost for the advertisers. Users in California, for example, do not care about seeing a link to a barber shop in Washington, D.C. for example. 			</li>
+<li>
+			Regional Filters is a natural for cell phone users. Cell phone users are often away from their homes and offices and, thus, do not have access to the "Yellow Pages". Adding Regional Information is a great way to reach that ever growing segment of the market, especially if you are a local business..			</li>
+
+
+<a href="#" onClick="ddaccordion.collapseall('technology'); return false">Collapse all</a>  | <a href="#" onClick="ddaccordion.expandall('technology'); return false">Expand all</a> 
+			
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="technology">Populations At A Glance (instructional/research)
+</div>
+<div class="thelanguage">
+	<div class="acc-section">
+		<li class="acc-content">
+			<ul class="acc" id="nested">
+			<li>
+With this tool you can pull up the population of the entire grid of categories and regions near yours	</li>
+
+<li>
+				Finds info about how many sites are listed in the different categories, subcategories and regional levels.
+			
+			
+			</li>
+<li>
+			Helps get you as high up in the category tree in the most prominent position for free or at the lowest cost.
+			</li>
+			
+			
+			</ul>
+
+		</div>
+	</div>
+</div>
+<div class="technology">Your Link Category Peers At A Glance (informational/community activity)
+</div>
+<div class="thelanguage">
+	<div class="acc-section">
+		<div class="acc-content">
+			<ul class="acc" id="nested">
+			<li>
+			Viewing the other links in the category can be very informative and instructional.
+			<ol><li>Meta tag, key word info. Page rank, Alexa rank, keyword density are all things you can explore</li></ol>
+
+</li>
+			<li>
+			After visiting their site help BungeeBones maintain and improve the quality of the directory by casting a "Peer" Rating vote.
+			</li>
+			
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="technology">Add Your Link Info (required)
+</div>
+<div class="thelanguage">
+	<div class="acc-section">
+		<div class="acc-content">
+			<ul class="acc" id="nested">
+			<li>
+			Add Your Link Title (as it will appear in the listing)<div class="acc-section">
+			
+			</li>
+			<li>
+			Add your website description
+			</li>
+			<li>
+			Add the url
+			</li>
+			
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="technology">Add More Company Info (optional) 
+</div>
+<div class="thelanguage">
+	<div class="acc-section">
+		<div class="acc-content">
+			<ul class="acc" id="nested">
+			<li>
+			Street and zip will only be displayed if regional info was added
+			</li>
+			<li>
+			
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="technology">Create Code For Your Distributed Web Directory (Optional)  
+</div>
+<div class="thelanguage">
+	<div class="acc-section">
+		<div class="acc-content">
+			<ul class="acc" id="nested">
+			<li>
+			Add just a few more inputs to the form and get the complete code for creating your very own, populated and managed web directory for your website absolutely free and with no obligation. You get the opportunity to earn some income from your website to boot.</li>
+			<li>
+			<li>See the detailed accordian menu specific to the code section (below)</li>
+			</ul>
+		</div>
+	</div>
+</div>
+</div>
+
+
+
+</body></html>

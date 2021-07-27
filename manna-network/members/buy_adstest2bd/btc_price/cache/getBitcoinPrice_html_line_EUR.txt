@@ -1,0 +1,1 @@
+<ul><li><strong>Last:</strong>&nbsp;&nbsp;630.188</li><li><strong>High:</strong>&nbsp;657.21</li><li><strong>Low:</strong>&nbsp;&nbsp;550</li><li><strong>Avg:</strong>&nbsp;&nbsp;&nbsp;598.937</li><li><strong>Vol:</strong>&nbsp;&nbsp;&nbsp;&nbsp;3949</li><li><strong>bid:</strong>&nbsp;&nbsp;&nbsp;627</li><li><strong>ask:</strong>&nbsp;&nbsp;&nbsp;627.898</li></ul>

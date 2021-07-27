@@ -1,0 +1,74 @@
+  
+    </div>
+    <br clear="all" />
+    <img id="main_bottom" src="/templates/themza_j15_06/images/black/bottom.png" alt="bottom" align="bottom" /></div>
+
+<div id="f_area"><img src="/templates/themza_j15_06/images/black/top_f_area.png" alt="top" align="top" />
+	    			<div class="moduletable">
+					<h3>Latest News</h3>
+					<ul class="latestnews">
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=5:joomla-license-guidelines&amp;catid=25:the-project&amp;Itemid=2" class="latestnews">
+			Joomla! License Guidelines</a>
+	</li>
+
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=24:content-layouts&amp;catid=29:the-cms&amp;Itemid=38" class="latestnews">
+			Content Layouts</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=27:the-joomla-community&amp;catid=30:the-community&amp;Itemid=30" class="latestnews">
+			The Joomla! Community</a>
+	</li>
+
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=1:welcome-to-joomla&amp;catid=1:latest-news&amp;Itemid=50" class="latestnews">
+			Welcome to Joomla!</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=42:newsflash-4&amp;catid=3:newsflash" class="latestnews">
+			Newsflash 4</a>
+	</li>
+
+</ul>		</div>
+	
+            			<div class="moduletable">
+					<h3>Popular</h3>
+					<ul class="mostread">
+	<li class="mostread">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=19:joomla-overview&amp;catid=29:the-cms&amp;Itemid=27" class="mostread">
+			Joomla! Overview</a>
+	</li>
+
+	<li class="mostread">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=26:extensions&amp;catid=29:the-cms&amp;Itemid=40" class="mostread">
+			Extensions</a>
+	</li>
+	<li class="mostread">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=5:joomla-license-guidelines&amp;catid=25:the-project&amp;Itemid=2" class="mostread">
+			Joomla! License Guidelines</a>
+	</li>
+
+	<li class="mostread">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=1:welcome-to-joomla&amp;catid=1:latest-news&amp;Itemid=50" class="mostread">
+			Welcome to Joomla!</a>
+	</li>
+	<li class="mostread">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=22:whats-new-in-15&amp;catid=29:the-cms&amp;Itemid=29" class="mostread">
+			What's New in 1.5?</a>
+	</li>
+
+</ul>		</div>
+	
+        <br clear="all" />
+    <img id="f_area_bottom" src="/templates/themza_j15_06/images/black/bottom_f_area.png" alt="bottom" align="bottom" /></div>
+
+    	
+<p id="power_by" align="center">
+	&#0169;Copyright 2008 Robert Lefebure All Rights Reserved
+</p>
+
+
+
+</body>
+</html>

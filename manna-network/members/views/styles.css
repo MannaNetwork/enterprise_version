@@ -1,0 +1,109 @@
+<style>
+.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: link_id; }
+.item4 { grid-area: cat_id; }
+.item5 { grid-area: bch; }
+.item6 { grid-area: demo; }
+.item7 { grid-area: right; }
+.item8 { grid-area: footer; }
+.item9 { grid-area: footer2; }
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header header'
+    'menu link_id cat_id bch demo right right'
+    'footer footer footer footer footer footer footer'
+'footer2 footer2 footer2 footer2 footer2 footer2 footer2'
+;
+  grid-gap: 5px;
+  background-color: #000000;
+  padding: 5px;
+}
+.grid-container > div {
+
+background-color:rgba(255,255,255, 0.9);
+  text-align: center;
+  padding: 5px 0;
+  font-size: 14px;
+}
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+.wrapper {
+      margin: 80px auto;
+      text-align: center;
+      width: 100%;
+      position: relative;
+      }
+.button {
+      padding: 15px 100px;
+      margin:10px 4px;
+      color: #eee;
+      font-family: sans-serif;
+      text-transform: uppercase;
+      text-align: center;
+      position: relative;
+      text-decoration: none;
+      display:inline-block;
+      border:1px solid ;
+      }
+      .button::before{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      -webkit-transform: scaleY(.1);
+      transform: scaleY(.1);
+      transition: all .4s
+      }
+      .button:hover{
+      color:#b414ba;  
+      }
+      .button:hover::before{
+      opacity: 1;
+      background-color: gray;
+      -webkit-transform: scaleY(1);
+      transform: scaleY(1);
+      transition: -webkit-transform .6s cubic-bezier(.08, .35, .13, 1.02), opacity .4s;
+      transition: transform .6s cubic-bezier(.08, .35, .13, 1.02), opacity
+      }
+
+
+</style>

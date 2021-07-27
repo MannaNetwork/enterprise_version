@@ -1,0 +1,401 @@
+<html><head><TITLE>Accordian</TITLE><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml2/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+
+<script type="text/javascript" src="ddaccordion.js">
+
+/***********************************************
+* Accordion Content script- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* Visit http://www.dynamicDrive.com for hundreds of DHTML scripts
+* This notice must stay intact for legal use
+***********************************************/
+
+</script>
+
+
+<style type="text/css">
+
+.mypets{ /*header of 1st demo*/
+cursor: hand;
+cursor: pointer;
+padding: 2px 5px;
+border: 1px solid gray;
+background: #E1E1E1;
+}
+
+.openpet{ /*class added to contents of 1st demo when they are open*/
+background: yellow;
+}
+
+.technology{ /*header of 2nd demo*/
+cursor: hand;
+cursor: pointer;
+font: bold 14px Verdana;
+margin: 10px 0;
+}
+
+
+.openlanguage{ /*class added to contents of 2nd demo when they are open*/
+color: green;
+}
+
+.closedlanguage{ /*class added to contents of 2nd demo when they are closed*/
+color: red;
+}
+
+</style>
+
+<script type="text/javascript">
+
+//Initialize first demo:
+ddaccordion.init({
+	headerclass: "mypets", //Shared CSS class name of headers group
+	contentclass: "thepet", //Shared CSS class name of contents group
+	revealtype: "mouseover", //Reveal content when user clicks or onmouseover the header? Valid value: "click", "clickgo", or "mouseover"
+	mouseoverdelay: 200, //if revealtype="mouseover", set delay in milliseconds before header expands onMouseover
+	collapseprev: true, //Collapse previous content (so only one open at any time)? true/false 
+	defaultexpanded: [0], //index of content(s) open by default [index1, index2, etc]. [] denotes no content.
+	onemustopen: false, //Specify whether at least one header should be open always (so never all headers closed)
+	animatedefault: false, //Should contents open by default be animated into view?
+	persiststate: true, //persist state of opened contents within browser session?
+	toggleclass: ["", "openpet"], //Two CSS classes to be applied to the header when it's collapsed and expanded, respectively ["class1", "class2"]
+	togglehtml: ["none", "", ""], //Additional HTML added to the header when it's collapsed and expanded, respectively  ["position", "html1", "html2"] (see docs)
+	animatespeed: "fast", //speed of animation: integer in milliseconds (ie: 200), or keywords "fast", "normal", or "slow"
+	oninit:function(expandedindices){ //custom code to run when headers have initalized
+		//do nothing
+	},
+	onopenclose:function(header, index, state, isuseractivated){ //custom code to run whenever a header is opened or closed
+		//do nothing
+	}
+})
+
+//Initialize 2nd demo:
+ddaccordion.init({
+	headerclass: "technology", //Shared CSS class name of headers group
+	contentclass: "thelanguage", //Shared CSS class name of contents group
+	revealtype: "click", //Reveal content when user clicks or onmouseover the header? Valid value: "click", "clickgo", or "mouseover"
+	mouseoverdelay: 200, //if revealtype="mouseover", set delay in milliseconds before header expands onMouseover
+	collapseprev: false, //Collapse previous content (so only one open at any time)? true/false 
+	defaultexpanded: [], //index of content(s) open by default [index1, index2, etc]. [] denotes no content.
+	onemustopen: false, //Specify whether at least one header should be open always (so never all headers closed)
+	animatedefault: false, //Should contents open by default be animated into view?
+	persiststate: false, //persist state of opened contents within browser session?
+	toggleclass: ["closedlanguage", "openlanguage"], //Two CSS classes to be applied to the header when it's collapsed and expanded, respectively ["class1", "class2"]
+	togglehtml: ["prefix", "<img src='images/6tpc4td.gif' style='width:13px; height:13px' /> ", "<img src='images/80mxwlz.gif' style='width:13px; height:13px' /> "], //Additional HTML added to the header when it's collapsed and expanded, respectively  ["position", "html1", "html2"] (see docs)
+	animatespeed: "fast", //speed of animation: integer in milliseconds (ie: 200), or keywords "fast", "normal", or "slow"
+	oninit:function(expandedindices){ //custom code to run when headers have initalized
+		//do nothing
+	},
+	onopenclose:function(header, index, state, isuseractivated){ //custom code to run whenever a header is opened or closed
+		//do nothing
+	}
+})
+
+</script></head><body>
+
+<a href="#" onClick="ddaccordion.collapseall('technology'); return false">Collapse all</a>  | <a href="#" onClick="ddaccordion.expandall('technology'); return false">Expand all</a> 
+
+
+<div class="technology">Distributed Directory Overview</div>
+<div class="thelanguage">
+<div class="acc-section">
+			<div class="acc-content">
+				<ul class="acc" id="nested">
+					<li>
+ The form below is intended for use by non-Joomla and non-Wordpress users (if you use either of those systems <a taget="_blank" href="http://bungeebones.com/download-plugins">CLICK HERE</a>). The form below will create all the code you need (2-3 short blocks of code) to install a complete (with categories and links) web directory script on your website. 
+ </li>
+<li>
+The links and categories will be managed and updated for you FOR FREE by BungeeBones. 
+	</li>
+	<li>
+Visitors to your site that want to add their own link will be able to add free or paid links.</li>
+<li>
+BungeeBones will review all links submitted before they are allowed to go live insuring only quality links appear in the directory on your site.</li>
+<li>
+If they at any time become a paid link you will receive a 50% commission for as long as they are a paid link.</li>
+</li>
+<li>
+Installation of a distributed directory does not affect your status as a free or paid link.</li>
+<li>
+You still have the same options to locate/relocate your listing in any category you wish (paid or free)
+</li>
+<li>
+By installing the directory and maintaining a link to it from your homepage you earn a 50% savings on any paid link fees associated with your site in addition to any commissions you earn.
+</li>
+<a href="#" onClick="ddaccordion.collapseall('technology'); return false">Collapse all</a>  | <a href="#" onClick="ddaccordion.expandall('technology'); return false">Expand all</a> 
+
+</div>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+</div>
+<div class="technology">The Directory As A Fund Raiser Tool - Donate Your Traffic</div>
+<div class="thelanguage">
+<div class="acc-section">
+			<div class="acc-content">
+				<ul class="acc" id="nested">
+					<li>
+You can use the BungeeBones web directory to donate web traffic that you may not even be using and are letting go to waste. You can add the directory which lets us pool any traffic your site sends in with traffic from all the other directory installations which makes listing in the directory even more desirable. And with the web directory install comes that little "Add A Link" button that every webmaster notices and that will enable you to sell web traffic on your favorite charity's behalf - automatically. Your charity earns 50% commissions on your web traffic sales. It is, in essence, "found money". Just provide payment instructions in the form below. 
+
+<p>If the charity requires you to register and/or become a member then you must do that and provide us the information so we can donate in your name. At the end of the year they will provide reports for your tax deduction. If you want to receive the money yourself to send in personally that is fine too. Let us know in the block whom you have pledged it too and we will post that info in your site's registration process information letting people know that of every advertising payment they make 50% goes to the charity you name.</p>
+
+
+
+<a href="#" onClick="ddaccordion.collapseall('technology'); return false">Collapse all</a>  | <a href="#" onClick="ddaccordion.expandall('technology'); return false">Expand all</a> 
+
+
+					</li>
+				</ul>
+
+			</div>
+		</div>
+</div>
+<div class="technology">The Distributed Web Directory's Features</div>
+<div class="thelanguage">
+<div class="acc-section">
+			<div class="acc-content">
+				<ul class="acc" id="nested">
+					<li>
+The web directory pages are unique to your website. </li>
+<li>
+You "brand" and customized the directory pages  to your site simply by inserting our code into one of your own website page templates and providing your menus, images etc.</li>
+<li>
+All the url paths for requesting new categories return to your url so, again, they will appear as any of your own web pages.</li>
+<li>
+Each page (for each individual category requested) has a "dynamic header" feature so that each webpage, for each category, will have unique title and descriptions specific to your website and the category.
+</li>
+<li>
+There is a mobile version designed specifically for cell phones and geared towards regional and local ads
+
+<a href="#" onClick="ddaccordion.collapseall('technology'); return false">Collapse all</a>  | <a href="#" onClick="ddaccordion.expandall('technology'); return false">Expand all</a> 
+</li>
+</div>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+
+</div>
+
+
+
+
+
+<div class="technology">Benefits Of Installing A Web Directory</div>
+<div class="thelanguage">
+<div class="acc-section">
+			<div class="acc-content">
+				<ul class="acc" id="nested">
+					<li>
+						Earn Commissions 
+							
+					</li>
+					<li>
+						Get Discounts Of Your Own Advertising Fees	
+						
+					</li>
+					<li>
+						Provide A Quality Feature For Your Visitors
+						
+					</li>
+					<li>
+						Long Term Residual Income	
+					</li>
+					<li>
+						Receive Bonus Promotion On BungeeBones.com
+								<a href="#" onClick="ddaccordion.collapseall('technology'); return false">Collapse all</a>  | <a href="#" onClick="ddaccordion.expandall('technology'); return false">Expand all</a> 
+
+						
+						
+					</li>
+				</ul>
+
+			</div>
+		</div></div>
+
+	
+<div class="technology">Technical Requirements</div>
+<div class="thelanguage">
+<div class="acc-section">
+			<div class="acc-content">
+				<ul class="acc" id="nested">
+					<li>
+						You Must Have PHP On Your Hosting Site
+						</li>
+					<li>
+						You Must Have Ability To Create A Folder or Directory On Your Website
+					</li>
+					<li>
+						You Must Have Ability To Create a Page On Your Website
+					</li>
+					<li>
+					You Must Have Ability To Place A Link In Your Website's Menus To Your New Web Directory Page
+					</li><a href="#" onClick="ddaccordion.collapseall('technology'); return false">Collapse all</a>  | <a href="#" onClick="ddaccordion.expandall('technology'); return false">Expand all</a> 
+
+						
+						
+					</li>
+				</ul>
+
+			</div>
+		</div></div>
+
+
+<div class="technology">Instructions For The Configuration Form (Below)</div>
+<div class="thelanguage">
+<div class="acc-section">
+			<div class="acc-content">
+				<ul class="acc" id="nested">
+				
+<li>Steps To Configure Your Distributed Web Directory To Function On Your Website
+	<ol><LI>	<b>Create A New Folder On Your Website And Enter The Folder Name (aka a directory) In The Form Below</b>			
+						<div class="acc-section">
+							<div class="acc-content">
+								
+						Create a new folder in your website to hold your new web directory web page (i.e. www.Your-domain.com/your_new_BungeeBones_web-directory_folder/). 
+<p>A SEO tip: relevant (to your topic) folder names can boost search engine rankings.
+
+						</div>
+					
+					</LI>
+<LI>			<b>Create A New Page Where Your Web Directory Script Will Be Copied To And Enter The Name In The Form Below</b>		
+						<div class="acc-section">
+							<div class="acc-content">
+							 A basic page name like "index.php" is fine but you can name it anything. Note the php file extension. The file must have a php extension. The final address to your new page would be something like www.Your-domain.com/your_new_BungeeBones_web-directory_folder/your-page-name.php
+							</div>
+						
+						
+						</div>
+					</LI>
+</LI>
+<LI>					<b>Create And Enter Your Dynamic Page Title</b>
+						<div class="acc-section">
+							<div class="acc-content">
+								BungeeBones lets you make every display page (as in every page for every different category) have a different title that emphasizes that category. This is a very important SEO feature. You need to enter <u>two phrases</u> in the form below to be used in your page's META TITLE (which also is displayed in the status bar at the top of each page). These two phrases will be coordinated and combined with each category name to produce unique titles for every web directory page. And since you have created them, they are also customized to your website. We suggest 
+        something like your site's domain name (if descriptive) and/or main topics or keywords are best, as search 
+        engines place a lot of weight on titles for their results placement. Our 
+        script will add the category name after your custom TITLE 1 and before your custom TITLE 2
+        sections so that each page's title for each category page is unique both to your site and unique for each 
+        particular category 
+<div style="font-size: smaller;"><p>Some Examples</p>
+<table border="1" style="font-size: smaller;"><tr><td>Your 1st Title</td><td>Your 2nd Title</td><td>Example Category Name<br />(selected by end-user)</td><td>Resulting Display Page's Meta Title </td></tr>
+<tr><td>BungeeBones Recommended</td><td>Links</td><td>Computers</td><td>BungeeBones Recommended Computers Links</td> </tr>
+<tr><td>BungeeBones Recommended</td><td>Links</td><td>Real Estate</td><td>BungeeBones Recommended Real Estate Links</td> </tr>
+<tr><td>BungeeBones Recommended</td><td>Links</td><td>Travel</td><td>BungeeBones Recommended Travel Links</td> </tr>
+</table></div>
+<p></p>						
+						</div>
+					</LI>
+			
+						
+					</LI>
+					
+					<li><b>Add Your Meta Description</b>
+					<div class="acc-section">
+							<div class="acc-content">Some search engines use your description 
+        in their search results while others will pull it from the content of 
+        the page itself. It should not be over 200 characters and we will add the category name to the end on every description to make it unique on every page.<br>
+        </div></div>
+					</li>
+					<li><b>Do You Want To Display Free Links?</b>
+					<div class="acc-section">
+							<div class="acc-content">As a widget directory host you get to choose whether or not to display the 
+      links of websites that are in our free program.
+     </div></div></li>	
+
+</ol></li>
+
+
+				</ul>
+<a href="#" onClick="ddaccordion.collapseall('technology'); return false">Collapse all</a>  | <a href="#" onClick="ddaccordion.expandall('technology'); return false">Expand all</a> 
+
+			</div>
+		</div></div>
+
+<div class="technology">Instructions For Installing The Code In Your Web Site</div>
+<div class="thelanguage">
+	<div class="acc-section">
+			<div class="acc-content">
+				<ul class="acc" id="nested">
+				This is just a preview of the installation instructions. The complete instructions will be supplied when the form below is submitted and when the code is delivered to you.
+					<li>You Will Have Three Sections Of Code To Paste Into A "Template" Of Your Web Page That You Supply
+						<ol>					
+						<LI>	
+						<b>You Need A "Template" Of Your Webpage</b>			
+						<div class="acc-section">
+							<div class="acc-content">
+							If you don't already have a template for your webpages making one is not too difficult.</div>
+						</div>
+						</LI>
+						<LI>			
+						<b>Place The Template Page In Your New Web Directory Folder</b>		
+						<div class="acc-section">
+							<div class="acc-content">
+							The template page you are about to paste the code in must be named as you name it in the configuration form below. The page you save must have a php extension.
+							</div>
+						</div>
+						</LI>
+						<LI>					
+						<b>Copy And Paste The First Section Of Code In The "Head" Section Of The Template Page</b>
+						<div class="acc-section">
+							<div class="acc-content">
+								The first section of code is to be pasted in place of everything before the closing &lt;/head&gt; tag (at the top of your template page). We are going to show you how to locate the closing &lt;/head&gt; tag and explain how to perhaps add some of your own style information if you need that.
+							</div>
+						</div>
+						</LI>
+						<LI>		
+						<b>Copy And Paste The Second Section Of Code  In The "Body" Section Of The Template Page</b>			
+						<div class="acc-section">
+							<div class="acc-content">
+					 		This section of code produces the BungeeBones Web Directory</b>
+							</div>
+							<div class="acc-content">
+							The second section of code is to be pasted in between the opening &lt;body&gt; tag and the closing &lt;/body&gt; body tag in your template. 
+							</div>
+							<div class="acc-content">
+							You can paste this second section of code over any content in your template that is in between those two body tags.
+							</div>
+						</div>
+						</li>
+<LI>		
+						<b>Copy And Paste The Third Section Of Code In A "SideBar" Of The Template Page</b>			
+						<div class="acc-section">
+							<div class="acc-content">
+					 		This section of code produces the optional "reciprocal" or link exchange component between you and the other webmasters with directories installed. This code will display a more prominent link (in your sidebar) of other webmasters that also have the distributed web directory installed. They will be displayed only in their category's sidebar. Your site will, in turn, be displayed on their site's sidebar, in your site's category.</b>
+							</div>
+							<div class="acc-content">
+							The third section of code is to be pasted in between the opening &lt;td&gt; tag and the closing &lt;/td&gt; tags that create the sidebar in your template. That could be either the left or right sidebars according to your preference.
+							</div>
+							
+						</div>
+						</li>
+						<LI>		
+						<b>What Should Happen</b>			
+						<div class="acc-section">
+							<div class="acc-content">
+					 		After installing the code, when you open the page that you installed (i.e. with your browser) you should have the main category page displaying.
+							</div>
+							<div class="acc-content">
+							If so, the links of any one of the categories to open up its sub-categories should have as its URL your website address. The directory appears as if it is all part of your website.</div>
+							</div><div class="acc-content">
+							Clicking a category link should produce a page displaying the sub-categories any links that have been submitted to it. The links and categories will be maintained and updated for you free of charge by Bungeebones and you will have zero maintenance to perform in maintaining the directory	</div>
+							</div>
+
+							
+							</li>	
+	
+						</ol>
+					</li>
+
+				</ul>
+
+			</div>
+		</div>
+
+</div>
+
+</body></html>

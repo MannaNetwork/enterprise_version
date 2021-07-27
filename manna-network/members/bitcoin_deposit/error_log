@@ -1,0 +1,68 @@
+[08-Sep-2015 13:00:23 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 86
+[08-Sep-2015 13:01:03 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 86
+[09-Sep-2015 01:45:37 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 86
+[09-Sep-2015 01:47:51 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 86
+[09-Sep-2015 01:50:17 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 86
+[09-Sep-2015 01:50:17 UTC] PHP Notice:  Undefined variable: paymentbox in /home/bungeebo/public_html/members/bitcoin_deposit/index.php on line 43
+[09-Sep-2015 01:50:17 UTC] PHP Notice:  Undefined variable: message in /home/bungeebo/public_html/members/bitcoin_deposit/index.php on line 44
+[09-Sep-2015 01:53:30 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 86
+[09-Sep-2015 01:53:30 UTC] PHP Warning:  require_once(../cryptobox.class.php) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/bitcoin_deposit/index.php on line 29
+[09-Sep-2015 01:53:30 UTC] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required '../cryptobox.class.php' (include_path='.:/opt/alt/php53/usr/share/pear:/opt/alt/php53/usr/share/php') in /home/bungeebo/public_html/members/bitcoin_deposit/index.php on line 29
+[09-Sep-2015 01:53:34 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 86
+[09-Sep-2015 01:53:34 UTC] PHP Warning:  require_once(../cryptobox.class.php) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/bitcoin_deposit/index.php on line 29
+[09-Sep-2015 01:53:34 UTC] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required '../cryptobox.class.php' (include_path='.:/opt/alt/php53/usr/share/pear:/opt/alt/php53/usr/share/php') in /home/bungeebo/public_html/members/bitcoin_deposit/index.php on line 29
+[09-Sep-2015 01:55:00 UTC] PHP Parse error:  syntax error, unexpected '*' in /home/bungeebo/public_html/members/bitcoin_deposit/index.php on line 102
+[09-Sep-2015 01:55:18 UTC] PHP Parse error:  syntax error, unexpected '*' in /home/bungeebo/public_html/members/bitcoin_deposit/index.php on line 102
+[09-Sep-2015 01:55:28 UTC] PHP Parse error:  syntax error, unexpected '*' in /home/bungeebo/public_html/members/bitcoin_deposit/index.php on line 102
+[09-Sep-2015 01:56:08 UTC] PHP Parse error:  syntax error, unexpected '*' in /home/bungeebo/public_html/members/bitcoin_deposit/index.php on line 102
+[09-Sep-2015 01:56:15 UTC] PHP Parse error:  syntax error, unexpected '*' in /home/bungeebo/public_html/members/bitcoin_deposit/index.php on line 102
+[09-Sep-2015 01:57:01 UTC] PHP Parse error:  syntax error, unexpected '*' in /home/bungeebo/public_html/members/bitcoin_deposit/index.php on line 102
+[09-Sep-2015 01:57:38 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 86
+[09-Sep-2015 01:59:59 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 86
+[09-Sep-2015 01:59:59 UTC] PHP Warning:  require_once(cryptoapi/cryptobox.class.php) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/bitcoin_deposit/index.php on line 26
+[09-Sep-2015 01:59:59 UTC] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required 'cryptoapi/cryptobox.class.php' (include_path='.:/opt/alt/php53/usr/share/pear:/opt/alt/php53/usr/share/php') in /home/bungeebo/public_html/members/bitcoin_deposit/index.php on line 26
+[09-Sep-2015 02:00:43 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 86
+[09-Sep-2015 02:00:43 UTC] PHP Warning:  require_once(./cryptoapi/cryptobox.class.php) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/bitcoin_deposit/index.php on line 26
+[09-Sep-2015 02:00:43 UTC] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required './cryptoapi/cryptobox.class.php' (include_path='.:/opt/alt/php53/usr/share/pear:/opt/alt/php53/usr/share/php') in /home/bungeebo/public_html/members/bitcoin_deposit/index.php on line 26
+[09-Sep-2015 02:01:01 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 86
+[09-Sep-2015 02:04:25 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 86
+[09-Sep-2015 02:22:59 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 86
+[09-Sep-2015 02:24:34 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 86
+[09-Sep-2015 02:25:30 UTC] PHP Parse error:  syntax error, unexpected $end in /home/bungeebo/public_html/members/bitcoin_deposit/index.php on line 37
+[09-Sep-2015 02:25:33 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 86
+[09-Sep-2015 02:25:33 UTC] PHP Notice:  Undefined variable: box1 in /home/bungeebo/public_html/members/bitcoin_deposit/index.php on line 29
+[09-Sep-2015 02:25:33 UTC] PHP Fatal error:  Call to a member function is_paid() on a non-object in /home/bungeebo/public_html/members/bitcoin_deposit/index.php on line 29
+[09-Sep-2015 02:25:35 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 86
+[09-Sep-2015 02:25:35 UTC] PHP Notice:  Undefined variable: box1 in /home/bungeebo/public_html/members/bitcoin_deposit/index.php on line 29
+[09-Sep-2015 02:25:35 UTC] PHP Fatal error:  Call to a member function is_paid() on a non-object in /home/bungeebo/public_html/members/bitcoin_deposit/index.php on line 29
+[09-Sep-2015 02:26:48 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 86
+[09-Sep-2015 02:26:48 UTC] PHP Notice:  Undefined variable: box1 in /home/bungeebo/public_html/members/bitcoin_deposit/index.php on line 29
+[09-Sep-2015 02:26:48 UTC] PHP Fatal error:  Call to a member function is_paid() on a non-object in /home/bungeebo/public_html/members/bitcoin_deposit/index.php on line 29
+[09-Sep-2015 02:27:05 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 86
+[09-Sep-2015 02:31:50 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 86
+[09-Sep-2015 02:31:50 UTC] PHP Warning:  require_once(/members/cryptoapi/cryptobox.class.php) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/bitcoin_deposit/index.php on line 30
+[09-Sep-2015 02:31:50 UTC] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required '/members/cryptoapi/cryptobox.class.php' (include_path='.:/opt/alt/php53/usr/share/pear:/opt/alt/php53/usr/share/php') in /home/bungeebo/public_html/members/bitcoin_deposit/index.php on line 30
+[09-Sep-2015 02:32:59 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 86
+[09-Sep-2015 02:43:25 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 86
+[09-Sep-2015 02:44:46 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 86
+[09-Sep-2015 03:30:15 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 25
+[09-Sep-2015 03:30:47 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 25
+[09-Sep-2015 03:30:56 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 25
+[09-Sep-2015 03:31:53 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 25
+[09-Sep-2015 03:33:06 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 25
+[09-Sep-2015 03:39:31 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 25
+[09-Sep-2015 03:39:56 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 25
+[09-Sep-2015 03:41:02 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 25
+[09-Sep-2015 03:41:42 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 25
+[09-Sep-2015 03:42:12 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 25
+[09-Sep-2015 03:55:04 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 25
+[09-Sep-2015 03:57:13 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 25
+[09-Sep-2015 03:58:05 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 25
+[09-Sep-2015 03:58:34 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 25
+[09-Sep-2015 04:04:18 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 25
+[09-Sep-2015 04:06:29 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 25
+[09-Sep-2015 04:07:46 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 25
+[09-Sep-2015 04:08:51 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 25
+[09-Sep-2015 04:09:42 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 25
+[09-Sep-2015 04:10:27 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 25
+[09-Sep-2015 04:23:21 UTC] PHP Notice:  Constant EMAIL_PASSWORDRESET_CONTENT already defined in /home/bungeebo/public_html/members/config/config.php on line 25

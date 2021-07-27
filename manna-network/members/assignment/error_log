@@ -1,0 +1,6 @@
+[28-Jul-2015 17:18:23 America/Chicago] PHP Fatal error:  Class 'assigment' not found in /home/bungeebo/public_html/link_exchange/admin/commiss_assignment/index.php on line 5
+[28-Jul-2015 17:19:42 America/Chicago] PHP Fatal error:  Class 'assigment' not found in /home/bungeebo/public_html/link_exchange/admin/commiss_assignment/index.php on line 5
+[29-Jul-2015 11:27:22 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/bungeebo/public_html/classes/assignment_class.php on line 28
+[29-Jul-2015 11:27:22 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/bungeebo/public_html/classes/assignment_class.php on line 37
+[29-Jul-2015 11:34:41 America/Chicago] PHP Parse error:  syntax error, unexpected T_VARIABLE, expecting ',' or ';' in /home/bungeebo/public_html/classes/assignment_class.php on line 29
+[29-Jul-2015 12:13:25 America/Chicago] PHP Fatal error:  Call to undefined method assignment::generate_wtm_list() in /home/bungeebo/public_html/link_exchange/admin/commiss_assignment/generate_wtm_list.php on line 29

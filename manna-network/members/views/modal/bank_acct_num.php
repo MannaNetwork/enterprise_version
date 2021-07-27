@@ -1,0 +1,17 @@
+<table><tr><td><h1>Why Is Your Bank Account Number Needed?</h1>
+
+
+<p>After the BUYER accepts your offer they will be going to a branch of your bank to make a CASH DEPOSIT and, so, they will need the account number in order to do that. We make it optional to provide it at this time BUT IT WILL BE REQUIRED EVENTUALLY.
+
+<p>Things to consider before deciding to post your account number...
+<p>It is my own opinion that a bank account number is a relatively harmless thing to release publicly but I assume no responsibility associated with its distribution to a prospective buyer that accepts your terms of sale. You, the SELLER, assume all risks associated with its release.
+<p>
+<p>If you don't provide it now then when a BUYER does accept your terms you will have to return to BungeeBones and enter the account information at that time. It is only after you do that does the timer for them to deposit the money begin to run (they can't have a time limit imposed if they don't have the information to perform). There are some potential problems with that. Suppose you and the buyer are in different time zones? Major banks have branches all around the world so the buyer could be in a very different time zone. You could even send the bank information to the BUYER in the middle of THEIR night while they are sleeping and the banks are closed. And the buyer doesn't know how long or even if you will ever respond to their acceptance so to expect them to sit by their email waiting for you may not be possible for them. Another potential problem is price fluctuation. The more time alloted the buyer to pay, the more the market could change during that time. A drop in the price while waiting for your bank information can cause the buyer to change their mind. Until the buyer actually makes the deposit there is little we can do to make them complete their purchase.
+<p>There are certain benefits to supplying the information ahead of time. One benefit is that it can greatly reduce the time that your credits are taken off the market when a BUYER accepts your terms. Since they can only accept your offer from the BungeeBones.com website we can deliver the account number to them immediately and the timer can begin then too. There will be no waiting, no time lag, no adjustment for time zones etc.. But even better, if the buyer has a Smart Phone they wouldn't need more than 15 minutes between the time they accept your offer and report a successful deposit to your account. Here's how ... They first travel to your bank branch. There they login and accept the offer. They could do so even from the teller line or the drive through. After making the deposit they can again login and report the successful deposit. Your advertising credits were only exposed for a few minutes. 
+
+<h1>Why Is The Name That Is Associated With Your Bank Account Requested?</h1>
+<p>Usually the banks have a place on the deposit ticket for that information. Though it may or may not be required by your bank, not having will certainly prompt the teller to make an enquiry and draw attention to a transaction that otherwise wouldn't. Since Bitcoin is often on the Bank's radar (even though the buyer is buying Ad Credits and isn't buying Bitcoin) do we want to risk it? I'll leave the decision to you, the seller, but the scrutiny could cause the buyer to not be able to make a deposit or for the banks to change their policy eventually. 
+
+
+</td></tr>
+</table>

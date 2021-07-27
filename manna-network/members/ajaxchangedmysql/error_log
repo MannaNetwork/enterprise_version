@@ -1,0 +1,228 @@
+[23-Nov-2015 22:44:48 UTC] PHP Warning:  include(select.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/ajaxchangedmysql/index.php on line 23
+[23-Nov-2015 22:44:48 UTC] PHP Warning:  include(select.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/ajaxchangedmysql/index.php on line 23
+[23-Nov-2015 22:44:48 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'select.class.php' for inclusion (include_path='.:/opt/alt/php53/usr/share/pear:/opt/alt/php53/usr/share/php') in /home/bungeebo/public_html/members/ajaxchangedmysql/index.php on line 23
+[23-Nov-2015 22:44:48 UTC] PHP Notice:  Undefined variable: opt in /home/bungeebo/public_html/members/ajaxchangedmysql/index.php on line 31
+[23-Nov-2015 22:44:48 UTC] PHP Fatal error:  Call to a member function ShowCategory() on a non-object in /home/bungeebo/public_html/members/ajaxchangedmysql/index.php on line 31
+[23-Nov-2015 22:46:09 UTC] PHP Warning:  include(db_config.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 13
+[23-Nov-2015 22:46:09 UTC] PHP Warning:  include(db_config.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 13
+[23-Nov-2015 22:46:09 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'db_config.php' for inclusion (include_path='.:/opt/alt/php53/usr/share/pear:/opt/alt/php53/usr/share/php') in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 13
+[23-Nov-2015 22:46:09 UTC] PHP Notice:  Undefined variable: host in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 14
+[23-Nov-2015 22:46:09 UTC] PHP Notice:  Undefined variable: user in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 14
+[23-Nov-2015 22:46:09 UTC] PHP Notice:  Undefined variable: password in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 14
+[23-Nov-2015 22:46:09 UTC] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'bungeebo'@'localhost' (using password: NO) in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 14
+[23-Nov-2015 23:01:27 UTC] PHP Notice:  Undefined variable: db in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 16
+[23-Nov-2015 23:01:27 UTC] PHP Notice:  Undefined variable: db in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 16
+[23-Nov-2015 23:03:07 UTC] PHP Warning:  include(select.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 61
+[23-Nov-2015 23:03:07 UTC] PHP Warning:  include(select.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 61
+[23-Nov-2015 23:03:07 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'select.class.php' for inclusion (include_path='.:/opt/alt/php53/usr/share/pear:/opt/alt/php53/usr/share/php') in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 61
+[23-Nov-2015 23:03:07 UTC] PHP Notice:  Undefined index: id in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 34
+[23-Nov-2015 23:03:07 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 37
+[23-Nov-2015 23:03:07 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 25
+[23-Nov-2015 23:03:50 UTC] PHP Warning:  include(select.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 61
+[23-Nov-2015 23:03:50 UTC] PHP Warning:  include(select.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 61
+[23-Nov-2015 23:03:50 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'select.class.php' for inclusion (include_path='.:/opt/alt/php53/usr/share/pear:/opt/alt/php53/usr/share/php') in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 61
+[23-Nov-2015 23:03:50 UTC] PHP Notice:  Undefined index: id in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 34
+[23-Nov-2015 23:03:50 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 37
+[23-Nov-2015 23:03:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:03:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:03:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:03:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:03:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:03:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:03:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:03:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:03:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:03:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:03:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:03:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:03:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:03:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:03:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:03:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:03:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:03:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:03:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:03:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:03:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:03:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:03:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:03:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:03:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:03:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:03:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:03:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:03:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:03:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:03:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:03:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:04:52 UTC] PHP Warning:  include(select.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 61
+[23-Nov-2015 23:04:52 UTC] PHP Warning:  include(select.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 61
+[23-Nov-2015 23:04:52 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'select.class.php' for inclusion (include_path='.:/opt/alt/php53/usr/share/pear:/opt/alt/php53/usr/share/php') in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 61
+[23-Nov-2015 23:04:52 UTC] PHP Notice:  Undefined index: id in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 34
+[23-Nov-2015 23:04:52 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 37
+[23-Nov-2015 23:04:52 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:04:52 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:04:52 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:04:52 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:04:52 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:04:52 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:04:52 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:04:52 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:04:52 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:22 UTC] PHP Warning:  include(select.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 61
+[23-Nov-2015 23:07:22 UTC] PHP Warning:  include(select.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 61
+[23-Nov-2015 23:07:22 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'select.class.php' for inclusion (include_path='.:/opt/alt/php53/usr/share/pear:/opt/alt/php53/usr/share/php') in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 61
+[23-Nov-2015 23:07:22 UTC] PHP Notice:  Undefined index: id in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 34
+[23-Nov-2015 23:07:22 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 37
+[23-Nov-2015 23:07:22 UTC] PHP Notice:  Undefined index: event in /home/bungeebo/public_html/members/ajaxchangedmysql/index.php on line 27
+[23-Nov-2015 23:07:22 UTC] PHP Notice:  Undefined index: id in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 34
+[23-Nov-2015 23:07:22 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 37
+[23-Nov-2015 23:07:22 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:22 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:22 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:22 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:22 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:22 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:22 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:22 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:22 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:39 UTC] PHP Warning:  include(select.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 61
+[23-Nov-2015 23:07:39 UTC] PHP Warning:  include(select.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 61
+[23-Nov-2015 23:07:39 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'select.class.php' for inclusion (include_path='.:/opt/alt/php53/usr/share/pear:/opt/alt/php53/usr/share/php') in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 61
+[23-Nov-2015 23:07:39 UTC] PHP Notice:  Undefined index: id in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 34
+[23-Nov-2015 23:07:39 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 37
+[23-Nov-2015 23:07:39 UTC] PHP Notice:  Undefined index: event in /home/bungeebo/public_html/members/ajaxchangedmysql/index.php on line 27
+[23-Nov-2015 23:07:39 UTC] PHP Notice:  Undefined index: id in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 34
+[23-Nov-2015 23:07:39 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 37
+[23-Nov-2015 23:07:39 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:39 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:39 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:39 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:39 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:39 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:39 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:39 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:39 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:42 UTC] PHP Warning:  include(select.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 61
+[23-Nov-2015 23:07:42 UTC] PHP Warning:  include(select.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 61
+[23-Nov-2015 23:07:42 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'select.class.php' for inclusion (include_path='.:/opt/alt/php53/usr/share/pear:/opt/alt/php53/usr/share/php') in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 61
+[23-Nov-2015 23:07:42 UTC] PHP Notice:  Undefined index: id in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 34
+[23-Nov-2015 23:07:42 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 37
+[23-Nov-2015 23:07:42 UTC] PHP Notice:  Undefined index: event in /home/bungeebo/public_html/members/ajaxchangedmysql/index.php on line 27
+[23-Nov-2015 23:07:42 UTC] PHP Notice:  Undefined index: id in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 34
+[23-Nov-2015 23:07:42 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 37
+[23-Nov-2015 23:07:42 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:42 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:42 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:42 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:42 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:42 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:42 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:42 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:42 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:51 UTC] PHP Warning:  include(select.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 61
+[23-Nov-2015 23:07:51 UTC] PHP Warning:  include(select.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 61
+[23-Nov-2015 23:07:51 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'select.class.php' for inclusion (include_path='.:/opt/alt/php53/usr/share/pear:/opt/alt/php53/usr/share/php') in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 61
+[23-Nov-2015 23:07:51 UTC] PHP Notice:  Undefined index: id in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 34
+[23-Nov-2015 23:07:51 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 37
+[23-Nov-2015 23:07:51 UTC] PHP Notice:  Undefined index: event in /home/bungeebo/public_html/members/ajaxchangedmysql/index.php on line 27
+[23-Nov-2015 23:07:51 UTC] PHP Notice:  Undefined index: id in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 34
+[23-Nov-2015 23:07:51 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 37
+[23-Nov-2015 23:07:51 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:51 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:51 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:51 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:51 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:51 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:51 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:51 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:07:51 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:10:50 UTC] PHP Warning:  include(select.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 61
+[23-Nov-2015 23:10:50 UTC] PHP Warning:  include(select.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 61
+[23-Nov-2015 23:10:50 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'select.class.php' for inclusion (include_path='.:/opt/alt/php53/usr/share/pear:/opt/alt/php53/usr/share/php') in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 61
+[23-Nov-2015 23:10:50 UTC] PHP Notice:  Undefined index: id in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 34
+[23-Nov-2015 23:10:50 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 37
+[23-Nov-2015 23:10:50 UTC] PHP Notice:  Undefined index: event in /home/bungeebo/public_html/members/ajaxchangedmysql/index.php on line 27
+[23-Nov-2015 23:10:50 UTC] PHP Notice:  Undefined index: id in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 34
+[23-Nov-2015 23:10:50 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 37
+[23-Nov-2015 23:10:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:10:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:10:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:10:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:10:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:10:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:10:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:10:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:10:50 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:11:10 UTC] PHP Warning:  include(select.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 61
+[23-Nov-2015 23:11:10 UTC] PHP Warning:  include(select.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 61
+[23-Nov-2015 23:11:10 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'select.class.php' for inclusion (include_path='.:/opt/alt/php53/usr/share/pear:/opt/alt/php53/usr/share/php') in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 61
+[23-Nov-2015 23:11:10 UTC] PHP Notice:  Undefined index: id in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 34
+[23-Nov-2015 23:11:10 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 37
+[23-Nov-2015 23:11:10 UTC] PHP Notice:  Undefined index: event in /home/bungeebo/public_html/members/ajaxchangedmysql/index.php on line 27
+[23-Nov-2015 23:11:10 UTC] PHP Notice:  Undefined index: id in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 34
+[23-Nov-2015 23:11:10 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 37
+[23-Nov-2015 23:11:10 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:11:10 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:11:10 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:11:10 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:11:10 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:11:10 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:11:10 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:11:10 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:11:10 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:12:06 UTC] PHP Warning:  include(select.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 62
+[23-Nov-2015 23:12:06 UTC] PHP Warning:  include(select.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 62
+[23-Nov-2015 23:12:06 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'select.class.php' for inclusion (include_path='.:/opt/alt/php53/usr/share/pear:/opt/alt/php53/usr/share/php') in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 62
+[23-Nov-2015 23:12:06 UTC] PHP Notice:  Undefined index: id in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 34
+[23-Nov-2015 23:12:06 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 38
+[23-Nov-2015 23:12:06 UTC] PHP Notice:  Undefined index: event in /home/bungeebo/public_html/members/ajaxchangedmysql/index.php on line 27
+[23-Nov-2015 23:12:06 UTC] PHP Notice:  Undefined index: id in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 34
+[23-Nov-2015 23:12:06 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 38
+[23-Nov-2015 23:12:06 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:12:06 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:12:06 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:12:06 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:12:06 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:12:06 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:12:06 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:12:06 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:12:06 UTC] PHP Notice:  Undefined index: id_cat in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 27
+[23-Nov-2015 23:13:49 UTC] PHP Warning:  include(select.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 62
+[23-Nov-2015 23:13:49 UTC] PHP Warning:  include(select.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 62
+[23-Nov-2015 23:13:49 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'select.class.php' for inclusion (include_path='.:/opt/alt/php53/usr/share/pear:/opt/alt/php53/usr/share/php') in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 62
+[23-Nov-2015 23:13:49 UTC] PHP Notice:  Undefined index: id in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 34
+[23-Nov-2015 23:13:49 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 38
+[23-Nov-2015 23:13:49 UTC] PHP Notice:  Undefined index: event in /home/bungeebo/public_html/members/ajaxchangedmysql/index.php on line 27
+[23-Nov-2015 23:13:49 UTC] PHP Notice:  Undefined index: id in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 34
+[23-Nov-2015 23:13:49 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 38
+[23-Nov-2015 23:16:06 UTC] PHP Warning:  include(select.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 64
+[23-Nov-2015 23:16:06 UTC] PHP Warning:  include(select.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 64
+[23-Nov-2015 23:16:06 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'select.class.php' for inclusion (include_path='.:/opt/alt/php53/usr/share/pear:/opt/alt/php53/usr/share/php') in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 64
+[23-Nov-2015 23:16:06 UTC] PHP Notice:  Undefined index: id in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 36
+[23-Nov-2015 23:16:06 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 40
+[23-Nov-2015 23:16:06 UTC] PHP Notice:  Undefined index: event in /home/bungeebo/public_html/members/ajaxchangedmysql/index.php on line 27
+[23-Nov-2015 23:16:06 UTC] PHP Notice:  Undefined index: id in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 36
+[23-Nov-2015 23:16:06 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 40
+[23-Nov-2015 23:16:31 UTC] PHP Warning:  include(select.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 64
+[23-Nov-2015 23:16:31 UTC] PHP Warning:  include(select.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 64
+[23-Nov-2015 23:16:31 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'select.class.php' for inclusion (include_path='.:/opt/alt/php53/usr/share/pear:/opt/alt/php53/usr/share/php') in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 64
+[23-Nov-2015 23:16:31 UTC] PHP Notice:  Undefined index: id in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 36
+[23-Nov-2015 23:16:31 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 40
+[23-Nov-2015 23:16:31 UTC] PHP Notice:  Undefined index: event in /home/bungeebo/public_html/members/ajaxchangedmysql/index.php on line 27
+[23-Nov-2015 23:16:31 UTC] PHP Notice:  Undefined index: id in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 36
+[23-Nov-2015 23:16:31 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 40
+[23-Nov-2015 23:16:39 UTC] PHP Warning:  include(select.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 64
+[23-Nov-2015 23:16:39 UTC] PHP Warning:  include(select.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 64
+[23-Nov-2015 23:16:39 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'select.class.php' for inclusion (include_path='.:/opt/alt/php53/usr/share/pear:/opt/alt/php53/usr/share/php') in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 64
+[23-Nov-2015 23:16:39 UTC] PHP Notice:  Undefined index: id in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 36
+[23-Nov-2015 23:16:39 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 40
+[23-Nov-2015 23:16:39 UTC] PHP Notice:  Undefined index: event in /home/bungeebo/public_html/members/ajaxchangedmysql/index.php on line 27
+[23-Nov-2015 23:16:39 UTC] PHP Notice:  Undefined index: id in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 36
+[23-Nov-2015 23:16:39 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 40
+[23-Nov-2015 23:18:57 UTC] PHP Notice:  Undefined index: event in /home/bungeebo/public_html/members/ajaxchangedmysql/index.php on line 27
+[23-Nov-2015 23:18:57 UTC] PHP Notice:  Undefined index: id in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 36
+[23-Nov-2015 23:18:57 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 40
+[23-Nov-2015 23:19:08 UTC] PHP Notice:  Undefined index: event in /home/bungeebo/public_html/members/ajaxchangedmysql/index.php on line 27
+[23-Nov-2015 23:19:08 UTC] PHP Notice:  Undefined index: id in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 36
+[23-Nov-2015 23:19:08 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/bungeebo/public_html/members/ajaxchangedmysql/select_list_class.php on line 40

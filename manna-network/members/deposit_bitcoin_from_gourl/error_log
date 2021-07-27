@@ -1,0 +1,2 @@
+[06-Oct-2015 17:44:52 America/New_York] PHP Notice:  Undefined index: BB_bank_ID in /home/bungeebo/public_html/classes/deposit_bitcoin_from_gourl_class.php on line 96
+[06-Oct-2015 17:44:52 America/New_York] PHP Notice:  Undefined variable: widgets_link_id in /home/bungeebo/public_html/classes/deposit_bitcoin_from_gourl_class.php on line 82
