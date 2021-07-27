@@ -1,0 +1,21 @@
+﻿Be sure to give write permission of this db_cfg folder and the files in it to the server (probably www-data).
+
+If the installation script in manna-network/admin/install doesn't finish successfully it will result in a partially installed
+system with UNUSABLE databases and users. You will probably need to manually remove those
+databases and users manually from mysql and retry the script. 
+
+The form that creates these db auth files is located at bitcoin_ad_agency/manna-network/admin/install/createdatabase.php
+
+There is also a partially completed manual install version at create_database_manually.php
+
+The current problem relates to cPanel. The install script was built on a local development server w/o cpanel so it creates the dbs and db users and THEN writes the user authentications (user names and passwords) to files here in this folder. Each db user’s file uses naming conventions hardcoded in the script to find the proper user (there are 4 users).
+
+During the INITIAL install, the form can be used to complete the last mentioned aspects (copying the user’s user name, db name, pw’s) to their proper auth file BUT the dbs and the dbusers need to be created manually.
+
+BUT, running the form again will cause all the files to be overwritten with potentially new user names and definitely new passwords (effectively breaking the script from working). 
+
+To fix, write some code on the form that checks if the file name exists. If so, offer an option to overwrite or not. Realizing that if that install form is NOT password protected anyone can currently run the form and break the script. There are many options to protect this. Removing the install folder is best.
+
+I wrote some code on the createdatabase.php page to prevent either overwriting the existing constants file and even creating it based solely on whether or not the sql query was successful. The same logic was used to prevent it from creating or overwriting existing user auth files. THIS HAS NOT BEEN TESTED ON NEW INSTALLATIONS YET! IT MAY BREAK INSTALLATIONS OF AGENCY SITES!
+
+
