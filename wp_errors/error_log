@@ -1,0 +1,53 @@
+[17-May-2020 21:42:15 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'url' in 'where clause' in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id.php:12
+Stack trace:
+#0 /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id.php(12): mysqli_query(Object(mysqli), 'select * from `...')
+#1 {main}
+  thrown in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id.php on line 12
+[04-Sep-2020 19:34:23 UTC] PHP Warning:  Use of undefined constant AGENT_REGISTRATION_PAGE - assumed 'AGENT_REGISTRATION_PAGE' (this will throw an Error in a future version of PHP) in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id.php on line 45
+[04-Sep-2020 19:34:23 UTC] PHP Warning:  Use of undefined constant AGENT_TECH_SUPPORT_CONTACT_PAGE - assumed 'AGENT_TECH_SUPPORT_CONTACT_PAGE' (this will throw an Error in a future version of PHP) in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id.php on line 46
+[04-Sep-2020 20:03:11 UTC] PHP Warning:  Use of undefined constant AGENT_REGISTRATION_PAGE - assumed 'AGENT_REGISTRATION_PAGE' (this will throw an Error in a future version of PHP) in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id.php on line 45
+[04-Sep-2020 20:03:11 UTC] PHP Warning:  Use of undefined constant AGENT_TECH_SUPPORT_CONTACT_PAGE - assumed 'AGENT_TECH_SUPPORT_CONTACT_PAGE' (this will throw an Error in a future version of PHP) in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id.php on line 46
+[15-Sep-2020 15:26:21 UTC] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id_regular.php on line 3
+[15-Sep-2020 15:28:00 UTC] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id_regular.php on line 3
+[15-Sep-2020 15:28:12 UTC] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id_regular.php on line 3
+[15-Sep-2020 15:28:18 UTC] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id_regular.php on line 3
+[15-Sep-2020 15:29:02 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id_regular.php on line 4
+[15-Sep-2020 15:30:17 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id_regular.php on line 4
+[15-Sep-2020 15:32:20 UTC] PHP Warning:  Use of undefined constant READER_CUSTOMERS - assumed 'READER_CUSTOMERS' (this will throw an Error in a future version of PHP) in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id_regular.php on line 5
+[15-Sep-2020 15:32:20 UTC] PHP Warning:  include(/home/stbitcoi/public_html/manna_network/manna-configs/db_cfg/READER_CUSTOMERS): failed to open stream: No such file or directory in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id_regular.php on line 5
+[15-Sep-2020 15:32:20 UTC] PHP Warning:  include(/home/stbitcoi/public_html/manna_network/manna-configs/db_cfg/READER_CUSTOMERS): failed to open stream: No such file or directory in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id_regular.php on line 5
+[15-Sep-2020 15:32:20 UTC] PHP Warning:  include(): Failed opening '/home/stbitcoi/public_html/manna_network/manna-configs/db_cfg/READER_CUSTOMERS' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id_regular.php on line 5
+[15-Sep-2020 15:32:20 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: No database selected in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id_regular.php:10
+Stack trace:
+#0 /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id_regular.php(10): mysqli_query(Object(mysqli), 'select * from `...')
+#1 {main}
+  thrown in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id_regular.php on line 10
+[15-Sep-2020 15:50:22 UTC] PHP Warning:  Use of undefined constant READER_CUSTOMERS - assumed 'READER_CUSTOMERS' (this will throw an Error in a future version of PHP) in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id_regular.php on line 5
+[15-Sep-2020 15:50:22 UTC] PHP Warning:  include(/home/stbitcoi/public_html/manna_network/manna-configs/db_cfg/READER_CUSTOMERS): failed to open stream: No such file or directory in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id_regular.php on line 5
+[15-Sep-2020 15:50:22 UTC] PHP Warning:  include(/home/stbitcoi/public_html/manna_network/manna-configs/db_cfg/READER_CUSTOMERS): failed to open stream: No such file or directory in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id_regular.php on line 5
+[15-Sep-2020 15:50:22 UTC] PHP Warning:  include(): Failed opening '/home/stbitcoi/public_html/manna_network/manna-configs/db_cfg/READER_CUSTOMERS' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id_regular.php on line 5
+[15-Sep-2020 15:50:22 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: No database selected in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id_regular.php:10
+Stack trace:
+#0 /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id_regular.php(10): mysqli_query(Object(mysqli), 'select * from `...')
+#1 {main}
+  thrown in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id_regular.php on line 10
+[15-Sep-2020 16:33:39 UTC] PHP Warning:  Use of undefined constant READER_CUSTOMERS - assumed 'READER_CUSTOMERS' (this will throw an Error in a future version of PHP) in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id_regular.php on line 5
+[15-Sep-2020 16:33:39 UTC] PHP Warning:  include(/home/stbitcoi/public_html/manna_network/manna-configs/db_cfg/READER_CUSTOMERS): failed to open stream: No such file or directory in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id_regular.php on line 5
+[15-Sep-2020 16:33:39 UTC] PHP Warning:  include(/home/stbitcoi/public_html/manna_network/manna-configs/db_cfg/READER_CUSTOMERS): failed to open stream: No such file or directory in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id_regular.php on line 5
+[15-Sep-2020 16:33:39 UTC] PHP Warning:  include(): Failed opening '/home/stbitcoi/public_html/manna_network/manna-configs/db_cfg/READER_CUSTOMERS' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id_regular.php on line 5
+[15-Sep-2020 16:33:39 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: No database selected in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id_regular.php:10
+Stack trace:
+#0 /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id_regular.php(10): mysqli_query(Object(mysqli), 'select * from `...')
+#1 {main}
+  thrown in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id_regular.php on line 10
+[15-Sep-2020 16:35:07 UTC] PHP Warning:  Use of undefined constant READER_CUSTOMERS - assumed 'READER_CUSTOMERS' (this will throw an Error in a future version of PHP) in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id_regular.php on line 5
+[15-Sep-2020 16:35:07 UTC] PHP Warning:  include(/home/stbitcoi/public_html/manna_network/manna-configs/db_cfg/READER_CUSTOMERS): failed to open stream: No such file or directory in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id_regular.php on line 5
+[15-Sep-2020 16:35:07 UTC] PHP Warning:  include(/home/stbitcoi/public_html/manna_network/manna-configs/db_cfg/READER_CUSTOMERS): failed to open stream: No such file or directory in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id_regular.php on line 5
+[15-Sep-2020 16:35:07 UTC] PHP Warning:  include(): Failed opening '/home/stbitcoi/public_html/manna_network/manna-configs/db_cfg/READER_CUSTOMERS' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id_regular.php on line 5
+[15-Sep-2020 16:35:07 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: No database selected in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id_regular.php:10
+Stack trace:
+#0 /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id_regular.php(10): mysqli_query(Object(mysqli), 'select * from `...')
+#1 {main}
+  thrown in /home/stbitcoi/public_html/manna_network/wp_errors/no_link_id_regular.php on line 10
+[10-Jun-2021 17:30:12 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/orlandoreferralg/public_html/manna_network/wp_errors/no_link_id.php on line 6
+[10-Jun-2021 17:31:38 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/orlandoreferralg/public_html/manna_network/wp_errors/no_link_id.php on line 6
