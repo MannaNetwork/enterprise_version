@@ -1,4 +1,5 @@
 <?php
+//Sam-Check note at line 147
 //echo '<br>in views/add_a_link.php';
 //print_r($_POST);
 $root = dirname(dirname(dirname(dirname( __FILE__, 2 ))));
@@ -11,8 +12,12 @@ require_once($root.'/manna_network/manna-configs/db_cfg/agent_config.php');
 }
 require_once(dirname( __FILE__, 2 )."/js/mn_ajax.js");
 require_once(dirname( __FILE__, 2 )."/translations/en/add_url.js");
+include(dirname(__DIR__, 3)."/manna-network/members/css/members_menu.css");
 
 get_header();
+
+echo file_get_contents('views/_menu.php', true);
+
 if(isset($_POST['confirm'])){
 
 
@@ -104,7 +109,6 @@ $new_links_id = $addalink->addNewLink($captcha, $website_title, $website_descrip
 
 
 
-/* we don't need to run this delete here. They are deleted when they are approved by MN. But there may be future need for this if we give enterprises the ability to approve their own links
 		$file="http://exchange.manna-network.com/incoming/delete_tmps.php";
 		$args = array(
 		'agent_id' => AGENT_ID,
@@ -141,7 +145,7 @@ $new_links_id = $addalink->addNewLink($captcha, $website_title, $website_descrip
 		
 }
 		echo($data);
-*/
+//this was here... What is this supposed to comment out????*/
 }
 
 header( "Location: http://".AGENT_URL."/".AGENT_FOLDERNAME."/manna-network/members/success.php", true, 303 );
@@ -156,7 +160,7 @@ $error_test="";
 echo '<div class="reg_form_page"><h1 align="center">Confirm Your Registration Details For Accuracy</h1>
  <div class="reg_form_content">
 <form class = "frms" method="POST" action="" name="registerform">';
-
+echo '<hr>';
 	foreach($_POST as $key=>$value){
 if(!in_array($key, $dont_show_array, TRUE) && !empty($value)){
 
@@ -455,7 +459,7 @@ showSubMenu(this.value,\'' . esc_attr( $nonce ) . '\',1,\'' . esc_attr( $selecte
 //END Location AJAX
 if(!array_key_exists("flag", $_GET) OR !isset($_GET['flag']) OR $_GET['flag'] !== "1"  ){
 $display_blockmp .= ' <h1>'.WORDING_REGISTRATION_RECIPROCAL_HEADER.
-WORDING_REGISTRATION_RECIPROCAL.' </div>';
+WORDING_REGISTRATION_RECIPROCAL;
 
    
 }
@@ -482,7 +486,7 @@ span.dropt span {position: absolute; left: -9999px;
   margin: 4px 0 0 0px; padding: 3px 3px 3px 3px; 
   border-style:solid; border-color:black; border-width:1px;}
 span.dropt:hover span {margin: 20px 0 0 170px; background: #ffffff; z-index:6;} 
-</style>';
+</style></div>';
 echo  $display_blockmp;
 }
 get_footer();

@@ -425,4 +425,8 @@ website. Try to make it eye-catching and informative about the goods
 or services you provide or, if yours is a blog site then enter
 something describing your main topic.</p>");
 define("REG_BLOKT_TITLE_MOUSEOVER", "Title Hint");
+define("EXCHANGE_COIN_TYPE_BOTH", "<h4>Please Select Which Coin Type You Wish To Send</h4>"); 
+define("EXCHANGE_COIN_TYPE_BSV", "Will Be Sending Your BitcoinSV Backed Ad Credits In The Amount You Enter Below");
+define("EXCHANGE_COIN_TYPE_DEMO", "Will Be Sending Your Demo Coin Ad Credits(free, unbacked and irredeemable) In The Amount You Enter Below");
+define("PROMO_FOOTER", "Like Earning Bitcoin Cash With Your Web Traffic!");
 

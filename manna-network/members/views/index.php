@@ -3,10 +3,12 @@ require($_SERVER['DOCUMENT_ROOT'].'/wp-load.php');
 get_header();
 //include('bootstrap_header.php');
 //include($_SERVER['DOCUMENT_ROOT']."/manna-network/members/classes/member_page_class.php");//load order 1
-include(dirname(__DIR__, 3)."/manna-network/members/classes/member_page_class.php");//load order 1
+include(dirname(__DIR__, 3)."/manna-network/members/classes/member_page_class.php");
+include(dirname(__DIR__, 3)."/manna-network/members/css/members_menu.css");
+
 include(dirname(__DIR__, 3)."/manna-configs/db_cfg/agent_config.php");//load order 1
 //echo dirname(__DIR__, 3)."/manna-network/members/css/members_menu.css";
-$display_block = file_get_contents('css/members_menu.css');
+$display_block = file_get_contents(dirname(__DIR__, 3).'/manna-network/members/css/members_menu.css');
 //include(dirname(__DIR__, 3)."/manna-network/members/css/members_menu.css");
 $linkInfo = new member_page_info();
  $LINKinfo = new member_page_info();
@@ -31,18 +33,12 @@ $website_street= $affiliate_link_display[10];
 $website_district= $affiliate_link_display[11];
 $user_registration_datetime= $affiliate_link_display[12];
 $installer_id= $affiliate_link_display[13];
+$display_block .= file_get_contents('views/_menu.php', true); 
+//$display_block .= '<div>&nbsp;</div><div id="index_content" class="index_content" name="index_content"><hr>';
 
-$display_block .= '<div id="index_content" class="index_content" name="index_content"><ul class="navmenu">
-	<li><a href="">Home</a></li>
-	<li><a href="add_a_link.php">Add New Sites</a></li>
-	<li><a href="adcredit_exchange_index.php">Ad Credit Exchange</a></li>
-	<li><a href="#">FAQ</a></li>
-	<li><a href="/tech-support">Tech Support</a></li>
-<li><a href="?logout">Logout</a></li>
-</ul>';
-$display_block .= "<div class='panel panel-default'><a href=\"\"><h1>Member's Home</h1></a><br>&nbsp;";
+$display_block .= "<div class='panel panel-default'><a href=\"\"><h2>Member's Home</h2></a>";
 if(is_array($id)){
-$display_block .= '<div id=members_links style="background-color:lightgray;"><h2 style="background-color:darkgray; color:white; font-weight:bold;">Manage Your Registered Links</h2>';
+$display_block .= '<div id=members_links style="background-color:lightgray;"><h3 style="background-color:darkgray; color:white; font-weight:bold;">Manage Your Registered Links</h3>';
 	foreach($id as $key=>$value){
 
 $thisLinksRegionalInfo = $LINKinfo->getThisLinksRegionalInfo($_GET['link_id'], $agent_ID);
@@ -74,7 +70,7 @@ $display_block .= "</ul></h3></span><hr>";
 else
 {
 $is_link_paid = $LINKinfo->check_for_bid($id);
-$display_block .=  '<div id=members_links style="background-color:lightgray;"><h2>Manage Your Registered Link</h2>';
+$display_block .=  '<div id=members_links style="background-color:lightgray;"><h3>Manage Your Registered Link</h3>';
 	$display_block .=  '<span><h3>URL:'.$affiliate_link_display[6].'</span><span><ul class="navmenu"><li><a href="buy_price_slot.php?url='.$affiliate_link_display[6].'&link_id='.$affiliate_link_display[1].'&category_id='.$affiliate_link_display[7].'&installer_id='.$affiliate_link_display[13].'&location_id='.$location_id.'&agent_ID='.AGENT_ID.'">';
 if($is_link_paid > 0){
 
@@ -111,7 +107,7 @@ echo '    <div class="panel-body"><h3>Redeem Your Bitcoin Earnings
 <li>Redeem their value by buying better placement for your own website in the web directory/ad network</li>
 </ul></div> ';
 echo '
-    <div class="panel-body"><h3>Accept Bitcoin At Your Business (Get Payment processing)</div> </div>';
+    <div class="panel-body"><h3>Accept Bitcoin At Your Business (Get Payment processing)</div> </div></div>';
 
 
 //include('bootstrap_footer.php');

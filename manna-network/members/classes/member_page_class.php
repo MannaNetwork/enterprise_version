@@ -1,11 +1,6 @@
 <?php
- //searched for old user db use - none found
-   // / First we define the class
-echo '<br>in member page class php';
-
-class member_page_info
+ class member_page_info
 {
-
 function get_num($agentid) {
 echo 'in function $agentid = ';
  if (is_numeric($agentid)) {

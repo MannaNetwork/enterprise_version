@@ -23,7 +23,7 @@ include(dirname( __FILE__, 2 ).'/css/members_menu.css');
 
 include('views/_menu.php');
 
-
+echo '<div>&nbsp;</div><div id="index_content" class="index_content" name="index_content"><hr>';
 $link_id = $_POST['link_id'];
 $new_price = $_POST['new_price'];
 $old_price = $_POST['old_price'];
@@ -51,7 +51,7 @@ get_header();
 include(dirname( __FILE__, 2 ).'/css/members_menu.css');
 
 include('views/_menu.php');
-
+echo '<div>&nbsp;</div><div id="index_content" class="index_content" name="index_content"><hr>';
 //We can't let this hit the missing link_if filters below that redirect because 1) it will always have to have
 //echo '<h1> in downgrade obviously the header is missing. And the final downgrade action should end on another page/action</h1>';
 //print_r($_POST);
@@ -341,15 +341,7 @@ $this_links_bid_status_on_Central = $linkInfo->getUserPriceSlots($user_id, $agen
 	}
 echo file_get_contents(dirname( __FILE__, 2 ).'/css/members_menu.css');
 
-$steps_display .= dirname( __FILE__, 2 ).'/css/members_menu.css';/*
-echo ' <ul class="navmenu">
-	<li><a href="index.php">Home</a></li>
-	<li><a href="add_a_link.php">Add New Sites</a></li>
-	<li><a href="adcredit_exchange_index.php">Ad Credit Exchange</a></li>
-	<li><a href="#">FAQ</a></li>
-	<li><a href="/tech-support">Tech Support</a></li>
-<li><a href="?logout">Logout</a></li>
-</ul>'; */
+$steps_display .= dirname( __FILE__, 2 ).'/css/members_menu.css';
 echo file_get_contents(dirname( __FILE__, 2 ).'/css/members_menu.css');
 include('views/_menu.php');
 	if($this_links_bid_status_on_Central == "error_detecting_bid"){
@@ -470,10 +462,11 @@ echo $linkInfo->thisLinksRegionalInfo($_GET['link_id'], $_GET['agent_ID']);
 include('includes/buy_section1.php');
 echo '<br>line 458';
 }
+echo '</div>'; //this closes the index_content class
 }
 echo $display_block;
 }
-
+echo '</div>';
 //include('bootstrap_footer.php');
 get_footer();
 ?>

@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Page Title</title>
-</head>
-<body>
-
 <?php
-include(dirname(__DIR__, 3)."/manna-network/members/classes/member_page_class.php");//load order 1
+require($_SERVER['DOCUMENT_ROOT'].'/wp-load.php');
+
+get_header();
+include(dirname(__DIR__, 3)."/manna-network/members/classes/member_page_class.php");
 include(dirname(__DIR__, 3)."/manna-configs/db_cfg/agent_config.php");//load order 1
-$display_block = file_get_contents('css/members_menu.css');
-//include(dirname(__DIR__, 3)."/manna-network/members/css/members_menu.css");
+include(dirname(__DIR__, 3)."/manna-network/members/css/members_menu.css");
 
 if (array_key_exists('store', $_POST)) {
 include(dirname( __FILE__, 1 ). "/dbconfig/auth.php");
@@ -77,20 +72,49 @@ Recipient: <?php echo $_POST['userid'];?>/>
 }
 else
 {
+// before anything, let's get the users balances for each coin type to make sure they can't transfer coin they don't have!
+$memberInfo = new member_page_info();
+$users_balances_string = $memberInfo->getUserBalanceFromCentral ($user_id, AGENT_ID);
+//returns  array( $bitcoin_cash_balance|$democoin_balance ); (the pipe [|] is the delimiter
+//so we explode the string into a two-item array
+$users_balances = explode("|",$users_balances_string);
+echo file_get_contents('views/_menu.php', true);
+//echo '<div>&nbsp;</div><div id="index_content" class="index_content" name="index_content"><hr>';
 
 ?>
-
+<div class="box_content" id="box_content" name="box_content">
 <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+<?php
 
-<input type='hidden' name='confirm' id='confirm' value='true'/>
+if($users_balances_string[0] >0 && $users_balances_string[1] >0){
+echo '<p>';
+echo EXCHANGE_COIN_TYPE_BOTH;//CONSTANTS in translations/en.php
+echo '</p>
+<div>BitcoinSV Backed <input type="radio" id="bsv" name="coinType" value="BSV"><br>
+Demo Coin(free) <input type="radio" id="css" name="fav_language" value="Demo">';
+}
+elseif($users_balances_string[0] >0)
+{
+echo '<div style="background-color: #ABBAEA;">'.EXCHANGE_COIN_TYPE_BSV;
+}
+else
+{
+echo '<div style="background-color: #ABBAEA;">'.EXCHANGE_COIN_TYPE_DEMO;
+}
+echo '</div><hr>';
+?>
+<div class="box_content" id="box_content" name="box_content">
+
+<input type='hidden' name='confirm' id='confirm' value='true'/></div>
 <input type='hidden' name = 'agentId' id='agentId' value='<?php echo AGENT_ID;?>'>
-Ad Credits: Amount <input type='text' name='amount' id='amount' />
+<p>Ad Credits: Amount <input type='text' name='amount' id='amount' />
 <br>
 Recipient: <input type='text' name='userid' id='userid' />
 
 <input type="submit" name="submit" value="Submit">
 
-</form>
-</body>
-</html>
+</form> </div>
+<div class="box_content" id="box_content" name="box_content">"<?php echo PROMO_FOOTER; ?>"</div></div>
+
 <?php }
+get_footer();

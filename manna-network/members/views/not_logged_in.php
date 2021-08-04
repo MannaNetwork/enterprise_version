@@ -1,7 +1,8 @@
   <?php
 require($_SERVER['DOCUMENT_ROOT'].'/wp-load.php');
 get_header();
-include('css/members_menu.css');
+//include('css/members_menu.css');
+include(dirname(__DIR__, 3)."/manna-network/members/css/members_menu.css");
 ?>
 
   <div class="box_content" id="box_content" name="box_content">	<form method="post" action="<?php echo htmlentities($_SERVER['REQUEST_URI']); ?>" name="loginform">

@@ -7,7 +7,7 @@
  * @link https://github.com/panique/php-login/
  * @license http://opensource.org/licenses/MIT MIT License
 */
-
+ 
 class Registration
 {
 
@@ -41,9 +41,10 @@ class Registration
      * the function "__construct()" automatically starts whenever an object of this class is created,
      * you know, when you do "$login = new Login();"
      */    
+    
     public function __construct()
     {
-    print_r($_SESSION);
+   
     if(!isset($_SESSION['1i'])){
         session_start();
 }

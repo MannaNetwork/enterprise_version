@@ -17,6 +17,8 @@ id=11&verification_code
 if(array_key_exists('id', $_GET) AND array_key_exists('verification_code', $_GET) ){
 //include('bootstrap_header.php'); 
 }
+
+
 if ($registration->errors) {
     foreach ($registration->errors as $error) {
         echo "<h2>Registration Error: ".$error."</h2>";

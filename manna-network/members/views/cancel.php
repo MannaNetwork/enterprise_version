@@ -160,25 +160,7 @@ require_once(dirname( __FILE__, 2 )."/css/styles.css");
 require_once(dirname( __FILE__, 2 )."/classes/CancelURL.php");
 $cancel = new cancelalink();
 $link_info = $cancel->getLinkByLinkId($_GET['link_id']);
-echo '<br>link info = ';
-print_r($link_info);
-/* returns 
-$id[] = $row['id'];
-$user_id2[] = $row['user_id'];
-$recruiter_lnk_num[] = $row['recruiter_lnk_num'];
-$website_title[] = $row['website_title'];
-$website_description[] = $row['website_description'];
-$website_url[] = $row['website_url'];
-$category_id[] = $row['category_id'];
-$newcatsuggestion[] = $row['newcatsuggestion'];
-$location_id[] = $row['location_id'];
-$website_street[] = $row['website_street'];
-$website_district[] = $row['website_district'];
-$bridge_id[] = $row['bridge_id'];
-$user_registration_datetime[] = $row['user_registration_datetime'];
-$installer_id[] = $row['installer_id'];
 
-*/
 echo '<div style=\'color:red;\'>'.CANCEL_FORM_WELCOME_TITLE.'</div>';
 echo '<div style=\'color:red;\'>'.CANCEL_FORM_WELCOME_BODY.'</div>';
 echo "<div><h2>".TABLE_HEADER."</h2></div>";
@@ -193,20 +175,18 @@ elseif($key==6){
 echo '<br>' .URL . ': '. $value.'</div>';
 }
 }
-echo '<br>$agent_ID line 196 = ', $agent_ID;
-
 $pay_status = $cancel->getLinkPayStatus($link_info[1], $agent_ID);
-echo '<br>pay_status line 179 = ', $status;
 if($pay_status == 'no_bids'){
-echo '<h1>Your advertising pay_status =', $pay_status ;
+echo 'Your advertising pay_status =', $pay_status ;
 }
-echo '<br>$agent_ID line 203 = ', $agent_ID;
-
-$widget_status = $cancel->getWidgetStatus($agent_ID, $link_info[1], $link_info[14], $link_info[6]);
+print_r($link_info);
+//send $agent_ID, $remote_lnk_id, $installer_id, $url
+$widget_status = $cancel->getWidgetStatus($agent_ID, $link_info[1], $link_info[13], $link_info[6]);
 echo '<h1>line 206 $widget_status = ', $widget_status ;
 echo '<br>&nbsp;<br>';
 if($widget_status === "Link_NOT_found"){
 echo '<h1>Your link was not found in widgets';
+echo 'ADD THE CURL CALL TO THE INSERT INTO MANNA NETWOrK';
 }
 else
 {
