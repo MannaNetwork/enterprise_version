@@ -30,8 +30,8 @@
  * COOKIE_SECRET_KEY: Put a random value here to make your app more secure. When changed, all cookies are reset.
  */
 define("COOKIE_RUNTIME", 1209600);
-define("COOKIE_DOMAIN", "orlandoreferralgroup.com.com");
-define("COOKIE_SECRET_KEY", "1gp@TMPS{+$88sgpMJFe-92t");
+define("COOKIE_DOMAIN", "your domain name");//no http:// or https://
+define("COOKIE_SECRET_KEY", "create a random string at least 24 characters - numbers, letters, caps and lower case, characters");
 
 /**
  * Configuration for: Email server credentials
@@ -58,10 +58,10 @@ define("COOKIE_SECRET_KEY", "1gp@TMPS{+$88sgpMJFe-92t");
  *
  */
 define("EMAIL_USE_SMTP", true);
-define("EMAIL_SMTP_HOST", 'ssl://mail.orlandoreferralgroup.com'); 
+define("EMAIL_SMTP_HOST", 'ssl://mail.your domain'); //use your own server's address for ssl
 define("EMAIL_SMTP_AUTH", true); // leave this true until your SMTP can be used without login
-define("EMAIL_SMTP_USERNAME", 'registration@orlandoreferralgroup.com');
-define("EMAIL_SMTP_PASSWORD", '?C_=iy;t{a8*');
+define("EMAIL_SMTP_USERNAME", '');
+define("EMAIL_SMTP_PASSWORD", '');
 
 define("EMAIL_SMTP_PORT", 465);
 define("EMAIL_SMTP_ENCRYPTION", 'ssl');
@@ -71,10 +71,10 @@ define("EMAIL_SMTP_ENCRYPTION", 'ssl');
  * Set the absolute URL to password_reset.php, necessary for email password reset links
  */
 
-define("EMAIL_PASSWORDRESET_URL", "https://orlandoreferralgroup.com/members-password-reset");
-define("EMAIL_PASSWORDRESET_FROM", "noreply@orlandoreferralgroup.com");
-define("EMAIL_PASSWORDRESET_FROM_NAME", "Orlando Referral Group reset");
-define("EMAIL_PASSWORDRESET_SUBJECT", "Password reset for Orlando Referral Group registration");
+define("EMAIL_PASSWORDRESET_URL", "https://your_domain.com/members-password-reset");
+define("EMAIL_PASSWORDRESET_FROM", "noreply your_domain.com");
+define("EMAIL_PASSWORDRESET_FROM_NAME", "your_domain reset");
+define("EMAIL_PASSWORDRESET_SUBJECT", "Password reset for your_domain registration");
 define("EMAIL_PASSWORDRESET_CONTENT", "Please click on this link to reset your password:");
 
 
@@ -84,10 +84,10 @@ define("EMAIL_PASSWORDRESET_CONTENT", "Please click on this link to reset your p
  * Configuration for: verification email data
 
 /** absolute URL to register.php, necessary for email verification links */
-define("EMAIL_VERIFICATION_URL", "https://orlandoreferralgroup.com/manna_network/manna-network/members/register.php");
-define("EMAIL_VERIFICATION_FROM", "noreply@orlandoreferralgroup.com");
-define("EMAIL_VERIFICATION_FROM_NAME", "Orlando Referral Group registration");
-define("EMAIL_VERIFICATION_SUBJECT", "Orlando Referral Group Account Activation & Registration");
+define("EMAIL_VERIFICATION_URL", "https://your_domain.com/manna_network/manna-network/members/register.php");
+define("EMAIL_VERIFICATION_FROM", "noreply@your_domain.com");
+define("EMAIL_VERIFICATION_FROM_NAME", "your_domain registration");
+define("EMAIL_VERIFICATION_SUBJECT", "your_domain Account Activation & Registration");
 define("EMAIL_VERIFICATION_CONTENT", 'Clicking on this link will activate your account. 
 
 Please click this link:
