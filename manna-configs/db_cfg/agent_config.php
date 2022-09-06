@@ -8,9 +8,7 @@ define("AGENT_FOLDERNAME", "manna_network");
 if (!defined('AGENT_URL')) {
 define("AGENT_URL", "orlandoreferralgroup.com");//be SURE to NOT include the http:// nor an https:// nor a www.
 }
-if (!defined('CURL_SECURITY')) {
-define("CURL_SECURITY", "https://");//had an issue in the development server where curl would not work using the dev server's SSL setup. We have a constant for all url requests to set it either https or http 
-}
+
 //IMPORTANT - YOU MUST REGISTER AT THE MANNA NETWORK ADMINISTRATION TO GET A VALID AGENT ID! IMPROPER CONFIGURATION CAN RESULT IN LOSS OF YOUR AND YOUR DOWNLINE'S COMMISSIONS AND ENLISTMENT CREDITS! 
 if (!defined('AGENT_ID')) {
 define("AGENT_ID", 25);
