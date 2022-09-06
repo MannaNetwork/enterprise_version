@@ -8,28 +8,26 @@ include(dirname( __FILE__, 3 ). "/manna-configs/db_cfg/agent_config.php");
 include(dirname( __FILE__, 3 ). "/manna-configs/db_cfg/".READER_AGENTS);
 include(dirname( __FILE__, 3 ). "/manna-configs/db_cfg/mysqli_connect.php");
 
-$link_hash_key_asking = $_POST['link_hash_key'];  
+$region_hash_key_asking = $_POST['region_hash_key'];  
 
-
-
-$sql = "SELECT * FROM links ORDER BY `id` DESC LIMIT 1";
+$sql = "SELECT * FROM categories_regional2 ORDER BY `id` DESC LIMIT 1";
 $result = mysqli_query($mysqli, $sql) or die("Couldn't execute 'Edit 16 Account' query");
 while($row = mysqli_fetch_array($result)){
-$this_last_url = $row['url'];
+$this_last_region_id = $row['id'];
 }
-$link_hash_key = rtrim($this_last_url, "/ \t\n\r");
-$link_hash_key = str_replace(' ', '', $link_hash_key);
-$link_hash_key = preg_replace('/\s/', '', $link_hash_key);
-$conacat = $link_hash_key.$exchange_pw;
+$region_hash_key = rtrim($this_last_region_id, "/ \t\n\r");
+$region_hash_key = str_replace(' ', '', $region_hash_key);
+$region_hash_key = preg_replace('/\s/', '', $region_hash_key);
+$conacat = $region_hash_key.$exchange_pw;
 
-$link_hash_key = hash('sha512', $conacat);
+$region_hash_key = hash('sha512', $conacat);
 
-//echo  '<br> in 1stbtc $link_hash_key = ', $link_hash_key;
-//echo ' ....   should match $link_hash_key_asking = ', $_POST['link_hash_key'];  
+//echo  '<br> in ORG $region_hash_key = ', $region_hash_key;
+//echo ' ....   should match $region_hash_key_asking = ', $_POST['region_hash_key'];  
 
-if($link_hash_key_asking == $link_hash_key){
+if($region_hash_key_asking == $region_hash_key){
 
-echo  $link_hash_key;
+echo  $region_hash_key;
 }
 else
 {
@@ -47,7 +45,7 @@ $mail->From = "noreply@".$_SERVER['HTTP_HOST'];
 elseif($_SERVER['SERVER_NAME'] ){
 $mail->From = "noreply@".$_SERVER['SERVER_NAME'];
 }
-$mail->FromName = "Cron Link Sync Error";
+$mail->FromName = "Cron region_hash_key Sync Error";
 
 //To address and name
 $mail->addAddress("robert.r.lefebvre@gmail.com", "Robert (from yourself)");
@@ -66,14 +64,14 @@ $mail->addCC($agent_email);
 //Send HTML or Plain Text email
 $mail->isHTML(true);
 
-$mail->Subject = "Cron Link Sync Error";
-$mail->Body = '<h1 style="color:red;">Auth was denied. The last url in '.$_SERVER['HTTP_HOST'].' link\'s table doesn\'t match the one recorded in Manna Network\'s agent_conn_credentials table</h1>
-<h3>$this_last_url in agent site links table  = '. $this_last_url. '</h3><h3>$link_hash_key_asking  = '. $link_hash_key_asking . '</h3><h3> $link_hash_key = '. $link_hash_key.' <br> and this is the last link on Manna Network: '.$_POST['last_agent_url'].'</h3><br><h3>Login to your Manna Network cpanel and change the last link url in the agent_conn_credentials table to match the one displayed here ';
+$mail->Subject = "Cron Region Sync Error";
+$mail->Body = '<h1 style="color:red;">Auth was denied. The last id in '.$_SERVER['HTTP_HOST'].' categories_regional2\'s table doesn\'t match the one recorded in Manna Network\'s agent_conn_credentials table</h1>
+<h3>$this_last_region_id in agent site categories table  = '. $this_last_region_id. '</h3><h3>$region_hash_key_asking  = '. $region_hash_key_asking . '</h3><h3> $region_hash_key produced by agent\'s site = '. $region_hash_key.' </h3><br><h3>Login to your Manna Network cpanel and change the last id in the agent_conn_credentials table to match the one displayed here (or the passwords don\'t match)';
 $mail->AltBody = "This is the plain text version of the email content";
 
 try {
     $mail->send();
-    echo "Message has been sent successfully|$this_last_url";
+    echo "Message has been sent successfully|$this_last_region_id";
 } catch (Exception $e) {
     echo "Mailer Error: " . $mail->ErrorInfo;
 }

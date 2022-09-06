@@ -29,53 +29,23 @@ $link_hash_url = rtrim($this_last_url, "/ \t\n\r");
 $conacat = $link_hash_url.$exchange_pw;
 //echo '<br>in btc conacat = ', $conacat;
 $link_hash_key = hash('sha512', $conacat);
-//echo '<br>linksstrink1 = ';
-//print_r($_POST['linkString']);
+echo '<br>$_POST (from MN) = ';
+print_r($_POST);
 //$linkString = json_decode($_POST['linkString']);
 $linkString = json_decode($_POST['linkString'], True);
-//echo '<br>linksstrink2 = ';
-//print_r($linkString);
+echo '<br>linksString = ';
+print_r($linkString);
 //echo '<br>';
 
 //echo '<br>line 40 $link_hash_key = ', $link_hash_key;
 //echo '<br>line 40 $_POST[link_hash_key] = ', $_POST['link_hash_key'];
 if($_POST['link_hash_key'] == $link_hash_key){
 	foreach($linkString as $key=>$value){
-
-$query = "INSERT INTO `links` 
-(
-`id`,
-`bridge_id`, 
-`category`, 
-`url`,
-`name`, 
-`description`, 
-`location_id`, 
-`website_street`, 
-`start_date`, 
-`nofollow`, 
-`price_slot`, 
-`coin_type`,
-`price_slot_prchs_date`,
-`catkeys`,
-`lockeys`) VALUES ('".
-$value['id']."', '".
-$value['bridge_id']."', '".
-$value['category']."', '".
-$value['url']."', '".
-utf8_encode($value['name'])."', '".
-utf8_encode($value['description'])."', '".
-$value['location_id']."', '".
-$value['website_street']."', '".
-$value['start_date']."', '".
-$value['nofollow']."', '".
-$value['price_slot']."', '".
-$value['coin_type']."', '0','".
-$value['catkeys']."', '".
-$value['lockeys']."')"; 
-
-
-//echo $query;
+echo '<br>key = ', $key;
+echo ' ..... value = ', $value;
+//$query = "UPDATE `links` set `status`='1' where `id` = $value['link_id']";
+        
+echo $query;
 $last_link_id_inserted = $value['id'];
 $last_url_inserted = $value['url'];
 $result = mysqli_query($mysqli, $query);
