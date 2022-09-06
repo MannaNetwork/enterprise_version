@@ -1,6 +1,5 @@
 <?php
 
-$dbh = new PDO('mysql:host=localhost;dbname=mn_agents', $username, $password);
-
+$dbh = new PDO('mysql:host=localhost;dbname=orlandor_agents', $username, $password);
 
 ?>

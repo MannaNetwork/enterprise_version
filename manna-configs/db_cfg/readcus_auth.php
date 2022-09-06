@@ -1,5 +1,6 @@
 <?php
- $servername = "localhost";
-      $username = "your database username to the customers database with only read access";
-	      $password = "Its database password";
-	      $dbname = "mn_customers";//change "prefix"			      ?>
+			      $servername = "localhost";
+			      $username = "orlandor_readcus";
+			      $password = "HyVExQZcPnEh34hDziq8F4n3vO8k3Elp";
+			      $dbname = "orlandor_customers";
+			      ?>
