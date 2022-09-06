@@ -130,6 +130,7 @@ define("MESSAGE_RESET_LINK_HAS_EXPIRED", "<h3>Your reset link has expired. Pleas
 define("MESSAGE_VERIFICATION_MAIL_ERROR", "<h3>Sorry, we could not send you an verification mail. Your account has NOT been created.</h3>");
 define("MESSAGE_VERIFICATION_MAIL_NOT_SENT", "<h3>Verification Mail NOT successfully sent! Error: </h3>");
 define("MESSAGE_VERIFICATION_MAIL_SENT", "<h3>Your account has been created successfully and we have sent you an email. Please click the VERIFICATION LINK within that mail. If you do not see it in your in box be sure to check your spam folder (if found there, be sure to indicate to your email program it is NOT spam). </h3>");
+define("MESSAGE_VERIFICATION_MAIL_RESENT", "<h3>Your NEW email verification has been sent (also check your spam folder). Please click the VERIFICATION LINK within that mail. If you do not receive it then please contact tech support at the site of your Manna Network Representative (<a target='_blank' href='".$agent_url."'>".$agent_url."'</a> </h3>");
 define("MESSAGE_USER_DOES_NOT_EXIST", "<h3>This user does not exist</h3>");
 define("MESSAGE_USERNAME_BAD_LENGTH", "<h3>Username cannot be shorter than 2 or longer than 64 characters</h3>");
 define("MESSAGE_USERNAME_CHANGE_FAILED", "<h3>Sorry, your chosen username renaming failed</h3>");
@@ -511,7 +512,10 @@ website. Try to make it eye-catching and informative about the goods
 or services you provide or, if yours is a blog site then enter
 something describing your main topic.</p>");
 define("REG_BLOKT_TITLE_MOUSEOVER", "Title Hint");
-define("ADD_URL_WELCOME_TITLE", "You Can Add More Ads To Our Classified Cooperative!");
- define("ADD_URL_WELCOME_BODY", "<p align='left' style=\"color:black;\">You can 1) insert more ads (but place them in different categories and create unique landing pages for each) or 2) insert other websites THAT YOU OPERATE (don't add websites operated by others [have them register their own sites themselves]).</p>
- <p  align='left' style=\"color:black;\">Let us mention, again, about how you can add this great, free web directory to your own site so you can become part of this bigger effort to make your website successful!");
+define("ADD_URL_WELCOME_TITLE", "Add More Ads/Websites!");
+ define("ADD_URL_WELCOME_BODY", "<p align='left' style=\"color:black;\"><h3>Guidelines</h3> <ol><li>Don't spam! You can insert more sites or more ads (for the same sites) but be sure to place them in relevant categories</li><li>Create unique landing pages for each</li><li>Only insert websites THAT YOU OPERATE (don't add websites operated by others [have them register their own sites themselves])</li><li>You can add the income earning script multiple times on a site (i.e. on any of the new pages) but it is easier to just add a link to your directory page on those other pages.</li></ol></p>
+ <p  align='left' style=\"color:black;\">Let us mention, again, about how you can add this great, free web directory to all your sites so you can start earning income from all your websites (and tell others to add their websites to YOUR web directory)!");
+ define("ADD_URL_CATEGORY_HEADING", "Select A Category");
+define("ADD_URL_REGIONAL_HEADING", "Add A Location (Optional)");
+define("ADD_URL_SUBMIT", "Add A New Listing");
 
