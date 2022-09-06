@@ -3,7 +3,7 @@
 //this medium page means they can upgrade to this empty price slot
 //we know they are the only bidder in the lower price slot
 $submit_button_name = "cancel";
-$button = "Your Current Bid<br><p style= 'font-size: smaller;'>Click To Cancel</p>"; 
+$button = "Your Current Bid"; 
 $link_title = "You Are Subscribed To This Price Slot";
 $pre_blockt_text_message  = "Your Current Bid!";
 $mouseover = "You can UPGRADE your price slot and strenghten your position"; 

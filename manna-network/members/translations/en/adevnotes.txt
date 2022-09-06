@@ -1,0 +1,3 @@
+The tanslations files for cat_has_a_bid_and_user_has_no_bids have been modifed but haven't been copied to other templates
+1) Removed the display of USD value from the DMC display. We don't want to imply that DMC has any cash value
+2) Also split the $daily_payment_message var into 2 and renumbered $daily_payment_message1 and $daily_payment_message2 to $daily_payment_message3 and $daily_payment_message4

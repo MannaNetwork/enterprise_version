@@ -11,4 +11,6 @@ $bsv_pop_mouseover = "BSV Bids OutRank Demo Coin Bids";
 $bsv_pop_blockt_message = "We report the number of BSV bids because they outrank bids using Demo Coin. These operations in demo mode function the exact same whether using actual BitcoinSv or Demo Coins EXCEPT when the bids are opened and compared daily (to determine their display order) all BSV bids will automatically outrank Demo Coin bids and will be displayed first across the network. ";
 $tentative_label = "Your tentative position will be ";
 
+$approved_bid_message="Your ad's posted position can change when it is compared to other bids in this category (the comparison of bids is done once daily). Your current bid is indicated below but you still can change it (higher or sometimes lower) anytime by clicking the \"subscribe\" button for that new price slot (note: changing your bid restarts your bid seniority date). The report below shows your current bid and the current competion to it (reported in the right column).";
+
 ?>

@@ -19,6 +19,7 @@ $price_slot_amount_label = "Price Slot Fee";
 $currency_pre_text = "USD value $";
 $currency_post_text = " per day. ";
 $submit_button_name = "purchase";//used to be C1
+$upgrade_button_name = "upgrade";//used to be C1
 $top_submit_button_title = "Top Price/Also #1! Most Secure - Purchase/Subscribe"; 
 $med_submit_button_title = "Middle Price/Also #1! More Secure - Purchase/Subscribe"; 
 $low_submit_button_title = "Lowest Price/Still #1! - Purchase/Subscribe"; 

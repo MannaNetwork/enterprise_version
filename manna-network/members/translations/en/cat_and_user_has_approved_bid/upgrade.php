@@ -3,7 +3,7 @@
 //this medium page means they can upgrade to this empty price slot
 //we know they are the only bidder in the lower price slot
 $submit_button_name = "upgrade";
-$button = "Upgrade/Subscribe"; 
+$button = "Upgrade"; 
 $link_title = "Subscribe To This Price Slot";
 $pre_blockt_text_message  = "Upgrade Your Bid!";
 $mouseover = "You can UPGRADE your price slot and strenghten your position"; 
