@@ -21,6 +21,7 @@ require_once('libraries/PHPMailer.php');
 require_once('classes/Login.php');
 $login = new Login();
 // ... ask if we are logged in here:
+
 if ($login->isUserLoggedIn() == true) {    
  echo '  You are logged in...';
 $user_id = $_SESSION['user_id'];
@@ -36,8 +37,22 @@ $phpself)) . $phpself;
 include(dirname(__DIR__, 2)."/manna-network/members/views/index.php");
 
 } else {
-//include("css/members_menu.css");
     // the user is not logged in...
+    if (array_key_exists('register', $_GET))
+    {
+   $register =$_GET['register'];
+   $agent_ID =$_GET['agent_id'];
+    $lnk_num =$_GET['lnk_num'];
+    ;
+/*echo '<br>    $register =', $register;
+ echo '<br>      $agent_ID =',$agent_ID;
+ echo '<br>       $lnk_num =',$lnk_num;  */
+   
+    include("views/register.php");
+    }
+    else
+    {
     include("views/not_logged_in.php");
+    }
 }
 ?>

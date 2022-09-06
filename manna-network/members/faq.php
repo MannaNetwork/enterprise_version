@@ -11,10 +11,8 @@ if (version_compare(PHP_VERSION, '5.3.7', '<')) {
 require_once('config/config.php');
 
 // include the to-be-used language, english by default. feel free to translate your project and include something else
-
-$lang="en";
-//require_once('translations/en/editalink.php');
 require_once('translations/en.php');
+
 // include the PHPMailer library
 require_once('libraries/PHPMailer.php');
 
@@ -34,7 +32,7 @@ $_SERVER['PHP_SELF'] = substr($_SERVER['PHP_SELF'], 0, strpos($_SERVER['PHP_SELF
 $phpself)) . $phpself;
 //You've got a clean PHP_SELF again (y) 
 
-include("views/edit_a_link.php");
+include("views/faq.php");
 
 //bitcoin_ad_agency/
 

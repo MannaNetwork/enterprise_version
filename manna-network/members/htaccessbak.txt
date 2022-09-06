@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteCond %{SERVER_PORT} 80
+RewriteCond %{HTTPS} on
+RewriteCond %{REQUEST_URI} members
+RewriteRule ^(.*)$ http://www.bungeebones.com/members/$1 [R,L]
+
+

@@ -29,8 +29,6 @@ require_once(dirname( __FILE__, 1 )."/libraries/PHPMailer.php");
 
 // load the registration class
 require_once(dirname( __FILE__, 1 )."/classes/Login.php");
-
-//temp deactivate over SESSION problem
-require_once(dirname( __FILE__, 1 )."/classes/Registration.php");
+require_once(dirname( __FILE__, 1 )."/classes/AddURL.php");
 require_once(dirname( __FILE__, 1 )."/css/members_menu.css");
 //echo '<br>in phplogin.php';

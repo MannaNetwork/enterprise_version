@@ -17,7 +17,8 @@
  */
 
 // load php-login components
-ini_set('display_errors', '1');
+//ini_set('display_errors', '1');
+
 require_once("php-login.php");
 
 // create the registration object. when this object is created, it will do all registration stuff automatically
@@ -38,7 +39,14 @@ include(dirname(__DIR__, 2)."/manna-configs/db_cfg/".READER_CUSTOMERS);
 
 include(dirname(__DIR__, 2)."/manna-configs/db_cfg/mysqli_connect.php");
 //include('bootstrap_header.php'); 
-include("js/registration.js"); 
+//getting "not found" errors because I renamed it 2bd. It says it was renamed to addalink.js but it, too is renamed to 2bd. What is going on? Do I comment it out because it is no longer needed? Is this registration page used by the advertiser control panel? I don't think so but am not sure.
+/*What to check:
+The name of the advertiser c panel is what? Doesn't matter because the menu goes to the Add A Link page. That is the only way that anyone logged in can add a link. So, this registration page is definitely NOT used by the CP
+
+We'll try commenting it out?
+If it works, the same thing needs to be done at 1stbtc
+*/
+//include("js/registration.js"); 
 
 if(array_key_exists('referer_lnk_num', $_GET) AND $_GET['referer_lnk_num']  =="change_me")
                 {   
@@ -66,12 +74,14 @@ if(!array_key_exists("flag", $_GET) OR !isset($_GET['flag']) OR $_GET['flag'] !=
 //The following "if" condition is to guide a "first time" registration request made to this register.php page. The first time they enter, there is no "flag' variable and, so, we give the installer a link to this same page - now witth a flag variable. Then, when the user retursn (this time with a flag value) they get a different message AND the form
 
 // but this is only run inside the function
+	/*
+	Trial deprecation - This code would only be needed when a user is transitioning to the enterprise level. It was wrongfully being trigured during normal plugin installation. NOTE that there is other code here referencing the "flag" variable that may also need recoding. IF THAT OTHER CODE needs to be changed in the future, it would be better to copy this file and rename it because it will be used by the enterprise edition and not the regular network plugin installer
 		echo "<h1>Final step in configuring your new installation. You need to register your own (i.e. this) website as the first registration in your DATABASE. You cannot use this registration form without adding yourself as a user and your own website first. </h1>
 
 		<p>&nbsp;<p><span  style='font-weight:bold;'>Simply Register THIS website/domain (i.e. $cleaned_host) as your account's FIRST user and FIRST website. 
 		<p>&nbsp;<p><span  style='font-weight:bold;'><h3>Clicking the following link will enable you to add the administrative agent website and domain and user info:</h3>
 
-		<p>&nbsp;<p><span  style='font-weight:bold;'><h3><a href='https://".AGENT_URL."/".AGENT_FOLDERNAME."/manna-network/members/register.php?referer_lnk_num=0&remote_server=".$_SERVER['HTTP_HOST']."&flag=1'>https://".$_SERVER['HTTP_HOST']."/".AGENT_FOLDERNAME."/manna-network/members/register.php?referer_lnk_num=0&remote_server=".$_GET['remote_server']."&flag=1</a>";
+		<p>&nbsp;<p><span  style='font-weight:bold;'><h3><a href='https://".AGENT_URL."/".AGENT_FOLDERNAME."/manna-network/members/register.php?referer_lnk_num=0&remote_server=".$_SERVER['HTTP_HOST']."&flag=1'>https://".$_SERVER['HTTP_HOST']."/".AGENT_FOLDERNAME."/manna-network/members/register.php?referer_lnk_num=0&remote_server=".$_GET['remote_server']."&flag=1</a>";  */
 				     exit();
 			}
 			elseif(array_key_exists("flag", $_GET) AND isset($_GET['flag']) AND $_GET['flag'] == "1"  ){ 

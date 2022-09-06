@@ -11,18 +11,24 @@ if (version_compare(PHP_VERSION, '5.3.7', '<')) {
 require_once('config/config.php');
 
 // include the to-be-used language, english by default. feel free to translate your project and include something else
+require_once('translations/en.php');
 
-$lang="en";
-require_once('translations/en/registration.php');
 // include the PHPMailer library
 require_once('libraries/PHPMailer.php');
 
 // load the login class
+
 require_once('classes/Login.php');
+
 $login = new Login();
 // ... ask if we are logged in here:
-if ($login->isUserLoggedIn() == true) {    
-  echo '  // the user is logged in...';
+if ($login->isUserLoggedIn() == true) {  
+if (!defined('READER_CUSTOMERS')) {
+include(dirname(__DIR__, 2)."/manna-configs/db_cfg/auth_constants.php");
+}
+include(dirname(__DIR__, 2)."/manna-configs/db_cfg/".READER_CUSTOMERS);
+include(dirname(__DIR__, 2)."/manna-configs/db_cfg/mysqli_connect.php");
+//include('bootstrap_header.php'); 
 $user_id = $_SESSION['user_id'];
 $user_email = $_SESSION['user_email'];
 
