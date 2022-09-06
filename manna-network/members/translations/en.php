@@ -5,7 +5,24 @@
  * in the application's header (in views/_header.php). To add new languages simply copy this file,
  * and create a language switch in your root files.
  */
-
+//getting demo or BSV
+define("BLOKT_GETTING_BSV", "<p>How To Get BitcoinSV</p>
+<p>There are a number of ways for you to get some BitcoinSV to use to get better ad position:
+<ul><li>Purchase at an online cryptocurrency exchange</li>
+<li>Purchase from a Manna Network member at the <a target='_blank' href=\"https://manna-network.com\">Manna Network Member Exchange</a></li>
+<li>Install the Manna Network API on your site (free) and start earning it with your website!</li>
+</ul> 
+</p>");
+define("BLOKT_GETTING_BSV_MOUSEOVER", "Info On How To Get BitcoinSV");
+define("BLOKT_GETTING_DMC", "<p>How To Get Demo Coin</p>
+<p>There are a number of ways for you to get some Demo Coin to use to get better ad position:
+<ul><li>Contact your upline (the website that you started your registration) and ask for some (Demo Coin have no monetary value)</li>
+<li>Contact the admin at the website that you logged into this dashboard at and ask for some (Demo Coin have no monetary value)</li>
+<li>Ask for some at the <a target='_blank' href=\"https://manna-network.com\">Manna Network Member Exchange</a></li>
+<li>Install the Manna Network API on your site (free) and start earning it with your website!</li>
+</ul> 
+</p>");
+define("BLOKT_GETTING_DMC_MOUSEOVER", "Info On How To Get Demo Coin");
 // login & registration classes
 define("MESSAGE_WEBSITE_TITLE_EMPTY", "<h3>Website Title field was empty</h3>");
 define("MESSAGE_WEBSITE_URL_EMPTY", "<h3>Website URL field was empty</h3>");
@@ -49,8 +66,11 @@ define("MESSAGE_REGISTRATION_ACTIVATION_SUCCESSFUL", "<h3>Activation was success
 define("MESSAGE_REGISTRATION_FAILED", "<h3>Sorry, your registration failed. Please go back and try again.</h3>");
 define("MESSAGE_RESET_LINK_HAS_EXPIRED", "<h3>Your reset link has expired. Please use the reset link within one hour.</h3>");
 define("MESSAGE_VERIFICATION_MAIL_ERROR", "<h3>Sorry, we could not send you an verification mail. Your account has NOT been created.</h3>");
+define("MESSAGE_RESET_ACTIVATION_NOT_SUCCESSFUL", "<h3>Sorry, no such name/verification code combination here...</h3>");
+define("MESSAGE_RESET_ACTIVATION_SUCCESSFUL", "<h3>Activation was successful! You can now log in!</h3>");
+define("MESSAGE_RESET_FAILED", "<h3>Sorry, your RESET failed. Please go back and try again.</h3>");
 define("MESSAGE_VERIFICATION_MAIL_NOT_SENT", "<h3>Verification Mail NOT successfully sent! Error: </h3>");
-define("MESSAGE_VERIFICATION_MAIL_SENT", "<h3>Your account has been created successfully and we have sent you an email. Please click the VERIFICATION LINK within that mail. If you do not see it in your in box be sure to check your spam folder (if found there, be sure to indicate to your email program it is NOT spam). </h3>");
+define("MESSAGE_VERIFICATION_MAIL_SENT", "<h3>Your account has been created successfully and we have sent you an email. Please click the VERIFICATION LINK in that email.</h3><h3> If you do not see it in your inbox then check your spam folder (if found there, also be sure to indicate to your email program it is NOT spam). <p><b>It will also contain the link to your \"Advertiser Dashboard\" where you will be able to login and:<ul><li>Add your listing to more categories</li><li>Add more websites (if you have some)</li><li>Purchase better placement with the free \"Demo Coin\" we will credit you</li><li>Fund your account with BitcoinSV</li><li>and more</li></ul></h3>");
 define("MESSAGE_USER_DOES_NOT_EXIST", "<h3>This user does not exist</h3>");
 define("MESSAGE_USERNAME_BAD_LENGTH", "<h3>Username cannot be shorter than 2 or longer than 64 characters</h3>");
 define("MESSAGE_USERNAME_CHANGE_FAILED", "<h3>Sorry, your chosen username renaming failed</h3>");
@@ -83,15 +103,15 @@ define("WORDING_REGISTER", "Register");
 define("WORDING_REGISTER_NEW_ACCOUNT", "<h3>Register new account</h3>");
 define("MESSAGE_WEBSITE_CATEGORY_EMPTY", "<h3>Please select the best category describing your website or business</h3>");
 define("WORDING_REGISTRATION_TITLE", "<h3>Title - Please enter a description (a heading or title) for your website or business. It will be the heading for your listing</h3>");
-define("WORDING_REGISTRATION_URL", "<h3>Landing Page URL - it is strongly suggested that you prepare a page specifically for this ad. Enter the URL here.</h3>");
+define("WORDING_EDIT_TITLE", "<h3>Title - Verify the description (a heading or title) of your website or business. It will be the heading for your listing</h3>");
+define("WORDING_REGISTRATION_URL", "<h3>Domain Name</h3>");
 define("WORDING_REGISTRATION_DESCRIPTION", "<h3>Description - Enter a 50 to 255 character description of your website or business</h3>");
+define("WORDING_EDIT_DESCRIPTION", "<h3>Description - Verify the 50 to 255 character description of your website or business</h3>");
 define("WORDING_REGISTRATION_CATEGORY", "<h3><b>Category (required) -</b> Select the BEST category for your website or business listing from among either main categories or subcategories (Hint: the higher the category, the more the competition).</h3>");
-
-define("WORDING_CATEGORY_SUGGESTION", "Have a category suggestion for YOUR website? Enter it here and, if approved, we will add it and your listing there (instead of your LAST selected one*)!");
+define("WORDING_EDIT_CATEGORY", "<h3><b>Verify Your Current Category -</b> Select the BEST category for your website or business listing from among either main categories or subcategories (Hint: the higher the category, the more the competition).</h3>");
 
 define("WORDING_REGISTRATION_LOCATION", "<h3><b>Location (optional) - </b>Locations will be used by the end users to \"filter\" to your listing from among irrelevant results outside their area.</h3>");
 define("WORDING_REGISTRATION_STREET", "<h3>Street Address - <b>IF</b> you selected a city then, optionally, you can also add your street addess to your listing.</h3>");
-define("WORDING_REGISTRATION_DISTRICT", "<h3>Add (optional) District, Boroughs, Regions, Neighborhood etc (optional) - Examples: Bronx, Lakes District, New England etc. (IF applicable) </h3>");
 define("WORDING_REGISTRATION_RECIPROCAL_HEADER", "<h2>Earn Income From Reciprocal Linking</h2><p style='text-align:left;font-weight:bold;'>CHECK HERE TO EARN!</b><br>");
 define("WORDING_REGISTRATION_RECIPROCAL", " Check here to accept the terms (read the wiki), then download and install our script - FREE!</h1>. 
 <p style='text-align:left;'>Install our script on your website and you become a full member of the cooperative with the following benefits:
@@ -101,12 +121,10 @@ define("WORDING_REGISTRATION_RECIPROCAL", " Check here to accept the terms (read
 
 </ul>
 * Commissions earned as \"Demo Coin\" are spendable and transferable to other members but are not backed nor redeemable for anything other than for better placement in the Manna Network. Commissions earned from ads purchased with BitcoinSV, on the other hand, are redeemable for BitcoinSV.");
-define("WORDING_EMAIL_VERIFIED1", "<h3  style='text-align:left;'>Your registration and web site information was successfully placed in the Manna Network queue for administrative review. Please allow 24-48 hours for this process and for your website listing to appear in the Manna Network member's websites.</h3>
-<h3 style=' text-align:left;'>We have credited your account with about a six month supply (at minimum bid price) of\"Demo Coin\" which you can use to \"buy\" better placement and be placed ahead of all advertisers advertising for free. </h3>'");
-define("WORDING_AGENT_ID", '<br>Your Agent ID is ');
-define("WORDING_EMAIL_VERIFICATION2", '<br> and your link or affiliate ID = ');
-define("WORDING_EMAIL_VERIFICATION3", '</h3><h3 style="text-align:left;">Now you can also log in to your User Control Panel to:<br>1) Advertise more of your websites<br>2) Bid For Better Placement for free using the free "demo coins" we credited to your account.<br>3) Learn about Bitcoin<br> 4) Get your free BitcoinSV-earning web directory for your own website (a nice feature just by itself).<br><br> <a href="./');
-define("WORDING_EMAIL_VERIFICATION4", "<h3 style='text-align:left;'>Here is the link:</a> to your member control panel. Login and \"purchase\" better placement with your free Demo Coin credits.</h3>");
+define("WORDING_EMAIL_VERIFIED1", "<h3  style='text-align:left;'>Your registration and web site information was successfully placed in the Manna Network queue for administrative review. Please allow 24-48 hours for this process and for your website listing to appear in the Manna Network member's websites.</h3>");
+
+define("WORDING_EMAIL_VERIFICATION3", '<h3 style="text-align:left;">Now you can also log in to your Advertiser Control Panel to:<br>1) Advertise more of your websites<br>2) Bid For Better Placement (for free) using the free "demo coins" we credited to your account.<br>3) Learn about Bitcoin<br> 4) Get your free BitcoinSV-earning web directory for your own website (a nice feature just by itself).<br><br> <a href="./');
+define("WORDING_EMAIL_VERIFICATION4", "<span style='color:red;'>Here is the link:</span></a> to your advertiser control panel. Login and \"purchase\" better placement with your free Demo Coin credits!</h3><h3 style=' text-align:left;'>The Manna Network has credited your account with about a six month supply (at minimum bid price) of\"Demo Coin\". You can learn the better placement system and be placed ahead of all non-paying advertisers risk-free! </h3>'");
 define("WORDING_AJAX_1", "<h3>More Subcategories Available After Selection");//x
 define("WORDING_AJAX_2", "<h3>Still More Subcategories To Choose From");
 define("WORDING_AJAX_MENU1", "Select a Sub-Category (optional)");
@@ -196,7 +214,7 @@ define("WORDING_REGISTRATION_USERNAME", "<h3>Username (only letters and numbers,
 define("WORDING_REMEMBER_ME", "Keep me logged in (for 2 weeks)");
 define("WORDING_REQUEST_PASSWORD_RESET", "<h3>Request a password reset. Enter your username and you'll get a mail with instructions:</h3>");
 define("WORDING_RESET_PASSWORD", "Reset my password");
-define("WORDING_SUBMIT_NEW_PASSWORD", "<h3>Submit new password</h3>");
+define("WORDING_SUBMIT_NEW_PASSWORD", "Submit new password");
 define("WORDING_USERNAME", "<h3>Username</h3>");
 define("WORDING_YOU_ARE_LOGGED_IN_AS", "<h3>You are logged in as </h3>");
 
@@ -225,7 +243,7 @@ define("BLOCKT_USERS_LINK_TITLE_VM","Effects On Your Position");
 
 define("BUY_2ND_PAGE_HEADER", "<h1>Select Your Ad Position</h1>
 <p>Selecting from the below list of \"Price Slots\" will enroll your site (on a subscription type basis) for placement in a \"relative and tenatative\" across the entire Manna Network Distributed Ad Network.  
-<p>\"Relative and tenatative\" means that the order that ads are actually displayed in is subject to change DAILY. The order is determined daily when new bids and subscriptions are compared and the links are ordered in the following priorities: 1) the coin type (BSV paying bids are listed first, Demo Coin bids next and then, lastly free links) 2) Within those three groupings the links are ordered according to the Price Slot selected (highest to lowest) and 3) Seniority (determined by when the price slot subscription was first acquired). Note that seniority orders the links when there is multiple subscribers to the same price slot and also the remaining free advertisers.
+<p>\"Relative and tentative\" means that the order that ads are actually displayed in is subject to change DAILY. The order is determined daily when new bids and subscriptions are compared and the links are ordered in the following priorities: 1) the coin type (BSV paying bids are listed first, Demo Coin bids next and then, lastly free links) 2) Within those three groupings the links are ordered according to the Price Slot selected (highest to lowest) and 3) Seniority (determined by when the price slot subscription was first acquired). Note that seniority orders the links when there is multiple subscribers to the same price slot and also the remaining free advertisers.
 <p>Purchases are \"relative and tentative\" because other higher or lower payments can and do arrive that can move your ad higher or lower in the display. Most of the time these movements up or down are minor and occur slowly over time but can also be volatile (escpecially if the crypto prices have been volatile). As the value of the BSV changes, so too does the value you are paying for your price slot. Yourself and others will react differently to the trends and move their placement accordingly. 
 <p> Notice that the next higher price slot will always be priced 1.5 times the next lower one.</td></tr>
 <tr><td colspan=3> <h3>Current BitcoinSV USD Price ");
@@ -350,57 +368,23 @@ define("MINIMUM_EXPLAINED5", " per month advertising expense (take that amount t
 
 define("SUCCESSFUL_BID_SUBMISSION1", "<h1>Thank you!</h1> 
 <h4  style='text-align:left;'>The transaction has been recorded here at your agent site and also has been sent along to Manna Network to be compared with all other bids. They will be ordered highest to lowest and by seniority (i.e. according to when bought). The purchase will initiate a subscription with regular automatic daily deductions from your appropriate \"prepaid\" account (i.e. either Bitcoin or Demo coin as you have selected). The daily fee will be deducted from this point forward until any of the following: 1) cancelled by you 2) you change the price slot (doing so resets your seniority in the new price slot) or 3) there is insufficient funds in your account.</h4><h4><a href=''>Return to your Member Dashboard</a>");
+define("TEMP_SUCCESSFUL_BID_SUBMISSION1", "<h1>Thank you!</h1> 
+<h4  style='text-align:left;'>The transaction has been recorded here at your agent site and also has been sent along to Manna Network. Once your website has been reviewed, your bid will be compared to other bids in this category. They will be ordered highest to lowest and by seniority (i.e. according to when bought). You will receive the seniority date according to when you submitted this bid (and won't be penalized while awaiting the site review process). Once approved, this purchase will initiate a subscription with regular automatic daily deductions from your appropriate \"prepaid\" account (i.e. either Bitcoin or Demo coin as you have selected). The daily fee will be NOT be deducted until your site is approved but, from that point forward, the fee will be deducted daily until any of the following: 1) cancelled by you 2) you change the price slot (doing so resets your seniority in the new price slot) or 3) there is insufficient funds in your account.</h4><h4><a href=''>Return to your Member Dashboard</a>");
+
 	 
 define("SUCCESSFUL_BID_SUBMISSION2", "<h4>Your seniority date for this price slot is :");
+define("SUCCESSFUL_BID_SUBMISSION3", "<h4>Bids (i.e. \"priceslots\") are processed once daily. You can verify your position by visiting your category in any Manna Network directory in the network or from your Advertiser Dashboard");
 */
+define("TEMP_ADDALINK_SUBMISSION1", "<h1>Thank you!</h1> 
+<h4  style='text-align:left;'>Your new ad has been sent along to the Manna Network for review and distribution. Once your website has been reviewed, your ad will be to network members and will displayed in this category. They will be ordered highest to lowest and by seniority (i.e. according to when created). You will receive the seniority date according to when you submitted this ad (and won't be penalized while awaiting the site review process). </h4><h4><a href=''>Return to your Member Dashboard</a>");
 define("NEW_MINIMUM_BID","ATTN:<BR> NEW MINIMUM BID<BR>");
 define("BLOCKT_NEW_MINIMUM_BID","HOW THIS AFFECTS YOU");
 define("BLOCKT_NEW_MINIMUM_BID_MESSAGE1","<h5>This affects the bidding display</h5><p>We have a minimum opening target of $");
 define("BLOCKT_NEW_MINIMUM_BID_MESSAGE2"," per month and a decrease in the dollar value of BSV causes an adjustment in the price slots we offer. We will not be making priceslots below the New Minimum Bid available for new bidders. Your purchase and possession of your below-minimum price slot will continue for as long as you like. But since we will only be offering higher price slots then every new bidder (even the lowest) will push your link further from the top spot.");
 
-define("BSV_VOLATILITY_MODELLER","<h3>BSV Volatility Modeller</h3><h5>See how price slots are affected by higher/lower Bitcoin prices</h5>  <p>Selecting one of these will alter the current BSV price by the amount listed which will cause changes to the fee amounts displayed in the price slots below.</p>");
-
-define("BSV_VOLATILITY_MODELLER_ON","<h3>You ARE OPERATING IN BSV Volatility Modeller MODE</h3><h5>The price slots displayed may have been affected by the higher/lower Bitcoin prices you selected</h5>  <p>It shows how the current BSV price will cause changes to the fee amounts displayed in the price slots offering to bidders.</p><h6>Select the RESTORE option in the dropdown to return to normal");
-/*
-define("BSV_VOLATILITY_MODELLER_HIGHER","Higher BSV Price");//used in the dropdown
-define("BSV_VOLATILITY_MODELLER_LOWER","Lower BSV Price");//used in the dropdown
-
-define("BSV_VOLATILITY_MODELLER_RESTORER","Restore Current BSV Price");//used in the dropdown
-*/
-define("BSV_PRICE_TITLE_VOLATILE","<h5>YOU ARE OPERATING IN MODELLER MODE<BR>NO BIDS OR CHANGES ARE ENABLED<BR>SELECT THE RESTORE OPTION IN THE DROPDOWN TO THE RIGHT TO RETURN TO NORMAL</h5>");
-define("REG_BLOKT_CATEGORY_MESSAGE", "<p>CATEGORY</p>
-<p>The category you select affects your ad campaign results. You
-should (as a rule) select the highest (but most descriptive) that you
-can UNLESS there is so much competition there from other advertisers
-that you will be too low in the display. If that is the situation you
-can select a lower level category (which should also be more specific
-to your business, service or blog topic) and you will face far less
-competition. You can also bid for better placement using either \"DEMO COIN\" (a supply of them will be credited to you) or with BitcoinSV.</p>");
-define("REG_BLOKT_CATEGORY_MOUSEOVER", "Category Selection Help");
-define("REG_BLOKT_REGIONAL_MESSAGE", "<p>Regional Filtering</p>
-<p>The main purpose for the regional option is to enable the END USER
-(sic. The Internet users viewing the ads) to filter out ad results
-from unwanted locations and find advertisers. Some businesses don’t
-draw customers from any specific region or location so they can leave
-this option empty. The way it works is the viewer selects the
-location they want to limit the results to. Only listings in a
-country selected will appear, for example (but results from all fifty
-states in the USA would also appear) but if the viewer selects a
-specific state (or city) then only those will appear..</p>");
-define("REG_BLOKT_REGIONAL_MOUSEOVER", "Regional Selection Help");
-define("REG_BLOKT_URL_MESSAGE", "<p>CREATE A LANDING PAGE</p>
-<p>It is strongly suggested you create a landing page so that you can
-track the results of the ad campaign yourself. Note, it doesn’t
-have to be unique content (because we have a No Index/No Follow meta
-tag on the directory to avoid duplicate content search engine
-problems). You can do something as simple as making a duplicate of
-your home page (with a different name of course) and entering that
-url here. To track the results of the advertising campaign go into
-your own stats software (example: AWStats in CPanel) to see how much
-traffic you are receiving from the ad network (you can be pretty
-certain the traffic came from the ad network if the only links to
-that page are the ones in the ad network).</p>");
-define("REG_BLOKT_URL_MOUSEOVER", "URL/Landing Page Help");
+define("REG_BLOKT_URL_MESSAGE", "<p>Enter Your Domain Name</p>
+<p>Enter ONLY your domain name (i.e. no \"http:// or https://\") and no \"paths\" to a page (enter the page name and/or path to it in the next input).</p>");
+define("REG_BLOKT_URL_MOUSEOVER", "URL/Domain Name Help");
 define("REG_BLOKT_DESCRIPTION_MESSAGE", "<p>Add An Ad Description</p>
 <p>Try to come up with an exciting and interesting GENERAL
 description of your main goods, services or blog topic. Attention
@@ -429,4 +413,92 @@ define("EXCHANGE_COIN_TYPE_BOTH", "<h4>Please Select Which Coin Type You Wish To
 define("EXCHANGE_COIN_TYPE_BSV", "Will Be Sending Your BitcoinSV Backed Ad Credits In The Amount You Enter Below");
 define("EXCHANGE_COIN_TYPE_DEMO", "Will Be Sending Your Demo Coin Ad Credits(free, unbacked and irredeemable) In The Amount You Enter Below");
 define("PROMO_FOOTER", "Like Earning Bitcoin Cash With Your Web Traffic!");
+define("REG_FORM_WELCOME_TITLE", "Adding Your Link To Our Classified Cooperative!");
+define("EDIT_FORM_WELCOME_TITLE", "Make Your Changes Below And Submit The Form");
+ 
+ define("REG_FORM_WELCOME_BODY", "<p align='left' style=\"color:black;\">Our web directory is one of an ever-growing network of individually owned and operated web directories. We co-operate to advertise each other\'s websites and the general public\'s, also. Your website will be advertised not just on our site but the entire network as well (absolutely free)! It provides a great way for us to help people find your website (better than what just our own site could provide you by itself). After you register as an advertiser you can join also the network (it's free).</p>
+ <p  align='left' style=\"color:black;\">You will be provided more info about how you can add this great, free web directory later and become part of this bigger effort to make websites successful!");
+ define("ADDALINK_FORM_WELCOME_BODY", "<p align='left' style=\"color:black;\">You can add more of your websites or add more listings of your website(absolutely free)! We ask, though, that you do not spam the web directory. Don't add a frivolous listing to irrelevant categories nor add individual products. </p>
+");
+ define("REGISTRATION_CAT_HEADING", "Select Category");
+define("REGISTRATION_REGIONAL_HEADING_SEL", "Select A Location (OPTIONAL)");
+define("REGISTRATION_GENERAL_ERROR1", " entry error ... ");
+define("REGISTRATION_GENERAL_ERROR2", " Current value: ");
+define("REGISTRATION_LNK_NUM1", "You must supply the link number of the recruiter (You can find it by logging in to your advertiser dashboad, click the \"Get Better Placement\" button).");
+define("REGISTRATION_LNK_NUM2", "Must be non negative integer.");
+define("REG_BLOKT_CATEGORY_MESSAGE", "<p>CATEGORY</p>
+<p>The category you select affects your ad campaign results! You should (as a rule) select the highest (but most descriptive) that you can. Look at the  competition, there,  from the other advertisers. If too much,  you can select a lower level category (which could also be more specific to your business, service, or blog topic) to have less competition. You can also bid for better placement using either \"DEMO COIN\" (a supply of them will be credited to you) or with BitcoinSV.</p>");
+define("REG_BLOKT_CATEGORY_MOUSEOVER", "Category Selection Help");
+define("REG_BLOKT_REGIONAL_MESSAGE", "<p>Regional Filtering</p><p>The main purpose for the location option is to enable Internet users viewing the ads to filter out ad results from unwanted locations and help them find advertisers in their location.</p><p>Some businesses don’t draw customers from any specific region or location, however, so if that is your situation, you can leave this option empty. </p><p>The way it works is: the viewer selects the location they want to limit the results to.  For example, if the viewer selects a specific country then only listings from that country will appear. But if the viewer selects a specific state (or city) then only those will appear.</p><p>It is worth noting that if you select down to the city level, then two new inputs will appear in the form. One will be for the street address and the other will be for a link to a map to that location. Both are optional but, if you enter info, then the info will be added to your ad listing.</p>");
+define("REG_BLOKT_REGIONAL_MOUSEOVER", "Regional Selection Help");
+/*define("REG_BLOKT_DESCRIPTION_MESSAGE", "<p>Add An Ad Description</p>
+<p>Try to come up with an exciting and interesting GENERAL
+description of your main goods, services or blog topic. Attention
+e-commerce sites: DO NOT add individual products (the ad will be
+rejected without notice).</p>");
+define("REG_BLOKT_DESCRIPTION_MOUSEOVER", "Description Help");
+define("REG_BLOKT_PASSWORD_MESSAGE", "<p>Password</p>
+<p>Create a VERY secure password for your account. That is important
+because the Manna Network uses a crypo-currency payment system and it
+draws hackers (at your control panel login). Use a secure password to
+keep anyr funds safe .</p>");
+define("REG_BLOKT_PASSWORD_MOUSEOVER", "Password Help");
+define("REG_BLOKT_EMAIL_MESSAGE", "<p>Use A Valid Email Address</p>
+<p>You will be sent a verification email before your ad will be
+processed. It also gives you access to your Control Panel where you
+can add more ads, edit existing ads and bid for better position. 
+</p>");
+define("REG_BLOKT_EMAIL_MOUSEOVER", "Email Info");
+define("REG_BLOKT_TITLE_MESSAGE","<p>ADD AN AD TITLE</p>
+<p>Create something exciting and descriptive about your business or
+website. Try to make it eye-catching and informative about the goods
+or services you provide or, if yours is a blog site then enter
+something describing your main topic.</p>");
+define("REG_BLOKT_TITLE_MOUSEOVER", "Title Hint"); */
+
+// login & registration classes
+define("REGISTRATION_CATEGORY_HEADING", "<h4>SELECT CATEGORY (Required)</h4>");
+define("EDIT_CATEGORY_HEADING", "<h4>ReEnter YOUR CURRENT Crumb Trail Or Edit</h4>");
+define("CAT_TREE_EXPLANATION","<h4>Your current selected category crumb trail is above. You can make the same selections of categories/subcategories or select others.</h4>");
+define("REG_TREE_EXPLANATION","<h4>Your current selected location/region crumb trail is above. You can make the same selections of regions/locations or select others.</h4><h4>Note: Since location info is optional, if you make no selection(s) then your current location settings will be cleared and your ad will only appear at the global level (i.e. the default view).</h4>");
+define("REGISTRATION_REGIONAL_HEADING", "<h4>ADD REGIONAL INFO (Optional)</h4>");
+define("WORDING_LINKEXCHANGE_PAGE_NAME", "PAGE");
+define("WORDING_REGIONAL_FILTERS_LABEL", "<h4>Filter Results To Selected Location</h4>");
+define("WORDING_REGIONAL_REG_LABEL", "<h4>OFFER BY<BR>LOCATION</h4>");
+//define("WORDING_AJAX_1", "More Subcategories Available After Selection");
+//define("WORDING_AJAX_2", "Still More Subcategories To Choose From");
+define("WORDING_AJAX_REGIONAL_FILTER_LABEL", "Smaller Regions Available After Selection");
+define("WORDING_AJAX_REGIONAL_MENU1", "Filter By Region (optional)");
+define("WORDING_AJAX_REGIONAL_MENU2", "Filter By State (optional)");
+define("WORDING_AJAX_REGIONAL_MENU3", "Filter By City (optional)");
+
+define("WORDING_AJAX_REGIONAL_REG_LABEL", "Smaller Regions Available After Selection");
+define("WORDING_AJAX_REGIONAL_REG1", "Offer By Region (optional)");
+define("WORDING_AJAX_REGIONAL_REG2", "Offer By State (optional)");
+define("WORDING_AJAX_REGIONAL_REG3", "Offer By City (optional)");
+define("WORDING_PROTOCOL_TITLE", "<h3>Verify The Current Protocol Of Your Site</h3>");
+define("PROT_BLOKT_TITLE_MOUSEOVER","An SSL protected site (sic. uses \https://\") is very strongly recommended (and it helps your SEO too!)");
+define("PROT_BLOKT_TITLE_MESSAGE","An SSL protected site (sic. uses \https://\") is very strongly recommended (and it helps your SEO too!)");
+define("REG_BLOKT_PAGE_MESSAGE", "<p>CREATE A LANDING PAGE</p>
+<p>It is strongly suggested you create a landing page so that you can better track the results from the Manna Network. Note, it does not have to be unique content (if you add a No Index/No Follow meta tag on the directory [that avoids duplicate content search engine problems]). You can do something as simple as making a duplicate of your home page (with a different file/page name of course). To track the results of the advertising campaign, go into your own stats software (example: AWStats in CPanel). There you can see how much traffic you are receiving to that page. You will know it is from the Manna Network because ... it is the only place showing THAT link to Internet users.</p>");
+define("REG_BLOKT_PAGE_MOUSEOVER", "Landing Page Help");
+define("REG_BLOKT_PAGE_INPUT_MESSAGE", "Insert Your LANDING PAGE NAME HERE (optional)");
+
+define("REG_BLOKT_URL_INPUT_MESSAGE", "Insert Your Domain Name URL HERE");
+define("WORDING_REGISTRATION_PAGE_NAME","<h3>Create a page specifically for this ad?</h3>");
+define("WORDING_LOCKEY_DESCRIPTION", "<h3>Location Key Words - Enter up to 255 characters of key words related to the location or operating area of your website or business</h3>");
+define("REG_BLOKT_LOCKEY_MESSAGE", "<p>Add Location Related Key Words</p>
+<p>Enter some key words describing your location, borrough, district, region, neighborhood etc.. </p><p>Attention: These 
+don't use the \"Better Placement\" method for fees but, instead, uses a Pay Per Click system (which you can subscribe to and configure in your Advertiser Control Panel).</p>");
+define("REG_BLOKT_LOCKEY_MOUSEOVER", "Location Keyword Help");
+
+define("WORDING_CATKEY_DESCRIPTION", "<h3>Category Key Words - Enter up to 255 characters of key words related to the topic of your website or business</h3>");
+define("REG_BLOKT_CATKEY_MESSAGE", "<p>Add Category Related Key Words</p>
+<p>Enter some key words describing your main goods, services or blog topic. </p><p>Attention: These 
+don't use the \"Better Placement\" method for fees but, instead, uses a Pay Per Click system (which you can subscribe to and configure in your Advertiser Control Panel).</p>");
+define("REG_BLOKT_CATKEY_MOUSEOVER", "Category Keyword Help");
+define("ADD_A_LINK_POLICY", "<h1>Policy For Adding Additional Ads/Links Of Your Current Site(s)</h1><p>Generally, we want to encourage providing the end user the opportunity to easily find what they are looking for. And, we know well that there is no \"perfect\" category to place an ad in and we try to provide a broad perspective on what constitutes \"proper category selection\".</p><p>With that said, <ul><li>DO NOT place ads for individual products (i.e. don't try to turn the Manna Network into your own personal catalog)</li><li>Do NOT place ads in irrelevant (i.e. to your business or website) categories</li></ul><p>You can add as many of YOUR websites that you wish too (the same options for free/paid advertising apply to them as to your current site). You can also add the monetization plugin/script (i.e. the web directory) to any/all of them as you wish. NEVER add an additional site by creating a new account under a different email and/or username, however!</p>");
+
+define("EDIT_A_LINK_POLICY", "<h1>Policy For Editing Ads/Links Of Your Current Site(s)</h1><p>Generally, we want to encourage providing the end user the opportunity to easily find what they are looking for. And, we know well that there is no \"perfect\" category to place an ad in and we try to provide a broad perspective on what constitutes \"proper category selection\".</p><p>With that said, <ul><li>DO NOT place ads for individual products (i.e. don't try to turn the Manna Network into your own personal catalog)</li><li>Do NOT place ads in irrelevant (i.e. to your business or website) categories</li></ul>
+<p style=\"color:red;\">Important: Editing an ad reenters it in the queue for administrative review. If/when reviewed and approved it will receive a new timestamp (sic. seniority date). Note: Seniority dates are used for placement of free ads only and do not affect paid links (whether paid with Demo Coin or BitcoinSV).");
 

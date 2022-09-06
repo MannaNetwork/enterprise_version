@@ -1,6 +1,4 @@
 <script>
-
-
 const still_more_locs_cont = '<h4 style="font-size:small;">Now your listing will appear when users filter for that continent.</h4>';
 const still_more_locs_coun = '<h4 style="font-size:small;">Now your listing will appear when users filter for that country.</h4>';
 const still_more_locs_stat = '<h4 style="font-size:small;"><h4 style="font-size:small;">Now your listing will appear when users filter for that state.</h4>';
