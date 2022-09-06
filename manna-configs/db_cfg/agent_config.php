@@ -24,7 +24,7 @@ define("INSTALLER_ID", 4);
 
 }
 //IMPORTANT - YOU MUST CONTACT MANNA NETWORK ADMINISTRATION TO GET A VALID $exchange_pw in order to send and receive updated link, bids and categories!
-$exchange_pw = "2a05PE8AfNuGlc5nHoDAzBkvSaoOdA2DKCDIkQhqI3yVF7BmwAfLHQ";
+$exchange_pw = "";
 $monthly_target_fee_in_dollar_value = 5;//Establishes what is basically the minimal fee (in dollars terms) that will be offerred by the priceslots order form. ex. 6 would be aiming for $6 monthly fee value in BSV. It takes the current BSV price, gets the decimal representation of the amount of BSV equal to this number and divides it by 30 days. That decimal is the lowest price someone can pay for better placement
 
 $number_of_extra_price_slots = 2;// This setting adds additional price slots for higher amounts than the minimum. The default setting of 2, therefore, places two higher (but always empty of previous bidders) over the existing high bidder (except when there are no bids in the category yet - then it will place the lowest required bid (about $5/month USD worth of crypto) plus two [for a total of three empty price slots]. Usually this won't need to be changed. 
