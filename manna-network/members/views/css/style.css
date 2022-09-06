@@ -1,3 +1,6 @@
+<?php
+echo "
+
 <style>
 div#mn_main_container{
 /*the top level - add url login etc menu*/
@@ -71,7 +74,7 @@ span.dropt span {position: absolute; left: -9999px;
   border-style:solid; border-color:black; border-width:1px;}
 span.dropt:hover span {margin: 20px 0 0 170px; background: #ffffff; z-index:6;} 
 
-      button {
+      mnbutton {
       display: inline-block;
       background-color: #D8A455;
       border-radius: 10px;
@@ -86,13 +89,13 @@ opacity: 0.8;
       cursor: pointer;
       margin: 5px;
       }
-      button span {
+      mnbutton span {
       cursor: pointer;
       display: inline-block;
       position: relative;
       transition: 0.5s;
       }
-      button span:after {
+      mnbutton span:after {
       content: '\00bb';
       position: absolute;
       opacity: 0;
@@ -100,16 +103,16 @@ opacity: 0.8;
       right: -20px;
       transition: 0.5s;
       }
-      button:hover {
+      mnbutton:hover {
       background-color: #D8A455;
 opacity: 1;
 font-weight: bolder;
       }
-      button:hover span {
+      mnbutton:hover span {
       padding-right: 25px;
       }
-      button:hover span:after {
+      mnbutton:hover span:after {
       opacity: 1;
       right: 0;
       }
-</style>
+</style> ";

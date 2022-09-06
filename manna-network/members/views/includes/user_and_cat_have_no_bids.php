@@ -1,5 +1,7 @@
 <?php
+if($debug=="2"){
 echo '<br> in user_and_cat_have_no_bids.php';
+}
   include('translations/en/user_and_cat_have_no_bids/common.php');
 if(isset($_POST['volatility_modeler'])){
   include('translations/en/user_and_cat_have_no_bids/user_modeler.php');
@@ -10,20 +12,31 @@ else
 }
 	
 $steps = $linkInfo->get_price_slots_no_bids($daily_minimum_bid_target, $number_of_extra_price_slots);
-
-
+if($debug=="2"){
+echo '<br>line 13 steps = (should be array)';
+print_r($steps);
+}
 $steps_display ='<div style=" width: 80%;
   margin: 0 auto;"><table style="border-collapse: collapse; table-layout:fixed;" cellpadding="40"><tr><td colspan=4>';
 $steps_display .= '<tr><td colspan=4><h3>'. $welcome_message .'</h3></td></tr><tr style="border-bottom: 1px solid #000;"<td colspan="3"><br></td></tr>';
 $steps = array_reverse($steps);
-
+if($debug=="2"){
+echo '<br>$location_id = ', $location_id;
+}
 foreach($steps as $key=>$value){
 if ($key == 0) {
 $pre_blockt_text_message = $top_pre_blockt_text_message;
    $message = $blockt_message; //using the same message on user_and_cat_have_no_bids.php. Other pages can have different messages
 $button = $top_submit_button_title;
 $link_title = $top_link_title;
+if($location_id > 0){
 $mouseover = $top_blockt_mouseover;
+}
+else
+{
+$mouseover = $top_regional_mouseover;
+
+}
 } elseif ($key == 1) {
 $pre_blockt_text_message = $med_blockt_text_message;
      $message = $blockt_message;

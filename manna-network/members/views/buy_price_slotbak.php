@@ -1,29 +1,29 @@
 <?php
 ##############   CONFIGURATIONS
 //Change
-/*echo '<H2>Manually turned debug on in buy_price_slot.php</h2>';
-$debug=2;
-echo '<br>$debug = ', $debug; */
 $monthly_target_fee_nominal_value = "$5 to $7.50";//change for different target value This is used in explanations only
 //for future use - a var to set the language - will need a dropdown form eventually
 $lang="en";
-
 include('translations/en/buy_price_slots_common.php');
 require($_SERVER['DOCUMENT_ROOT'].'/wp-load.php');
+//there is some bug that allows this page to display but lacking the credentials (resulting in a bad bid). This redirects to dashboard to pick up credentials again
 require_once(dirname( __FILE__, 4 )."/manna-configs/db_cfg/agent_config.php");
 require_once(dirname( __FILE__, 5 )."/".AGENT_FOLDERNAME."/manna-network/members/classes/member_page_class.php");
+
 include('styles.css');
 include(dirname(__FILE__).'/css/style.css');
 include(dirname( __FILE__, 2 ).'/css/members_menu.css');
-// try relocating this below require _menu to avoid "headers already sent" error for redirect 
 get_header();
- 
+echo '<H2>Manually turned debug on in buy_price_slot.php</h2>';
+$debug=2;
 require_once('views/_menu.php');
+/*echo '<br>in buy price slot - print_r =DEBUG ON MANUALLY LINE 19 ';
+$debug=2; */
+
 if ( isset( $_GET['get_filters_info'] ) ) {
 		include('translations/en/get_filters_info.php');
 		exit();
 	}
- $today1 = date('F j, Y, g:i a');
 	
 if(isset($_POST['confirm_downgrade']) AND null !==($_POST['link_id']) ){
 $link_id = $_POST['link_id'];
@@ -33,37 +33,26 @@ $cat_id = $_POST['cat_id'];
 $installer_id = $_POST['installer_id'];
 $coin_type = $_POST['coin_type'];
 $agent_ID = $_POST['agent_ID'];
+//generated errors - not used by functions
+//$users_balances_string = $_POST['users_balances_string'];
 $this_links_bid_status_on_Central = $_POST['this_links_bid_status_on_Central'];
 $reason="downgrade";
+$this_links_bid_status_on_Central = $_POST['this_links_bid_status_on_Central'];
 $linkInfo = new member_page_info();
 //Change on local table
+
 $linkInfo->updateLocalPriceslotsSubscripts($user_id, $agent_ID, $link_id, $new_price, $old_price, $cat_id, $installer_id, $coin_type);
-$mod_result = $linkInfo->sendModifyToCentral($user_id, $agent_ID, $link_id, $new_price, $old_price, $cat_id, $installer_id, $coin_type, $reason, $this_links_bid_status_on_Central);
-//echo '<br>in buy price slot downgrade $mod_result var (after sendModifyToCentral). Looking for "success"', $mod_result;
-if($mod_result=="success"){
- if(isset($isLinkApproved) && $isLinkApproved == "yes"){
- echo '<br>', SUCCESSFUL_BID_SUBMISSION1;
- }
- else
- {
- echo '<br>', TEMP_SUCCESSFUL_BID_SUBMISSION1;
- }
-echo SUCCESSFUL_BID_SUBMISSION2." ".   $today1;
-echo '</h4>';
-echo '<div style=" width: 50%;  margin: 0 auto;"><img src = "views/networkeffect4.jpeg"></div>';
-}
-else
-{
-echo FAILED_BID_SUBMISSION;
-echo '<div style=" width: 50%;  margin: 0 auto;"><img src = "views/networkeffect4.jpeg"></div>';
-}
+$linkInfo->sendModifyToCentral($user_id, $agent_ID, $link_id, $new_price, $old_price, $cat_id, $installer_id, $coin_type, $reason, $this_links_bid_status_on_Central);
+//get_footer();
 exit();
+
 }
 elseif(isset($_POST['modify_type']) AND $_POST['modify_type']== "downgrade" AND null !==($_POST['link_id']) ){
 if($debug==2){
 print_r($_POST);
 }
 echo '<div>&nbsp;</div><div id="index_content" class="index_content" name="index_content"><hr>';
+//We can't let this hit the missing link_if filters below that redirect because 1) it will always have to have
 $steps_display = $modified_confirm_message;
 $steps_display .= "<table><tr><td>
 <form name='test' action='' method='post'>
@@ -79,14 +68,17 @@ $steps_display .= "<table><tr><td>
 <input type='hidden' name='confirm_downgrade' value='true'>
 ";
 // removed <input type='hidden' name='new_bid_type' value='".$_POST['new_bid_type']."'> from above inputs. It was generating an error message and doesn't seem to be used in the functions (next and above)
+ 
+
 $steps_display .= '<br><input type="submit" name="confirm_downgrade" id="confirm_downgrade" value="Confirm downgrade" /> </td></tr></table>';
+
 echo $steps_display;
 //get_footer();
 exit();
 }
-elseif(array_key_exists('modify_type', $_POST) && $_POST['modify_type']=="purchase"){
-//something unique happens in this condition when the buyer is crossing over. They will be coming here from either catanduserhaveno bids or from cathasbidsanduserhas none. Either way, the crossover will always be a purchase (and never an upgrade or downgrade). SO, we get the $this_links_opposite_bid_status_on_Central to flag it as a crossover and we pass it along to Manna.
-
+elseif(isset($_POST['purchase'])){
+echo '<br>in line 77 POST purchae';
+print_r($_POST);
 $linkInfo = new member_page_info();
 
 $link_id = $_POST['link_id'];
@@ -96,7 +88,6 @@ $installer_id = $_POST['installer_id'];
 $coin_type = $_POST['coin_type'];
 $agent_ID = $_POST['agent_ID'];
 $users_balances_string =$_POST['users_balances_string'];
-$this_links_opposite_bid_status_on_Central = $_POST['this_links_opposite_bid_status_on_Central'];
 if(array_key_exists('users_balances_string', $_POST)){
 $users_balances_string = $_POST['users_balances_string'];
 }
@@ -104,32 +95,21 @@ else
 {
 $users_balances_string = "";
 }
-if($this_links_opposite_bid_status_on_Central != "no_bids"){
-//we have to delete the old bid at central
-$reason="cancel";
-if($coin_type=="BSV"){
-$opposite_coin_type = "DMC";
-}
-else
-{
-$opposite_coin_type = "BSV";
-}
-$linkInfo = new member_page_info();
-//the delete function deletes from the enterprise server and also deletes from MN but be sure to send the opposite coin_type of this purchase)
-$linkInfo->delete_opposite_bids($user_id,$link_id, $agent_ID, $opposite_coin_type, $reason);
-}
+
 $num_bids = $linkInfo->check_for_bid($link_id);
-//this $num_bids checks on the local server. Apparently, 
 if($num_bids < 1){
 /* Dropping $links_approval_status from the function call because it generates (no value) error after purchasin
 $linkInfo->copyBuyAgentPriceslotsSubscripts($user_id, $agent_ID, $link_id, $price, $cat_id, $installer_id, $coin_type,$links_approval_status, $users_balances_string); */
 $linkInfo->copyBuyAgentPriceslotsSubscripts($user_id, $agent_ID, $link_id, $price, $cat_id, $installer_id, $coin_type, $users_balances_string);
 $reason = "purchase";
+
 //the above will also run archiveBuyAgentPriceslotsSubscripts($agent_ID, $link_id)
 if(!isset($location_id)){$location_id=0;}
 $isLinkApproved = $linkInfo->isUserLinkReviewed($user_id, $agent_ID, $link_id, $cat_id, $location_id);
+
 $linkInfo->sendBuyToCentral($user_id, $agent_ID, $link_id, $price, $cat_id, $installer_id, $coin_type, $reason);
 
+ $today1 = date('F j, Y, g:i a');
  if($isLinkApproved == "yes"){
  echo '<br>', SUCCESSFUL_BID_SUBMISSION1;
  }
@@ -138,7 +118,7 @@ $linkInfo->sendBuyToCentral($user_id, $agent_ID, $link_id, $price, $cat_id, $ins
  echo '<br>', TEMP_SUCCESSFUL_BID_SUBMISSION1;
  }
 echo SUCCESSFUL_BID_SUBMISSION2." ".   $today1;
-echo '</h4>';
+echo '</h4>'.SUCCESSFUL_BID_SUBMISSION3;
 echo '<div style=" width: 50%;  margin: 0 auto;"><img src = "views/networkeffect4.jpeg"></div>';
 //get_footer();
 }
@@ -147,9 +127,13 @@ else
 echo '<h2>This bid has already been submitted. Use the Modify Bid function to change it</h2>';
 }
 exit();
-}//close if isset purchase
+
+ }//close if isset purchase
 elseif(isset($_POST['confirm_upgrade']) AND null !==($_POST['link_id']) ){
+
+
 $linkInfo = new member_page_info();
+//print_r($_POST);
 $link_id = $_POST['link_id'];
 $new_price = $_POST['price'];
 $old_price = $_POST['old_price'];
@@ -157,37 +141,21 @@ $cat_id = $_POST['cat_id'];
 $installer_id = $_POST['installer_id'];
 $coin_type = $_POST['coin_type'];
 $agent_ID = $_POST['agent_ID'];
+//$users_balances_string = $_POST['users_balances_string'];
 $this_links_bid_status_on_Central = $_POST['this_links_bid_status_on_Central'];
 $reason="upgrade";
-$linkInfo->updateLocalPriceslotsSubscripts($user_id, $agent_ID, $link_id, $new_price, $old_price, $cat_id, $installer_id, $coin_type);
-$mod_result = $linkInfo->sendModifyToCentral($user_id, $agent_ID, $link_id, $new_price, $old_price, $cat_id, $installer_id, $coin_type, $reason, $this_links_bid_status_on_Central);
-echo '<br>in buy price slot $mod_result var (after sendModifyToCentral). Looking for "success"', $mod_result;
-if($mod_result=="success"){
-if(isset($isLinkApproved) && $isLinkApproved == "yes"){
- echo '<br>', SUCCESSFUL_BID_SUBMISSION1;
- }
- else
- {
- echo '<br>', TEMP_SUCCESSFUL_BID_SUBMISSION1;
- }
-echo SUCCESSFUL_BID_SUBMISSION2." ".   $today1;
-echo '</h4>';
-echo '<div style=" width: 50%;  margin: 0 auto;"><img src = "views/networkeffect4.jpeg"></div>';
-}
-else
-{
-echo FAILED_BID_SUBMISSION;
-echo '</h4>';
-echo '<div style=" width: 50%;  margin: 0 auto;"><img src = "views/networkeffect4.jpeg"></div>';
-}
+$linkInfo->sendModifyToCentral($user_id, $agent_ID, $link_id, $new_price, $old_price, $cat_id, $installer_id, $coin_type, $reason, $this_links_bid_status_on_Central);
 //get_footer();
 exit();
 }
 elseif(isset($_POST['modify_type']) AND $_POST['modify_type'] == 'current' ){
 echo '<h1>In order to modify your bid you must select a price slot different from your current one</h1><h1>Use the browser\'s back button to return to the previous bidding form</h1>';
-exit();
+exit('line 149');
 }
 elseif(isset($_POST['modify_type']) AND $_POST['modify_type'] == 'upgrade' AND null !==($_POST['link_id']) ){
+echo '<br>line 147 in POST upgrade';
+print_r($_POST);
+//We can't let this hit the missing link_if filters below that redirect because 1) it will always have to have
 $steps_display = "<h2>Confirm Your Upgrade!</h1><h2> Your listing will receive a new Bid Seniority. Your new position in the display may be affected. Ads are displayed first by price slot amount and then by their seniority (i.e. date/time purchased) within that price slot.  </h2>";
 $steps_display .= "<table><tr><td>
 <form name='test' action='' method='post'>
@@ -203,12 +171,15 @@ $steps_display .= "<table><tr><td>
 <input type='hidden' name='this_links_bid_status_on_Central' value='".$_POST['this_links_bid_status_on_Central']."'>
 <input type='hidden' name='confirm_upgrade' value='true'>
 ";
+
 $steps_display .= $confirm_upgrade_message;//in translations/en/buy_price_slots_common.php
 $steps_display .=  '<br><input type="submit" name="confirm_upgrade" id="confirm_upgrade" value="Confirm Upgrade" /> </td></tr></table>';
+
 echo $steps_display;
 //get_footer();
 exit();
 }
+
 elseif(isset($_POST['confirm_cancel']) AND null !==($_POST['link_id']) ){
 $link_id = $_POST['link_id'];
 $price = $_POST['price'];
@@ -225,6 +196,10 @@ $linkInfo->sendModifyToCentral ($current_id,$user_id,$link_id, $agent_ID,$prev_s
 exit();
 }
 elseif(isset($_POST['modify_type']) AND $_POST['modify_type']== 'cancel' AND null !==($_POST['link_id']) ){
+
+//We can't let this hit the missing link_if filters below that redirect because 1) it will always have to have
+//echo '<h1> in cancel obviously the header is missing. And the final cancel action should end on another page/action</h1>';
+//print_r($_POST);
 
 $steps_display .= "<table><tr><td>
 <form name='test' action='' method='post'>
@@ -244,7 +219,6 @@ $steps_display .= '<h1>Confirm Your Paid Advertising!</h1><h2> (Your listing wil
 //get_footer();
 exit();
 }
-
 if(isset($_POST['B1']) OR isset($_GET['B1'])){
 //get BSV price
 $handle = curl_init();
@@ -280,7 +254,6 @@ $agent_ID = $_POST['agent_ID'];
 $users_balances_string = $_POST['users_balances_string'];
 $installer_id = $_POST['installer_id'];
 $location_id = $_POST['location_id'];
-//new db calls - lack of $BSVpopulation was causing errors. No use of $DMCpopulation created yet.
 
 $isLinkApproved = $linkInfo->isUserLinkReviewed($user_id, AGENT_ID, $link_id, $cat_id, $location_id);
 
@@ -290,27 +263,15 @@ $isLinkApproved = $linkInfo->isUserLinkReviewed($user_id, AGENT_ID, $link_id, $c
 //the above checks both the temppriceslots table (that would mean it hasn't been submitted yet and any changes they make only affect local tables and displays) and also the regular price slots table (a change only takes effect at cron time but local records get changed)
 //$thisLinksRegionalInfo = $linkInfo->getThisLinksRegionalInfo($link_id, $agent_ID, $location_id);
 //instead of this function we need to retrieve ALL the regional array associated with the location id.
+$site_is_reviewed = $linkInfo->isUserLinkReviewed($user_id, $agent_ID, $link_id, $cat_id, $location_id);
 //Pseudo code: If/when there are no bids in central's live price slots there may be some in temp priceslots BUT the only temp bid we need is this users (so we can accurately report their status and the progress of the bid's processing by admin.
 //  SO ... we need to 1) Determine if there are any LIVE bids in Central
 //If it returns "no bids" we still check for this user (it is only possible for them to be in temp)
 //If it returns a string with a pipe in it then the high bid will be on the left and the low one on the right (note they will be the same if all the bids are the same)
  $this_links_bid_status_on_Central = $linkInfo->getUserPriceSlots($user_id, $agent_ID, $link_id, $cat_id, $coin_type);
- if($debug=="2"){
-	echo '<h3 style="color:red;">$this_links_bid_status_on_Central = '.$this_links_bid_status_on_Central. '</h3>';
-	}
- if($coin_type=="BSV"){
- $opposite_coin_type = "DMC";
- }
- else
- {
- $opposite_coin_type = "BSV";
- }
- //This serves two purposes 1)is for messaging purposes. It tells the user they are making a crossover to the other coin and their present bid will be cancelled 2) Is sent to manna network's insertion function so it can delete the old bid before inserting new one
- $this_links_opposite_bid_status_on_Central = $linkInfo->getUserPriceSlots($user_id, $agent_ID, $link_id, $cat_id, $opposite_coin_type);
 // returns either "no_bids", "temp_bid", "approved_bid", or "error_detecting_bid"
 	if($debug=="2"){
-	echo '<h3 style="color:red;">$this_links_opposite_bid_status_on_Central = '.$this_links_opposite_bid_status_on_Central. '</h3>';
-	echo '<p style="color:red;>$this_links_bid_status_on_Central = '. $this_links_bid_status_on_Central . '</p>';
+	echo '<h3>$this_links_bid_status_on_Central = '.$this_links_bid_status_on_Central. '</h3>';
 	}
 if($this_links_bid_status_on_Central !=="no_bids"){
 	if($debug=="2"){
@@ -345,8 +306,10 @@ if($debug=="2"){
 	}
 // Continue the parse after skipping functions because the values were returned from dropdown via GET
 }
+
 elseif (array_key_exists('link_id', $_GET)) {
 //this will parse the data coming to the dropdown regional filter selection ON the first loading of the bid page from the selection (BTC vs demo)
+//https://1stbitcoinbank.com/manna_network/manna-network/members/buy_price_slot.php?link_id=79&price=&cat_id=60&coin_type=DMC&agent_ID=17&users_balances_string=0000000000.0000000000|0000000000.1000000000&this_links_bid_status_on_Central=temp_bid&this_links_bid=000.00127836&tregional_num=y&B1=%271%27
 
 $link_id = $_GET['link_id'];
 $price = $_GET['price'];
@@ -362,6 +325,7 @@ $tregional_num = $_GET['tregional_num'];
 
 $steps_display_common = "<tr><td colspan=4>".MINIMUM_EXPLAINED1.$monthly_target_fee_nominal_value.MINIMUM_EXPLAINED2.$monthly_target_fee_nominal_value.MINIMUM_EXPLAINED3.MINIMUM_EXPLAINED4.$monthly_target_fee_nominal_value.MINIMUM_EXPLAINED5."</td></tr></table></div>";
 
+//$steps_display_common = "<tr><td colspan=4>".MINIMUM_EXPLAINED1.$monthly_target_fee_nominal_value.MINIMUM_EXPLAINED2.$monthly_target_fee_nominal_value.MINIMUM_EXPLAINED3.$steps[$max_key_of_steps-1].MINIMUM_EXPLAINED4.$monthly_target_fee_nominal_value.MINIMUM_EXPLAINED5."</td></tr></table></div>";
 /*
 Possible_scenarios.
 1) cat_and_user_have_no_bids.php (no_user_temp_bids_nor_user_approved_bids)_-_status_works_ok_on_1stbtc_
@@ -370,24 +334,20 @@ Possible_scenarios.
 4) cat_has_a_bid_and_user_has_a_bid_in_pending_status.php
 5) cat_has_a_bid_and_user_has_the_only_approved_bid.php
 6) cat_and_user_has_approved_bid.php   */
-/*
-Better naming of below code:
-$BSVpopulation =  $linkInfo->get_cat_count_of_bids_approved($cat_id, "BSV");
-$DMCpopulation =  $linkInfo->get_cat_count_of_bids_approved($cat_id, "DMC");
-if($debug==2){
-echo '<br>$count_BSVBids =  ', $count_BSVBids ;
-echo '<br>$count_DemoBids =  ', $count_DemoBids ;
-}
-
-*/
-$BSVpopulation =  $linkInfo->get_cat_count_of_bids_approved($cat_id, "BSV");
 $cat_status_approved = $linkInfo->get_cat_count_of_bids_approved($cat_id, $coin_type);
 //returns the number of approved bids within this category and the coin type selected by the user
-
+echo '<BR><form method="post" action="https://exchange.manna-network.com/incoming/check_for_bids_by_remote_link_id.php">
+<input type="text" name= "user_id" value="'.$user_id.'" />
+ <input type="text" name= "agent_ID" value="'.$agent_ID.'" />
+ <input type="text" name= "remote_link_id" value="'.$remote_link_id.'" />
+  <input type="text" name= "cat_id" value="'.$cat_id.'" />
+  <input type="text" name= "coin_type" value="'.$coin_type.'" />
+   <input type="submit" value="Submit">
+</form> ';
 $this_links_bid_status_on_Central = $linkInfo->getUserPriceSlots($user_id, $agent_ID, $link_id, $cat_id, $coin_type);
 // returns either "no_bids", "temp_bid", "approved_bid", or "error_detecting_bid"
 	if($debug=="2"){
-	echo '<h1>line 372 $cat_status_approved = '. $cat_status_approved.'</h1>';
+	echo '<br>$cat_status_approved = ', $cat_status_approved;
 	if($this_links_bid_status_on_Central !=="no_bids")
 	echo '<br>$this_links_bid_status_on_Central = ', $this_links_bid_status_on_Central;
 	
@@ -408,12 +368,11 @@ $this_links_bid_status_on_Central = $linkInfo->getUserPriceSlots($user_id, $agen
 		$lowestpriceslot = $pieces[1];
 		$highestpriceslot = $pieces[0];
 		}
-	//I "think" this condition may be redundant and is a candidate for deprecation	
+		
 		if($this_links_bid_status_on_Central == "temp_bid"){
 		include('conditions/cat_has_no_bids_and_user_has_a_bid_in_pending_status.php');
 		$max_key_of_steps = count($steps);
 		$steps_display .= $steps_display_common;
-		$steps_display .= '</td></form></td>';
 		}
 		else
 		{
@@ -434,7 +393,7 @@ if($hi_low_string !=="No Bids"){
 		{
 		echo '<br>We need to make this users temp bid the hi and low. Line 358 of BPS';
 		}
-	//this user status may be the one causing the cat to "have bid" so we need to 1) check if this user has an approved bid , then this user is only bid. This may be a redundant condition. It might not make a difference whether it is THIS user's bid in the category or not to the operation of the script. It will detect that there is A BID in the price slot and will act accordingly. THEN, after it detects the buyer has a bid it will act accoring to that and would deliver the cat_and_user_both_have_bids template
+	//this user status may be the one causing the cat to "have bid" so we need to 1) check if this user has an approved bid , then this user is only bid
 		if($this_links_bid_status_on_Central == "approved_bid" AND $cat_status_approved ==1){
 		include('conditions/cat_has_a_bid_and_user_has_the_only_approved_bid.php');
 		$steps_display .= $steps_display_common;
@@ -457,6 +416,9 @@ $hi_low_string = $linkInfo->getMinMaxPriceSlotFromCentral($cat_id, $coin_type);
 		$pieces = explode("|", $hi_low_string);
 		$lowestpriceslot = $pieces[1];
 		$highestpriceslot = $pieces[0];
+// TEST CODE TO FIX OMMISSION!
+//This isn't loading the translations?
+//This isn't comparing the current users temp bid to see if it is higher than highest?
 if($this_links_bid_status_on_Central == "temp_bid"){
 		include('conditions/cat_has_a_bid_and_user_has_a_bid_in_pending_status.php');
 		$max_key_of_steps = count($steps);
@@ -472,7 +434,8 @@ if($this_links_bid_status_on_Central == "temp_bid"){
 		include('conditions/cat_and_user_has_approved_bid.php');
 		$max_key_of_steps = count($steps);
 		$steps_display .= $steps_display_common;
-		 }
+              }
+
 }
 echo $steps_display;
 }
@@ -492,10 +455,24 @@ print_r($_GET);
 echo '<br>';
 print_r($_POST);
 }
-include('includes/buy_section1.php');
-
-echo '</div>'; //this closes the index_content class in WP theme
+//we need to deactivate this temporarily - It needs to detect the level of the location so we don't give irrelevant info and links
+$_GET['location_id'] = 0;
+if(isset($_GET['location_id']) && $_GET['location_id'] > 0){
+echo '<br>IN sset($_GET[\'location_id\']) && $_GET[\'location_id\'] > 0 == ', $_GET['location_id'];
+include('includes/buy_section1_regional.php');
+//echo '<br>line 386';
 }
+else
+{ 
+//echo '<h1>NOT IN sset($_GET[\'location_id\']) && $_GET[\'location_id\'] > 0</h1>';
+//echo $linkInfo->thisLinksRegionalInfo($_GET['link_id'], $_GET['agent_ID']);
+
+include('includes/buy_section1.php');
+//echo '<br>line 393';
+}
+echo '</div>'; //this closes the index_content class
+}
+//echo '<br>line 408 with commented out $display_block';
 if(isset($display_block)){
 echo $display_block;
 }

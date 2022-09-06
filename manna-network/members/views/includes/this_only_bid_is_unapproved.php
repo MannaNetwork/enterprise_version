@@ -1,9 +1,9 @@
 <?php
-//if($debug=="2"){
-echo '<br>bbbbbbbin this_only_bid_is_unapproved.php ';
+f($debug=="2"){
+echo '<br>in this_only_bid_is_unapproved.php ';
 echo '<br>';
 print_r($_POST);
-//}
+}
 
  include('translations/en/this_only_bid_is_unapproved/common.php');
 if(isset($_POST['volatility_modeler'])){

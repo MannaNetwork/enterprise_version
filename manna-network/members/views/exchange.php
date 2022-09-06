@@ -79,6 +79,8 @@ $users_balances_string = $memberInfo->getUserBalanceFromCentral ($user_id, AGENT
 //so we explode the string into a two-item array
 $users_balances = explode("|",$users_balances_string);
 echo file_get_contents('views/_menu.php', true);
+//include('views/_menu.php');
+
 //echo '<div>&nbsp;</div><div id="index_content" class="index_content" name="index_content"><hr>';
 
 ?>

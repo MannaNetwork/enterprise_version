@@ -1,0 +1,22 @@
+The buy_price_slot.php presents purchase options to the advertiser based upon the current bidders in the category and the location(s) that the buyer has already selected. The following hopes to explain how the regional reports are generated (which have the goal of providing the buyer information about where the offered price will place them in the display page).
+
+Suppose the buy_price_slots.php is showing there are buyers in the following price_slots:
+0.009707520645
+0.006471680430
+0.004314453620
+
+AND the buyer has made the selection (optional) of a city (Orlando, Fl in this case)
+That provides data of the region levels to search for competitors in (this is the buyers tree)
+ [0] => 1 [1] => 2568 [2] => 2732 [3] => 2825 [4] => 3153 
+ with [1] being the continent id number, [2] being the country, [3] being the state and [4] being the city
+ 
+ Then we query the db for all the advertisers in the same category as the buyer AND also with a location AND also having purchased a price slot.  We then compare the location tree of each link/ad to the buyers_tree but we first check if the link's purchased price slot is > or == to the price slot being offered (i.e. there's no reason to do the other db calls if the link's purchased price slot is less than the one we are checking).
+ if($regionalPaidLinksList[2][$key] >= $price_slot){
+ 
+ Then, for each level in buyers_tree we check 1) whether the level being checked even exists in the link's array (for example, the link might not have selected a city or state and the buyer did). If/when, for example, the link's city/state doesn't exist, it is not a key so the script skips it and doesn't count it. 2) We use a for loop to compare the location ids at each level and count them as competitors ONLY IF the the location ids are equal
+
+So, if the link is in the same city as this buyer, its tree would be the same as the buyers tree (i.e. using our example of the buyers tree above), an ad/link would have the same tree - ([0] => 1 [1] => 2568 [2] => 2732 [3] => 2825 [4] => 3153 ) and each level would be equal and each level's counter would be incremented.
+
+If, on the other hand, the link was in a different city (Montreal), in a different state (Quebec) and a different country(Canada), then the only level equal to the buyers would be the continent (i.e. # 2568) and only the $competingBids[$complevs] for the continent level counter would be incremented.
+
+After the script runs each ad/link in the buyer's category (along with having purchased a price slot and having entered a location id) through the first for loop, it has a count of competitors at each level that the buyer is in. It then runs the for loop again and reports the number of competitors at each level. 

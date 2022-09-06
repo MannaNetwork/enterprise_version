@@ -1,4 +1,5 @@
 <?php
+
 if($debug=="2"){
 echo '<br>in cat_has_a_bid_and_user_has_the_only_approved_bid.php ';
 echo '<p style="color:red;">You are seeing these coding messages because you have Debug turned on in /manna-configs/db_cfg/agent_config.php/</p><br>Post values from form = ';
@@ -61,7 +62,7 @@ $steps_display .= '<h3>'.$crypto_coin_label." ".$population.": ".$BSVpopulation.
 $steps_display.= '<span class="dropt" style="font-size: large;" title="'.$bsv_pop_mouseover.'">'.$bsv_pop_link_title.'<img height="42" width="42" src="views/green_arrow.png">
   <span style="width:500px;">'.$bsv_pop_blockt_message.'</span></span>';
 }
-$steps_display .= '</td><td  colspan=2>'. $volatility_modeler.'</td></tr>';
+$steps_display .= '</td></tr>';
 
 
 
@@ -84,6 +85,7 @@ else
 $temp_DMCpopulation = 0;
 $temp_BSVpopulation = 1;
 }
+$final_message = $approved_bid_message;
 	}
 elseif (number_format($value , 8) < number_format($this_links_bid , 8)) {
 	include('translations/en/cat_has_a_bid_and_user_has_the_only_approved_bid/downgrade.php');
@@ -91,13 +93,15 @@ $modify_type = "<input type='hidden' name='modify_type' value='downgrade'>";
 
 $temp_DMCpopulation = 0;
 $temp_BSVpopulation = 0;
+$final_message = $approved_bid_message;
 	}
  elseif (number_format($value , 8) > number_format($this_links_bid , 8)) {
 include('translations/en/cat_has_a_bid_and_user_has_the_only_approved_bid/upgrade.php');
 $modify_type = "<input type='hidden' name='modify_type' value='upgrade'>";
 
 $temp_DMCpopulation = 0;
-$temp_BSVpopulation = 0;	
+$temp_BSVpopulation = 0;
+$final_message = $approved_bid_message;	
 	} 
  
 $steps_display .= "<tr style='background-color: rgba(255,255,224, 0.8)'><td>";
@@ -115,7 +119,8 @@ $steps_display .= "</td><td colspan=2>
 <input type='hidden' name='coin_type' value='".$_POST['coin_type']."'> 
 <input type='hidden' name='agent_ID' value='".$_POST['agent_ID']."'> 
 <input type='hidden' name='users_balances_string' value='".$users_balances_string."'> 
-<input type='hidden' name='this_links_status_on_Central' value='".$this_links_status_on_Central."'>";
+<input type='hidden' name='this_links_bid_status_on_Central' value='".$this_links_bid_status_on_Central."'>
+<input type='hidden' name='old_price' value='".$this_links_bid."'>";
 
  $steps_display .= $modify_type;
 $steps_display .= "<input type='hidden' name='C1' value='C1'> 
@@ -126,25 +131,21 @@ $steps_display .= " - ". $crypto_coin_header;
 
 $steps_display .= " - <input type='text' name='price' value='".$value."' readonly> <br> USD value $".round($value * $data['USD'],2)." per day. ";
 
-$steps_display .= $message;
-if(isset($_POST['volatility_modeler'])){
-$steps_display .= '<h5>Price Slot Selection Deactivated<br>While In Modeller Mode</h5>';
-}
-else
-{
+$steps_display .= $final_message;
+
 if (number_format($value , 8) == number_format($this_links_bid , 8)) {
 $steps_display .= '<div class="wrapper">   
-      <span class="button"><button class="'.$submit_button_name.'" name="'.$submit_button_name.'"  />'.$button.'</span></div>';
-
+      <span class="mnbutton"><button class="'.$submit_button_name.'" name="'.$submit_button_name.'"  />'.$button.'</span></div>';
 }
 else
 {
 $steps_display .= '<div class="wrapper">   
-      <span class="button"><button class="'.$submit_button_name.'" name="'.$submit_button_name.'"  />'.$button.'</span></div>';
+      <span class="mnbutton"><button class="'.$submit_button_name.'" name="'.$submit_button_name.'"  />'.$button.'</span></div>';
 }
-$steps_display .= '</td></form></td><td style="vertical-align: text-top;"><h5>'.$population.'</h5>';
-$steps_display .= '<br>'.$crypto_coin_label.': '.$temp_BSVpopulation.'<br>'.$demo_coin_label.': '.$temp_DMCpopulation.'</td></tr> ';
-}
+ $steps_display .= '</form></td>';
+      echo '<br>in cat_and_user_has_only_approved_bid.php - dirname( __FILE__, 2 ) = ', dirname( __FILE__, 2 ).'/includes/right_column.php';
+      include(dirname( __FILE__, 2 ).'/includes/right_column.php');
+
 }
 
 ?>

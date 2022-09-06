@@ -1,6 +1,9 @@
 <?php
+ echo '<H2>Manually turned debug on in conditions/cat has a bid and user in pending status</h2>';
+echo '<br> The welcome message is wrong. It\'s not the website that needs to be reviewed. The cron needs to be run in order to move the link position';
+$debug=2; 
 if($debug=="2"){
-echo '<br>in cat_has_bids_user_in_pending_status.php line 3';
+echo '<br>in cat_has_bids_user_has_a_bid_in_pending_status.php line 3';
 echo '<p style="color:red;">You are seeing these coding messages because you have Debug turned on in /manna-configs/db_cfg/agent_config.php/</p><br>Post values from form = ';
 print_r($_POST);
 }
@@ -12,6 +15,7 @@ echo '<br> $this_links_bid = ', $this_links_bid;
 echo '<br> $cat_id = ', $cat_id;
 echo '<br> $hi_low_string = ', $hi_low_string;
 }
+$users_balances_array = explode("|", $users_balances_string);
 $this_links_bid = number_format($this_links_bid, 8);
 
 //we need to determine 1) if this user's pending bid will be the new top bid or 2) if this user's bid is above the current minimum bid target or not (they may have bought it before a price drop)? If the price spiked that info won't affect the list (i.e. $steps array) of THIS price slots display  
@@ -30,14 +34,6 @@ $current_index_of_min = $linkInfo->get_current_index_of_priceslot($this_links_bi
 }
 
 $steps = $linkInfo->get_price_slots_by_minmaxindex($current_index_of_max, $current_index_of_min, $number_of_extra_price_slots);
-/*
-$steps_display ='<div style=" width: 80%;
-  margin: 0 auto;"><table style="border-collapse: collapse; table-layout:fixed;" cellpadding="40"><tr><td colspan=4>';
-$steps_display .= "<tr><td colspan=4><h3>". $welcome_message ."</h3></td></tr>";
-//$steps_display .= BUY_2ND_PAGE_HEADER. "</td></tr><tr><td colspan=2> <h3>".BSV_PRICE_TITLE.":".$data['USD'].'</h3></td><td  colspan=2>'. $volatility_modeler.'</td></tr>';
-
-$steps_display .= "<tr><td colspan=2> <h3>".$crypto_coin_header.":".$data['USD'].'</h3></td><td  colspan=2>'. $volatility_modeler.'</td></tr>';
-*/
 $BSVpopulation = $linkInfo->get_cat_count_of_bids_approved($cat_id, "BSV");
 $demo_coin_population = $linkInfo->get_cat_count_of_bids_approved($cat_id, "DMC");
 include('translations/en/cat_has_bids_user_in_pending_status/common.php');
@@ -73,6 +69,7 @@ $hi_low_string = 000.00127836|000.00085224
 foreach($steps as $key=>$value){
 if($key == 0){
 include('translations/en/cat_has_bids_user_in_pending_status/key0.php');
+$submit_button_name = "upgrade"; //These two $key priceslots are always empty so, therefore, are upgrades
 $modify_type = "<input type='hidden' name='modify_type' value='upgrade'>";
 
 	$temp_DMCpopulation = 0;
@@ -80,31 +77,35 @@ $modify_type = "<input type='hidden' name='modify_type' value='upgrade'>";
 }
 elseif($key == 1){
 include('translations/en/cat_has_bids_user_in_pending_status/key1.php');
+$submit_button_name = "upgrade"; //These two $key priceslots are always empty so, therefore, are upgrades
 $modify_type = "<input type='hidden' name='modify_type' value='upgrade'>";
 
 	$temp_DMCpopulation = 0;
 	$temp_BSVpopulation = 0;
 }
 elseif (number_format($value, 8) == $this_links_bid) {
-echo 'in if 1';
+//Give every translations include new value for submit button name - $submit_button_name = "current"; //This value works with any value just don't give it value "purchase" because every one of these are the current bid by this user
 if($this_links_bid < number_format($lowestpriceslot , 8) ){
 	include('translations/en/cat_has_bids_user_in_pending_status/user_bid_lower_than_lowest.php');
+	$submit_button_name = "current"; //This value works with any value just don't give it value "purchase"
 	}
 	elseif($this_links_bid == number_format($highestpriceslot, 8) ){
 	include('translations/en/cat_has_bids_user_in_pending_status/user_bid_is_highest.php');
+	$submit_button_name = "current"; //This value works with any value just don't give it value "purchase"
 	}
 	elseif($this_links_bid == number_format($lowestpriceslot , 8) ){
 	include('translations/en/cat_has_bids_user_in_pending_status/user_bid_is_lowest.php');
+	$submit_button_name = "current"; //This value works with any value just don't give it value "purchase"
 	}
 	elseif($this_links_bid > number_format($lowestpriceslot , 8) AND $this_links_bid < number_format($highestpriceslot , 8)){
-echo 'in elseif 3';
 	include('translations/en/cat_has_bids_user_in_pending_status/user_bid_between_highest_and_lowest.php');
+	$submit_button_name = "current"; //This value works with any value just don't give it value "purchase"
 	}
 	else{
-echo 'in else 1';
 	include('translations/en/cat_has_bids_user_in_pending_status/user_normal.php');
+	$submit_button_name = "current"; //This value works with any value just don't give it value "purchase"
 	}
-			$modify_type = "<input type='hidden' name='modify_type' value='cancel'>";
+		$modify_type = "<input type='hidden' name='modify_type' value='current'>";	
 	if($coin_type=="DMC"){
 	// we need to get the total BSV bids to determine final position
 	//$BSVpopulation = $linkInfo->get_cat_count_of_bids_approved($cat_id, "BSV");
@@ -119,11 +120,12 @@ echo 'in else 1';
 $temp_DMCpopulation = $linkInfo->get_population_from_Central_by_slot($cat_id, number_format($value , 8), "DMC");
 if($temp_DMCpopulation ==0){
 include('translations/en/cat_has_bids_user_in_pending_status/downgrade.php');
+$submit_button_name = "downgrade"; //This value works with any value just don't give it value "purchase"
 }
 else
 {
 include('translations/en/cat_has_bids_user_in_pending_status/downgrade_between_highest_and_lowest_has_pop.php');
-
+$submit_button_name = "downgrade"; //This value works with any value just don't give it value "purchase"
 }
 		$modify_type = "<input type='hidden' name='modify_type' value='downgrade'>";
 		$temp_DMCpopulation = $linkInfo->get_population_from_Central_by_slot($cat_id, number_format($value , 8), "DMC");
@@ -131,10 +133,12 @@ include('translations/en/cat_has_bids_user_in_pending_status/downgrade_between_h
 $temp_DMCpopulation = $linkInfo->get_population_from_Central_by_slot($cat_id, number_format($value , 8), "DMC");
 if($temp_DMCpopulation ==0){
 include('translations/en/cat_has_bids_user_in_pending_status/upgrade.php');
+$submit_button_name = "upgrade";
 }
 else
 {
 include('translations/en/cat_has_bids_user_in_pending_status/upgrade_between_highest_and_lowest_has_pop.php');
+$submit_button_name = "upgrade";
 }
 
 		$modify_type = "<input type='hidden' name='modify_type' value='upgrade'>";
@@ -156,7 +160,9 @@ include('translations/en/cat_has_bids_user_in_pending_status/upgrade_between_hig
 	<input type='hidden' name='coin_type' value='".$_POST['coin_type']."'> 
 	<input type='hidden' name='agent_ID' value='".$_POST['agent_ID']."'> 
 	<input type='hidden' name='users_balances_string' value='".$users_balances_string."'> 
-	<input type='hidden' name='this_links_status_on_Central' value='".$this_links_status_on_Central."'>";
+	<input type='hidden' name='old_price' value='".$this_links_bid."'> 
+	<input type='hidden' name='isLinkApproved' value='".$isLinkApproved."'>
+	<input type='hidden' name='this_links_bid_status_on_Central' value='".$this_links_bid_status_on_Central."'>";
 
 	 $steps_display .= $modify_type;
 	$steps_display .= "<input type='hidden' name='C1' value='C1'> ";
@@ -164,111 +170,33 @@ include('translations/en/cat_has_bids_user_in_pending_status/upgrade_between_hig
 
 	$steps_display .= " - ". $priceslot_label; 
 
-	$steps_display .= " - <input type='text' name='price' value='".$value."' readonly> <br> USD value $".round($value * $data['USD'],2)." per day. ";
-
-	$steps_display .= $message;
+	//$steps_display .= " - <input type='text' name='price' value='".$value."' readonly> <br> USD value $".round($value * $data['USD'],2)." per day. ";
+	$steps_display .= " - <input type='text' name='price' value='".$value."' readonly> <br><span class=\"dropt\" style=\"font-size: large;\" title=\".$daily_payment_mouseover.\"> USD value $".round($value * $data['USD'],2)." per day. ";
+if($coin_type == 'bsv'){
+	$num_days_funded = $users_balances_array[0]/$value;
+	}
+	else
+	{
+	$num_days_funded = $users_balances_array[1]/$value;
+	}
+	$steps_display .= '<b>'.$daily_payment_message.'</b><img height="42" width="42" src="views/green_arrow.png">';
+	$steps_display .= '  <span style="width:500px;">'.$daily_payment_message1.$num_days_funded.$daily_payment_message2.'</span></span>';
+	
 $steps_display .= '<div class="wrapper">   
-      <span class="button"><button class="'.$submit_button_name.'" name="'.$submit_button_name.'"  />'.$button.'</span></div>';
-
-if (number_format($value , 8) == $this_links_bid) {
-if($coin_type == "DMC"){
-$steps_display .= '</td></form></td><td style="vertical-align: text-top;"><h5>'.$population_rank.'</h5><h5>'.$crypto_coin_label.' '.$population.': '.$BSVpopulation.'</h5>';
-
-$steps_display .= '<br>'.$demo_coin_label.' '.$population.': '.$temp_DMCpopulation;
-if($temp_DMCpopulation ==1){
-$steps_display .= $personalize;
-}
-else
-{
-$steps_display .= " (including yours)";
-}
-}
-else
-{
-$steps_display .= '<br>'.$crypto_coin_label.': '.$temp_DMCpopulation;
-}
-$this_links_rank = $linkInfo->get_rank_of_bidder($link_id, $agent_ID,$cat_id, $coin_type, number_format($value , 8));
-if($BSVpopulation > 0){
-$this_links_rank = $this_links_rank + $BSVpopulation;
-}
-if($this_links_rank == 1){
-$postfix="st";
-}
-elseif($this_links_rank == 2){
-$postfix="nd";
-}
-elseif($this_links_rank == 3){
-$postfix="rd";
-}
-else
-{
-$postfix="th";
-}
-$steps_display .= '<br>'.$rank.' *: '.$this_links_rank.$postfix.'<br><span class="dropt" style="font-size: large;" title="'.$mouseover_rank.'">'.$link_title_rank.'<img height="42" width="42" src="views/green_arrow.png">
-	  <span style="width:500px;">'.$blockt_message_rank.'</span></span>';;
-}
-else
-{
-if($coin_type == "DMC"){
-$steps_display .= '</td></form></td><td style="vertical-align: text-top;"><h5>'.$population.'</h5>';
-$steps_display .= '<br>'.$demo_coin_label.': '.$temp_DMCpopulation;
-}
-else
-{
-$steps_display .= '<br>'.$demo_coin_label.': '.$temp_DMCpopulation;
-}
-$steps_display .= '</td></tr> ';
-
-}
-/*
-if (number_format($value , 8) == number_format($this_links_bid , 8)) {
-if($coin_type == "DMC"){
-$steps_display .= '</td></form></td><td style="vertical-align: text-top;"><h5>'.$population_rank.'</h5><h5>'.$crypto_coin_label.' '.$population.': '.$BSVpopulation.'</h5>';
-$steps_display .= '<br>'.$demo_coin_label.' '.$population.': '.$temp_DMCpopulation;
-if($temp_DMCpopulation ==1){
-$steps_display .= $personalize;
-}
-else
-{
-$steps_display .= " (including yours)";
-}
-}
-else
-{
-$steps_display .= '<br>'.$crypto_coin_label.': '.$temp_DMCpopulation;
-}
-$this_links_rank = $linkInfo->get_rank_of_bidder($link_id, $agent_ID,$cat_id, $coin_type, number_format($value , 8));
-if($this_links_rank == 1){
-$postfix="st";
-}
-elseif($this_links_rank == 2){
-$postfix="nd";
-}
-elseif($this_links_rank == 3){
-$postfix="rd";
-}
-else
-{
-$postfix="th";
-}
-$steps_display .= '<br>'.$rank.' *: '.$this_links_rank.$postfix.'<br><span class="dropt" style="font-size: large;" title="'.$mouseover_rank.'">'.$link_title_rank.'<img height="42" width="42" src="views/green_arrow.png">
-	  <span style="width:500px;">'.$blockt_message_rank.'</span></span>';;
-}
-else
-{
-if($coin_type == "DMC"){
-$steps_display .= '</td></form></td><td style="vertical-align: text-top;"><h5>'.$population.'</h5>';
-$steps_display .= '<br>'.$demo_coin_label.': '.$temp_DMCpopulation;
-}
-else
-{
-$steps_display .= '<br>'.$demo_coin_label.': '.$temp_DMCpopulation;
-}
-$steps_display .= '</td></tr> ';
-
-}*/
-
-}
-
-
+      <span class="mnbutton"><button class="'.$submit_button_name.'" name="'.$submit_button_name.'"  />'.$button.'</span></div>';
+ $steps_display .= '</form></td><td style="vertical-align: text-top;">';
+// echo '<br>LOOKING for price_slot value used in each form window - am inside the for loop so number_format($value, 8) should work? ' , number_format($value, 8);
+ $price_slot = number_format($value, 8);
+// echo '<br>$value (without formatting) is =', $value.'<br><br>';
+ if($key==0 OR $key==1){
+ $steps_display .= '<br># Of Previous Buyers - 0 <br>Your tentative rank at ALL levels*: 1st';
+ }
+ else
+ {
+ $competingBids = array(0,0,0,0,0);
+       include(dirname( __FILE__, 2 ).'/includes/right_column.php');
+  }     
+   $steps_display .= '</td></tr> ';   
+      
+ } 
 ?>

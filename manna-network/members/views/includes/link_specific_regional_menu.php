@@ -1,15 +1,16 @@
 <?php
+if($debug=="2"){
 echo '<br>in link_specific_regional_menu.php';
 //echo $linkInfo->thisLinksRegionalInfo($_GET['link_id'], $_GET['agent_ID']);
 echo '<br>$location_id = ', $location_id;
 echo '<br>dirname( __FILE__, 5 ) = '. dirname( __FILE__, 5 ).'/manna-configs/db_cfg';
+}
 //grab the last entry from log and return hash of timestamp
 if(!defined('READER_CUSTOMERS')){ 
 include(dirname( __FILE__, 5 ). "/manna-configs/db_cfg/auth_constants.php");
 }
 include(dirname( __FILE__, 5 ). "/manna-configs/db_cfg/".READER_AGENTS);
 include(dirname( __FILE__, 5 ). "/manna-configs/db_cfg/pdo_connect.php");
-echo '<br>$username = ', $username;
 try {
     $dbh = new PDO('mysql:host=localhost;dbname=orlandor_agents', $username, $password);
   /*  $stmt = $dbh->prepare("SELECT * FROM categories_regional2 where id = ?");
@@ -43,7 +44,7 @@ $sth->bindParam(':location_id', $location_id, PDO::PARAM_INT);
 //$sth->bindValue(':colour', $colour, PDO::PARAM_STR, 12);
 $sth->execute();
 
-$sth->debugDumpParams();
+//$sth->debugDumpParams();
 
 foreach ($sth as $row) {
   print_r($row);

@@ -1,0 +1,195 @@
+<?php
+ $display_blockmp = '<h3 align="center">'.ADD_URL_WELCOME_TITLE.'</h3>'.ADD_URL_WELCOME_BODY.'   
+<form class = "frms" method="POST" action="" name="addalinkform">';
+
+/*
+agent_id , remote_user_id, remote_link_id, newcatsuggestion, website_street, website_district, promo_credit, recruiter_lnk_num, recruiter_mn_bridge_num,  map_link*/
+
+$display_blockmp .= '<br>   <label for="website_title">'. WORDING_REGISTRATION_TITLE.'</label><span class="dropt" style="font-size: large;" title="'.REG_BLOKT_TITLE_MOUSEOVER.'"><img height="42" width="42" src="/wp-content/plugins/manna-network/images/green_arrow.png">
+  <span style="width:500px;">'.REG_BLOKT_TITLE_MESSAGE.'</span></span>
+   <br>   <input id="website_title" type="text"  name="website_title" style="width: 20em;" required />
+    <br>   <label for="website_description">'. WORDING_REGISTRATION_DESCRIPTION.'</label><span class="dropt" style="font-size: large;" title="'.REG_BLOKT_DESCRIPTION_MOUSEOVER.'"><img height="42" width="42" src="/wp-content/plugins/manna-network/images/green_arrow.png">
+  <span style="width:500px;">'.REG_BLOKT_DESCRIPTION_MESSAGE.'</span></span>
+     <br>   <textarea  id="website_description" type="text-area"  name="website_description" required  rows="5" cols="40"></textarea>
+      <br>   <label for="website_url">'. WORDING_REGISTRATION_URL.'</label><span class="dropt" style="font-size: large;" title="'.REG_BLOKT_URL_MOUSEOVER.'"><img height="42" width="42" src="/wp-content/plugins/manna-network/images/green_arrow.png">  <span style="width:500px;">'.REG_BLOKT_URL_MESSAGE.'</span></span>
+      <br>    <input id="website_url" type="text"  name="website_url" value="https://Insert Your URL HERE" required /><span style="color:red;">(Leave the https:// in front of your URL - remove the "s" from "https" if yours is not SSL [NOT recommended!])</span>
+<hr>';
+
+if( array_key_exists('gocat', $_GET) AND ISSET($_GET['gocat'])){
+//NOTE category id comes in from main menu
+$selected_cat_id = 1;
+}
+
+elseif( array_key_exists('q', $_GET) AND ISSET($_GET['q'])){
+//NOTE category id comes in from main menu
+$selected_cat_id = $_GET['q'];
+}
+elseif( array_key_exists('selected_cat_id', $_GET) AND ISSET($_GET['selected_cat_id'])){
+//NOTE THIS CATEGORY ID COMES IN FROM THE PAGINATOR MENU
+$selected_cat_id = $_GET['selected_cat_id'];
+}
+elseif(array_key_exists('selected_cat_id', $_POST) && ISSET($_POST['selected_cat_id'])){
+
+//NOTE q comes in from dropdown 
+$selected_cat_id = $_POST['selected_cat_id'];
+}
+else
+{
+$selected_cat_id = 1;
+
+}
+//both determiine what links are shown via category id var
+
+$file = 'https://' . AGENT_URL . '/' . AGENT_FOLDERNAME  . '/mannanetwork-dir/get_category_json.php';
+$curl = curl_init();
+    curl_setopt($curl, CURLOPT_URL, $file);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+    curl_setopt($curl, CURLOPT_HEADER, 0);
+    if( $header !== 0 ){
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $header);
+    }
+    curl_setopt($curl, CURLOPT_POST, $method_type);
+ 
+    if( $data == 0 ){
+        echo '<h1>Curl error</h1>';
+    }
+    else
+    {
+ curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+    $response = curl_exec($curl);
+    $category_list = json_decode($response, true);
+    curl_close($curl);
+    echo '<br>$json array = ';
+    print_r($json);
+
+/*
+/* Dev Note PHPCS reports "ERROR   | Processing form data without nonce verification" for all these POSt variables but this page is included and the nonce verification was done on the previous page */
+/*
+if ( isset( $_POST['main_cat_nonce'] ) ) {
+	$nonce = sanitize_text_field( wp_unslash( $_POST['main_cat_nonce'] ) );
+} elseif ( isset( $_GET['main_cat_nonce'] ) ) {
+	$nonce = sanitize_text_field( wp_unslash( $_GET['main_cat_nonce'] ) );
+} else {
+	$nonce = 'null';
+}
+
+
+	$response = wp_remote_post(
+		$file,
+		array(
+			'method'      => 'POST',
+			'timeout'     => 45,
+			'redirection' => 5,
+			'httpversion' => '1.0',
+			'blocking'    => true,
+			'headers'     => array(),
+			'body'        => array(
+				'selected_cat_id' => $selected_cat_id,
+'type' => 'categories',
+			),
+			'cookies'     => array(),
+		)
+	);
+
+	if ( is_wp_error( $response ) ) {
+		$error_message = esc_attr( $response->get_error_message() );
+		echo 'Something went wrong: (' . esc_attr( $error_message ) . ')'; */
+	//} else {
+		
+
+
+//$category_list = json_decode( $response['body'], true );
+
+
+$category_list = str_replace('[', '', $category_list);
+$category_list = str_replace(']', '', $category_list);
+
+$display_blockmp .= '
+<script>
+var main_cat_nonce = "'.esc_attr( $nonce ).'"
+var original_cat_id = "'.esc_attr( $selected_cat_id ) . '"
+</script>';
+
+//echo '<span id="mn_subcat_container"> <script>showSubLoc1(\'y:Select:1\',\'\',1,\'1\',\'categories\')</script></span>';
+
+		$display_blockmp .= '<span id="mn_subcat_container"> 
+ <table id="mn_subcat_table">
+<tr><td><h2>'.ADD_URL_CATEGORY_HEADING.'</h2>
+
+
+
+
+<select name="submenu" onchange="showSubLoc1(this.value,\'' . esc_attr( $nonce ) . '\',1,\'' . esc_attr( $selected_cat_id ) . '\',\'categories,\''.AGENT_URL.'\',\''.AGENT_FOLDERNAME.'\')"><option value="">' . esc_attr( WORDING_AJAX_MENU1 ) . '</option> ';
+		$display_blockmp .= "<option value='y:" . esc_attr( $selected_cat_id ) . ":'></option>";
+		foreach ( $category_list as $key => $value ) {
+			if ( $category_list[ $key ]['lft'] + 1 < $category_list[ $key ]['rgt'] ) {
+				$display_blockmp .= "<option value='y:" . esc_attr( $category_list[ $key ]['id'] ) . ':' . esc_attr( $category_list[ $key ]['name'] ) . "'>" . esc_attr( $category_list[ $key ]['name'] ) . '</option>';
+			} else {
+				$display_blockmp .= "<option value='n:" . esc_attr( $category_list[ $key ]['id'] ) . ':' . esc_attr( $category_list[ $key ]['name'] ) . "'>" . esc_attr( $category_list[ $key ]['name'] ) . '</option>';
+			}
+		}
+		$display_blockmp .= '</select>&nbsp;&nbsp;&nbsp;&nbsp;<span class="dropt" style="font-size: large;" title="'.REG_BLOKT_CATEGORY_MOUSEOVER.'"><img height="42" width="42" src="/wp-content/plugins/manna-network/images/green_arrow.png">  <span style="width:500px;">'.REG_BLOKT_CATEGORY_MESSAGE.'</span></span>
+		      <div class="catHint1" id="catHint1" name="catHint1"><b>' . esc_attr( WORDING_AJAX_1 ) . '</b></div><input type="hidden" id="selected_cat_name" name="selected_cat_name" class ="selected_cat_name" value="">
+<input type="hidden" id="selected_cat_id" name="selected_cat_id" class ="selected_cat_id" value=""><div width: 250px;style="font-size: larger; font-weight:stronger;">Your Current Selection *: <input style="font-size: larger; font-weight:stronger;width: 250px;" type="text" id="selected_cat_menu_name"  class="selected_cat_menu_name" name="selected_cat_menu_name" value=""></td></tr></table></span>';
+
+	}
+
+
+
+$display_blockmp .= '<span id="mn_location_container"> 
+<table id="mn_location_table">
+<tr><td><h2>'.ADD_URL_REGIONAL_HEADING.'</h2><select name="regional" id="regional" onchange="
+showSubLoc1(this.value,\'' . esc_attr( $nonce ) . '\',1,\'' . esc_attr( $selected_cat_id ) . '\',\'regions\',\''.AGENT_URL.'\',\''.AGENT_FOLDERNAME.'\')"><option value="">'.WORDING_AJAX_REGIONAL_REG1.'</option>';
+			$display_blockmp .= "
+		<option value='y:2566:Africa'>Africa</option>
+		<option value='y:2567:America - Central'>America - Central</option>
+		<option value='y:2568:America - North'>America - North</option>
+		<option value='y:2569:America - South'>America - South</option>
+		<option value='y:2572:Asia'>Asia</option>
+		<option value='y:2573:Australia/Oceania'>Australia\/Oceania</option>
+		<option value='y:2756:Caribbean'>Caribbean</option>
+		<option value='y:2575:Europe'>Europe</option>
+		<option value='y:2740:Middle East'>Middle East</option>";
+	
+		$display_blockmp .= '</select>&nbsp;&nbsp;&nbsp;&nbsp;<span class="dropt" style="font-size: large;" title="'.REG_BLOKT_REGIONAL_MOUSEOVER.'"><img height="42" width="42" src="/wp-content/plugins/manna-network/images/green_arrow.png"><span style="width:500px;">'.REG_BLOKT_REGIONAL_MESSAGE.'</span></span><br>
+		      <div id="locHint1" name="locHint1"><b>Smaller Regions Available After Selection.</b></div>
+					  <div id="locHint2" name="locHint2"><b></b></div>
+					   <div id="locHint3" name="locHint3"><b></b></div>
+					    <div id="locHint4" name="locHint4"><b></b></div>
+		<div id="locHint5" name="locHint5"><b></b></div>
+		<div id="locHint6" name="locHint6"><b></b></div>
+		<p id="selectedregion" name="selectedregion"><b></b></p>
+<input type="hidden" id="selected_region_id" name="selected_region_id" class ="selected_region_id" value="">
+<input type="hidden" id="selected_region_name" name="selected_region_name" class ="selected_region_name" value="">	<div width: 250px;style="font-size: larger; font-weight:stronger;">Your Current Selection *: <input style="font-size: larger; font-weight:stronger;width: 250px;" type="text" id="selected_region_menu_name"  class="selected_region_menu_name" name="selected_region_menu_name" value="">
+
+		</td><td></table></span><div id="city_street_address" name="city_street_address" class="city_street_address"><b></b></div>
+		';
+//$display_blockmp .= '<span class="dropt" style="font-size: large;" title="'.$mouseover.'">'.$link_title.'<img height="42" width="42" src="/wp-content/plugins/manna-network/images/green_arrow.png">  <span style="width:500px;">'.$blockt_message.'</span></span>';
+		//}
+	if( array_key_exists('regional_num', $_GET) AND ISSET($_GET['regional_num'])){
+	//NOTE category id comes in from main menu
+	$regional_num = $_GET['regional_num'];
+	unset($_GET['regional_num']);
+	unset($_POST['regional_num']);
+	}
+//END Location AJAX
+if(!array_key_exists("flag", $_GET) OR !isset($_GET['flag']) OR $_GET['flag'] !== "1"  ){
+$display_blockmp .= ' <h1>'.WORDING_REGISTRATION_RECIPROCAL_HEADER.
+WORDING_REGISTRATION_RECIPROCAL.' </div>';
+
+   
+}
+
+$plugin_name = basename( plugin_dir_path(  dirname( __FILE__ , 2 ) ) );
+$display_blockmp .= wp_nonce_field(); //this will ADD a nonce field to the form which will then need to be detected on exch of the showsubcat and showsubloc pages
+//The installer_id var (below) is a complicated and a bit confusing name. The id number comes from the widgets table (in manna) and represents the parent id (sic widget id number) of the parent of THIS website (i.e. orlandoreferralgroup in this case) which is 1stbitcoinbank.com (where org is registered). That number is stored in the WP plugin's options. This form retrieves that setting and forwards it as a hidden var (via POST) to itself, which then gets used by the Registration class
+$display_blockmp .= '
+     <img src="tools/showCaptcha.php" alt="captcha" />
+      <label>'.WORDING_REGISTRATION_CAPTCHA.'</label>
+        <input type="text" name="captcha" required style="width: 150px;"/>
+<input type="hidden" name="installer_id" value="'.get_option('installer_id').'">
+        <input type="submit" name="formInputs" value="'.ADD_URL_SUBMIT.'" />
+   </form>';
+   
+   

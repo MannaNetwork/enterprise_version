@@ -1,18 +1,22 @@
 <?php
 //add sanitizing - check if numeric
+if($debug=="2"){
 echo '<br> in includes/buy section1_regional php';
 print_r($_GET);
+}
 $link_id = $_GET['link_id'];
 $agent_ID = $_GET['agent_ID'];
 $url = $_GET['url'];
 $category_id = $_GET['category_id'];
 $installer_id = $_GET['installer_id'];
 $location_id = $_GET['location_id'];
+if($debug=="2"){
 echo '<br>location id = ', $location_id;
 echo '<br>';
 print_r($location_id);
 echo '<br>';
-$display_block .= '<div id="index_content" class="index_content" name="index_content"><div class="grid-container">';
+}
+$display_block = '<div id="index_content" class="index_content" name="index_content"><div class="grid-container">';
 $LINKinfo = new member_page_info();
 
 //Storing some useful code here - This could be used to calculate the entire price slots list
@@ -40,7 +44,7 @@ $satoshi = .00000001;
 //just some useful code am storing here
 //echo "The factorial of 6 is: " . factorial( 6 );
 //include("css/members_menu.css");
-print_r($_GET);
+//print_r($_GET);
 if(0 == count($_GET)){
 //don't display if no GET vars
 $display_block .= '  <div class="item1"><h2 style="color:red;">Your Site Info Is Empty!</h2><h3>This happens when you visit the page directly rather than from your Users Link Management Panel. </h3>
@@ -49,21 +53,28 @@ $display_block .= '  <div class="item1"><h2 style="color:red;">Your Site Info Is
 }
 else
 {
-//$thisLinksRegionalInfo = $LINKinfo->getThisLinksRegionalInfo($link_id, $agent_ID, $location_id);
-
-//echo '<br> $thisLinksRegionalInfo = ';
-//print_r($thisLinksRegionalInfo);
+$thisLinksRegionalInfo = $LINKinfo->getThisLinksRegionalInfo($link_id, $agent_ID, $location_id);
+if($debug=="2"){
+echo '<br> $thisLinksRegionalInfo = ';
+print_r($thisLinksRegionalInfo);
+}
 $users_balances_string = $LINKinfo->getUserBalanceFromCentral ($user_id, $agent_ID);
 //returns  array( $bitcoin_cash_balance|$democoin_balance );
 $users_balances = explode("|",$users_balances_string);
+if($debug=="2"){
+echo '<br>in buy section1 regional.php - $users_balances_string = ';
+print_r($users_balances_string);
 
+echo '<br>in buy section1 regional.php - $users_balances exploded into array = ';
+print_r($users_balances);
+}
 $display_block .= '  <div class="item1"><h2>Your Site Info </h2><h3>(IF the info isn\'t displaying click "Home" button and then to return to this page)</h3> <h4>Your Landing Page -> '. $url.'</h4>
 <h4>Link ID -> '. $link_id.'</h4>
   <h4>Category ID -> '. $category_id.'</h4>
  <h4>Site You Registered At -> '. $installer_id.'</h4>
  <h4>Your Agent\'s ID -> '. $agent_ID.'</h4>
 <h4>Your Agent\'s URL -> <a target="_blank" href="https://'. AGENT_URL.'">'.AGENT_URL.'</a></h4>
-<h4>Your Dashboard -> <a target="_blank" href="https://'. AGENT_URL.'">'.AGENT_URL.'</a></h4>';
+';
 /*if(is_array($thisLinksRegionalInfo)){
 $display_block .= ' <h4>Region INFO -> </h4>';
 foreach($thisLinksRegionalInfo as $key=>$value){
@@ -161,12 +172,11 @@ border-radius: 15px;
 <input type="hidden" name="agent_ID" value="'.AGENT_ID.'">
 <input type="hidden" name="users_balances_string" value="'.$users_balances_string.'">
 <h5>Your Demo Coin Balance ** -> '. ltrim($users_balances[1], '0').'</h5>
-In buy_section1_regional.php line 161 and we need a curl query to mn and then an "if" regional numberdisplay levels to offer list<br>
-<br>location_id = '. $location_id.'<br>place regional menu here';
+';
 $object = new member_page_info();
 
 //we need the row info for this user's selected region (use it to build the last form after iterating)
-echo '<br>$_GET[location_id] before function call', $_GET['location_id'];
+//echo '<br>$_GET[location_id] before function call', $_GET['location_id'];
 $selected_region_row = $object->getRegionsRow($_GET['location_id']);
 $regions_array = $object->get_regions_array(2875);
 $num_of_levels = count($regions_array[0]);

@@ -1,7 +1,7 @@
 <?php 
 
-if($debug=="1")
-echo '<h4> In includes/cat_has bids_user none.php using files in translations/cat_has bids_user none</h4>';
+if($debug=="2")
+echo '<h4> zzzzzzz  In includes/cat_has bids_user none.php using files in translations/cat_has bids_user none</h4>';
 
 	if(isset($lowest_price_bought) and isset($highest_price_bought)){
 	   if($lowest_price_bought == $highest_price_bought){
@@ -34,7 +34,7 @@ $highest_bid_with_population = $lowest_bid_index - $number_of_extra_price_slots;
 foreach($steps as $key=>$value){
 $price_slot_amount = number_format($value , 8);
 $pop_count_in_price = $linkInfo->getPricePopByCat($cat_id, $price_slot_amount, $coin_type);
-if($debug=="1"){
+if($debug=="2"){
 echo '<br>$key = ', $key;
 echo '... ... ... $value = ', $value;
 echo '<br>$lowest priceslot = ', number_format($lowestpriceslot , 8);
@@ -47,7 +47,7 @@ echo '<br>$highwest priceslot = ', number_format($highestpriceslot , 8);
 // This code caused mis catagroeization after the current highest AND lowest price slot when high and low wwere the same price
 //the following section does the same as line 118
 /*if($lowest_bid_index == $key){
-if($debug=="1"){
+if($debug=="2"){
 echo '<br>IN section where $lowest_bid_index == $key';
 echo '<br>This is basically the same as if(number_format($value , 8) = \', number_format($lowestpriceslot , 8)';
 echo '<br>Then proceeds to perform check for population';
@@ -101,7 +101,7 @@ elseif (number_format($value , 8)  == number_format($highestpriceslot , 8))  {
 // there could be more than one
 //if the highest bid and lowest BID (don't confuse lowest bid with lowest priceslot) are the same then this will operate too
 //but the message of highest bid should explain the situation best. If not, might need another conditional statement and message page
-if($debug=="1"){
+if($debug=="2"){
 echo '<br>$key = ', $key;
 echo '... ... ... $value = ', $value;
 echo '<br>$lowest priceslot = ', number_format($lowestpriceslot , 8);
@@ -125,7 +125,7 @@ $highwest priceslot = 0.00287630
 flase for next
 */
 elseif (number_format($value , 8)  > number_format($highestpriceslot , 8))  {
-if($debug=="1"){
+if($debug=="2"){
 echo '<br>$key = ', $key;
 echo '... ... ... $value = ', $value;
 echo '<br>$lowest priceslot = ', number_format($lowestpriceslot , 8);
@@ -136,7 +136,7 @@ include('translations/en/cat_has_bids_user_none/highest_no_pop_slots.php');
 }
 //highest_with_pop_slots.php
  elseif (number_format($value , 8) == number_format($lowestpriceslot , 8)) {
-if($debug=="1"){
+if($debug=="2"){
 echo '<br>$key = ', $key;
 echo '... ... ... $value = ', $value;
 echo '<br>$lowest priceslot = ', number_format($lowestpriceslot , 8);
@@ -158,7 +158,7 @@ if($pop_count_in_price > 1){
 	}
 }
 elseif (number_format($value , 8) < number_format($lowestpriceslot , 8) AND $key < $lowest_bid_index) {
-if($debug=="1"){
+if($debug=="2"){
 echo '<br>$key = ', $key;
 echo '... ... ... $value = ', $value;
 echo '<br>$lowest priceslot = ', number_format($lowestpriceslot , 8);
@@ -173,7 +173,7 @@ echo '<br>line 166 value = lowest. Should fire for everything under highest and 
 }
 else //(number_format($value , 8) < number_format($lowestpriceslot , 8 but is NOT the lowest)) 
 {
-if($debug=="1"){
+if($debug=="2"){
 echo '<br>$key = ', $key;
 echo '... ... ... $value = ', $value;
 echo '<br>$lowest priceslot = ', number_format($lowestpriceslot , 8);
