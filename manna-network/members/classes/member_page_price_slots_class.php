@@ -96,7 +96,8 @@ return false;
 }
 }
   
- function sendBuyToCentral ($user_id, $agents_ID, $link_id, $price, $cat_id, $coin_type){
+ function sendBuyToCentral2bd ($user_id, $agents_ID, $link_id, $price, $cat_id, $coin_type){
+ //marked for deletion
 //now send user registration to central 
 $file="http://manna-network.cash/incoming/buy.php";
 $args = array(

@@ -61,8 +61,14 @@ class Login
     public function __construct()
     {
         // create/read session
-        session_start();
+//if(session_id() == ''){
+/*
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+*/
 
+if ( ! session_id() ) @ session_start();
         // TODO: organize this stuff better and make the constructor very small
         // TODO: unite Login and Registration classes ?
 
@@ -145,14 +151,22 @@ class Login
                 // @see http://wiki.hashphp.org/PDO_Tutorial_for_MySQL_Developers#Connecting_to_MySQL says:
                 // "Adding the charset to the DSN is very important for security reasons,
                 // most examples you'll see around leave it out. MAKE SURE TO INCLUDE THE CHARSET!"
-            //    $this->db_connection = new PDO('mysql:host='. DBLOGIN_HOST .';dbname='. DBLOGIN_NAME . ';charset=utf8', DBLOGIN_USER, DBLOGIN_PASS);
-            if (!defined('READER_CUSTOMERS')) {
+
+	if (!defined('READER_CUSTOMERS')) {
 		include(dirname(__DIR__, 3)."/manna-configs/db_cfg/auth_constants.php");
 		}
 		include(dirname(__DIR__, 3)."/manna-configs/db_cfg/".READER_CUSTOMERS);
+		include(dirname(__DIR__, 3)."/manna-configs/db_cfg/mysqli_connect.php");
+
+//including the agent config overwrites all the variables loaded above and was preventing access via login. Since registration is occurring from remote sites (I'm pretty sure) then there is probably different configs 9i.e. they don't include agent configs) in the registration process
+//		include(dirname(__DIR__, 3)."/manna-configs/db_cfg/agent_config.php");
 
                 $this->db_connection = new PDO('mysql:host='.$servername.';dbname='. $dbname, $username, $password);
-            
+
+
+            //    $this->db_connection = new PDO('mysql:host='. DBLOGIN_HOST .';dbname='. DBLOGIN_NAME . ';charset=utf8', DBLOGIN_USER, DBLOGIN_PASS);
+              
+           //     $this->db_connection = new PDO('mysql:host='. DBLOGIN_HOST .';dbname='. DBLOGIN_NAME . ';charset=utf8', DBLOGIN_USER, DBLOGIN_PASS);
                 return true;
             } catch (PDOException $e) {
                 $this->errors[] = MESSAGE_DATABASE_ERROR . $e->getMessage();
@@ -267,7 +281,6 @@ class Login
             if (!filter_var($user_name, FILTER_VALIDATE_EMAIL)) {
                 // database query, getting all the info of the selected user
                 $result_row = $this->getUserData(trim($user_name));
-
             // if user has typed a valid email address, we try to identify him with his user_email
             } else if ($this->databaseConnection()) {
                 // database query, getting all the info of the selected user
@@ -370,7 +383,10 @@ class Login
             $cookie_string = $cookie_string_first_part . ':' . $cookie_string_hash;
 
             // set cookie
+            if(!headers_sent())
+{ 
             setcookie('rememberme', $cookie_string, time() + COOKIE_RUNTIME, "/", COOKIE_DOMAIN);
+            }
         }
     }
 
@@ -391,7 +407,10 @@ if (array_key_exists('user_id', $_SESSION)) {
         // set the rememberme-cookie to ten years ago (3600sec * 365 days * 10).
         // that's obivously the best practice to kill a cookie via php
         // @see http://stackoverflow.com/a/686166/1114320
-        setcookie('rememberme', false, time() - (3600 * 3650), '/', COOKIE_DOMAIN);
+       // print_r($_COOKIE);
+       // if(!isset($_COOKIE['rememberme'])) {
+       // setcookie('rememberme', false, time() - (3600 * 3650), '/', COOKIE_DOMAIN);
+       // }
     }
 
     /**
@@ -510,7 +529,7 @@ if (array_key_exists('user_id', $_SESSION)) {
         $user_email = substr(trim($user_email), 0, 64);
 
          if ($this->databaseConnection()) {
-echo '<br> in database connect';
+
             // check if new email already exists
             $query_user = $this->db_connection->prepare('SELECT * FROM users WHERE wdgts_lnk_num = :wdgts_lnk_num');
             $query_user->bindValue(':wdgts_lnk_num', $wdgts_lnk_num, PDO::PARAM_STR);
@@ -520,7 +539,6 @@ echo '<br> in database connect';
 
 
                 // write users new data into database
-echo '<br> in ELSE of isset result';
                 $query_edit_wdgts_lnk_num = $this->db_connection->prepare('UPDATE users SET wdgts_lnk_num = :wdgts_lnk_num WHERE user_id = :user_id');
                 $query_edit_wdgts_lnk_num->bindValue(':wdgts_lnk_num', $wdgts_lnk_num, PDO::PARAM_STR);
                 $query_edit_wdgts_lnk_num->bindValue(':user_id', $_SESSION['user_id'], PDO::PARAM_INT);
@@ -565,8 +583,8 @@ echo '<br> in ELSE of isset result';
 
                     // now it gets a little bit crazy: check if we have a constant HASH_COST_FACTOR defined (in config/hashing.php),
                     // if so: put the value into $hash_cost_factor, if not, make $hash_cost_factor = null
-                    $hash_cost_factor = (defined('HASH_COST_FACTOR') ? HASH_COST_FACTOR : null);
-
+                    //$hash_cost_factor = (defined('HASH_COST_FACTOR') ? HASH_COST_FACTOR : null);
+$hash_cost_factor = 10;
                     // crypt the user's password with the PHP 5.5's password_hash() function, results in a 60 character hash string
                     // the PASSWORD_DEFAULT constant is defined by the PHP 5.5, or if you are using PHP 5.3/5.4, by the password hashing
                     // compatibility library. the third parameter looks a little bit shitty, but that's how those PHP 5.5 functions
@@ -829,4 +847,3 @@ echo '<br> in ELSE of isset result';
         $this->user_gravatar_image_tag = $url;
     }
 }
-?>

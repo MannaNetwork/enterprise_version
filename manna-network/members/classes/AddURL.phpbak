@@ -1,0 +1,72 @@
+<?php
+
+/**
+This class adapted from PHPLogin
+ * Handles the user registration
+ * @author Panique
+ * @link http://www.php-login.net
+ * @link https://github.com/panique/php-login/
+ * @license http://opensource.org/licenses/MIT MIT License
+*/
+
+class Addurl
+{
+   function addNewLink($website_title, $website_description, $website_url, $page_name, $category_id, $user_id, $installer_id, $remote_link_id, $promo_credit, $recruiter_mn_bridge_num)
+    {
+echo '<br>in AddURL class';
+$website_description = substr($website_description,0,254);
+if (!defined('WRITER_CUSTOMERS')) {
+		include(dirname(__DIR__, 3)."/manna-configs/db_cfg/auth_constants.php");
+		}
+		include(dirname(__DIR__, 3)."/manna-configs/db_cfg/".WRITER_CUSTOMERS);
+		include(dirname(__DIR__, 3)."/manna-configs/db_cfg/mysqli_connect.php");
+
+if (!($stmt = $mysqli->prepare("INSERT INTO customer_links (user_id, recruiter_lnk_num,  user_registration_datetime, website_title, website_description, website_url, page_name, category_id, newcatsuggestion, location_id, website_street, installer_id) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)"))) {
+    echo "Prepare failed: (" . $mysqli->errno . ") " . $mysqli->error;
+}
+$user_registration_datetime = time();
+if (!$stmt->bind_param('iiisssisissi',$user_id, $recruiter_lnk_num, $user_registration_datetime, $website_title, $website_description, $website_url, $page_name, $category_id, $newcatsuggestion, $location_id, $website_street, $installer_id)) {
+    echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
+}
+if (!$stmt->execute()) {
+    echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
+}
+$new_links_id = $stmt->insert_id;
+//return $new_links_id;
+$stmt->close();
+if($new_links_id > 0){
+//add a check whether site is already a member would be an improvement (then omit message about becoming a member if they already are)
+$file="https://exchange.manna-network.com/incoming/add_a_link.php";
+		$args = array(
+		'agent_id' => AGENT_ID,
+		'remote_user_id' => $user_id,
+		'remote_link_id' => $remote_link_id,
+		'website_title' => $website_title,
+		'website_description' => $website_description,
+		'website_url' => $website_url,
+		'page_name' => $page_name,
+		'category_id' => $category_id, 
+		'newcatsuggestion' => $newcatsuggestion, 
+		'location_id' => $location_id, 
+		'website_street' => $website_street, 
+		'promo_credit' => $promo_credit, 
+		'recruiter_lnk_num' => $recruiter_lnk_num, 
+		'recruiter_mn_bridge_num' => $recruiter_mn_bridge_num,
+		'installer_id' => $installer_id
+		);
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $file);
+		curl_setopt($ch, CURLOPT_POSTFIELDS,$args);
+		curl_setopt($ch, CURLOPT_HEADER, 0);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		$data = curl_exec($ch);
+    		    $curl_errno = curl_errno($ch);
+		    if ($curl_errno > 0) {
+			    echo "cURL Error line 575 ($curl_errno): $curl_error\n";
+		    } else {    
+                   $this->errors[] = $this->lang['MESSAGE_REGISTRATION_FAILED'];
+                   } 
+		echo '<h1 style="text-align:center;">Your addition of another website to the Manna Network has been successful. It is now awaiting approval. In the mean time, you can still purchase better placement for it (with the free Demo coin you received). Placing a bid also moves you to the top of the queue for reviewing! If you haven\'t done so already,  you can install a FREE Manna Network Plugin API on your new site! You can place a bid for better placement by returning to your member control panel and click the "Get Better Placement" link by this new ad you submitted.</h1>';
+		    }
+        }
+}

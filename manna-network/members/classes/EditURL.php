@@ -31,10 +31,6 @@ if (!defined('READER_CUSTOMERS')) {
 if($link_id >0){
 //SELECT `id`, `user_id`, `recruiter_lnk_num`, `website_title`, `website_description`, `website_url`, `category_id`, `newcatsuggestion`, `location_id`, `website_street`, `website_district`, `bridge_id`, `user_registration_datetime`, `installer_id` FROM `customer_links` WHERE 1
 $query = "SELECT * FROM customer_links WHERE id='$link_id'  ORDER BY `user_registration_datetime` ASC";
-/*
-SELECT `id`, `user_id`, `recruiter_lnk_num`, `website_title`, `website_description`, `website_url`, `category_id`, `newcatsuggestion`, `location_id`, `website_street`, `website_district`, `bridge_id`, `user_registration_datetime`, `installer_id` FROM `customer_links` WHERE 1
-
-*/
 echo $query;
 $result = @mysqli_query($mysqli, $query) or die("Couldn't execute 'Edit 3 Account' query");
 $num_rows = mysqli_num_rows($result);
@@ -47,10 +43,8 @@ $website_title[] = $row['website_title'];
 $website_description[] = $row['website_description'];
 $website_url[] = $row['website_url'];
 $category_id[] = $row['category_id'];
-$newcatsuggestion[] = $row['newcatsuggestion'];
 $location_id[] = $row['location_id'];
 $website_street[] = $row['website_street'];
-$website_district[] = $row['website_district'];
 $bridge_id[] = $row['bridge_id'];
 $user_registration_datetime[] = $row['user_registration_datetime'];
 $installer_id[] = $row['installer_id'];
@@ -67,10 +61,8 @@ $website_title = $row['website_title'];
 $website_description = $row['website_description'];
 $website_url = $row['website_url'];
 $category_id = $row['category_id'];
-$newcatsuggestion = $row['newcatsuggestion'];
 $location_id = $row['location_id'];
 $website_street = $row['website_street'];
-$website_district = $row['website_district'];
 $bridge_id = $row['bridge_id'];
 $user_registration_datetime = $row['user_registration_datetime'];
 $installer_id = $row['installer_id'];
@@ -80,13 +72,13 @@ $num_links_this_user = 1;
 }
 
 
-$send_array = array($num_links_this_user, $id, $user_id, $recruiter_lnk_num, $website_title, $website_description, $website_url, $category_id, $newcatsuggestion, $location_id, $website_street, $website_district, $bridge_id, $user_registration_datetime, $installer_id);
+$send_array = array($num_links_this_user, $id, $user_id2, $recruiter_lnk_num, $website_title, $website_description, $website_url, $category_id,  $location_id, $website_street,  $bridge_id, $user_registration_datetime, $installer_id);
 
 return $send_array;
 }
 
 }
-   function editLink($captcha, $recruiter_lnk_num, $website_title, $website_description, $website_url, $category_id, $newcatsuggestion, $location_id, $website_street, $website_district, $installer_id, $user_id, $link_status)
+   function editLink($captcha, $recruiter_lnk_num, $website_title, $website_description, $website_url, $category_id,  $location_id, $website_street,  $installer_id, $user_id, $link_status)
     {
 //echo '<br>in func';
 if (!defined('WRITER_CUSTOMERS')) {
@@ -114,11 +106,11 @@ if (!defined('WRITER_CUSTOMERS')) {
 
 */
 
-if (!($stmt = $mysqli->prepare("UPDATE customer_links SET user_id = ?, recruiter_lnk_num  = ?,  user_registration_datetime = ?, website_title = ?, website_description = ?, website_url = ?, category_id = ?, newcatsuggestion = ?, location_id = ?, website_street = ?, website_district = ?, installer_id = ?"))) {
+if (!($stmt = $mysqli->prepare("UPDATE customer_links SET user_id = ?, recruiter_lnk_num  = ?,  user_registration_datetime = ?, website_title = ?, website_description = ?, website_url = ?, category_id = ?,  location_id = ?, website_street = ?,  installer_id = ?"))) {
     echo "Prepare failed: (" . $mysqli->errno . ") " . $mysqli->error;
 }
 $user_registration_datetime = time();
-if (!$stmt->bind_param('iiisssisissi',$user_id, $recruiter_lnk_num, $user_registration_datetime, $website_title, $website_description, $website_url, $category_id, $newcatsuggestion, $location_id, $website_street, $website_district, $installer_id)) {
+if (!$stmt->bind_param('iiisssiisi',$user_id, $recruiter_lnk_num, $user_registration_datetime, $website_title, $website_description, $website_url, $category_id, $location_id, $website_street, $installer_id)) {
     echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
 }
 if (!$stmt->execute()) {

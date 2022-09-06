@@ -2,47 +2,6 @@
 //org
  class member_page_info
 {
-function getLinkByLinkId($link_id){
-
-if (!defined('READER_CUSTOMERS')) {
-		include(dirname(__DIR__, 3)."/manna-configs/db_cfg/auth_constants.php");
-		}
-		include(dirname(__DIR__, 3)."/manna-configs/db_cfg/".READER_CUSTOMERS);
-		include(dirname(__DIR__, 3)."/manna-configs/db_cfg/mysqli_connect.php");
-
-$query = "SELECT * FROM customer_links WHERE id='$link_id'";
-$result = @mysqli_query($mysqli, $query) or die("Couldn't execute 'Edit 3 Account' query");
-$num_rows = mysqli_num_rows($result);
-if($num_rows > 0){
-while ($row = mysqli_fetch_array($result)){
-$id = $row['id'];
-$user_id2 = $row['user_id'];
-$recruiter_lnk_num = $row['recruiter_lnk_num'];
-$website_title = $row['website_title'];
-$website_description = $row['website_description'];
-$protocol = $row['protocol'];
-$website_url = $row['website_url'];
-$category_id = $row['category_id'];
-$location_id = $row['location_id'];
-$website_street = $row['website_street'];
-$page_name = $row['page_name'];
-$map_link = $row['map_link'];
-$bridge_id = $row['bridge_id'];
-$user_registration_datetime = $row['user_registration_datetime'];
-$installer_id = $row['installer_id'];
-$catkeys = $row['catkeys'];
-$lockeys= $row['lockeys'];
-$status = $row['status'];
-}
-$num_links_this_user = 1;
-}
-
-
-$send_array = array($num_links_this_user, $id, $user_id2, $recruiter_lnk_num, $website_title, $website_description, $protocol, $website_url, $category_id, $location_id, $website_street, $page_name, $map_link, $bridge_id, $user_registration_datetime, $installer_id,$catkeys, $lockeys, $status);
-
-return $send_array;
-}
-
 function ordinal($number) {
     $ends = array('th','st','nd','rd','th','th','th','th','th','th');
     if ((($number % 100) >= 11) && (($number%100) <= 13))
@@ -59,7 +18,7 @@ if (!defined('READER_AGENTS')) {
 		include(dirname(__DIR__, 3)."/manna-configs/db_cfg/mysqli_connect.php");
 		
 		$sql = "SELECT * from `links` WHERE `category`=$cat_id and `price_slot` > 0 and `location_id` > 0 and `coin_type`='$coin_type'";
-		//echo $sql;
+		echo $sql;
 		$result = mysqli_query($mysqli, $sql) or die("Couldn't execute 'Edit 1 Account' query");
 $row_cnt = $result->num_rows;
 
@@ -91,6 +50,7 @@ FROM `categories_regional2`
 WHERE `id` = '$location_id' ";
 $result = mysqli_query($mysqli, $sql) or die("Couldn't execute 'Edit 1 Account' query");
 $row_cnt = $result->num_rows;
+echo '<br>'.$sql.'<br>';
 if($row_cnt > 0){
    while($row = mysqli_fetch_assoc($result)){
 $saved_loc_id = $row['id'];
@@ -99,28 +59,30 @@ $saved_loc_id = $row['id'];
 	$lft = $row['lft'];
 	$rgt = $row['rgt'];
     }
-}
-/* NOW get all the locations in this buyer's tree with a lft rgt query */
-$idTree= array();
- $parentTree= array();
- $nameTree= array();
-$lftTree= array();
-$rgtTree= array();
-$sqlTree = "SELECT *
+
+/* NOW get all the links with a lft rgt query */
+$id2=[];
+ $parent2=[];
+ $name2=[];
+$lft2=[];
+$rgt2=[];
+$sql2 = "SELECT *
 FROM `categories_regional2`
 WHERE `lft` <= $lft AND `rgt` >= $rgt ";
-//by using the equal sign it will include the submitted category in the tree also
-$result = mysqli_query($mysqli, $sqlTree) or die("Couldn't execute 'Edit 2 Account' query");
-$row_cnt = $result->num_rows;
- while($row = mysqli_fetch_assoc($result)){
- $idTree[] = $row['id'];
- $parentTree[] = $row['parent'];
- $nameTree[] = $row['name'];
-$lftTree[] = $row['lft'];
-$rgtTree[] = $row['rgt'];
-}
+echo '<br>'.$sql.'<br>';
+//by adding the equal sign it will include the submitted category in the tree also
+//echo '<br>$sql2 = ', $sql2 ;
 
-$send_array = array($idTree, $parentTree, $nameTree, $lftTree, $rgtTree);
+$result = mysqli_query($mysqli, $sql2) or die("Couldn't execute 'Edit 2 Account' query");
+ while($row = mysqli_fetch_assoc($result)){
+ $id2[] = $row['id'];
+ $parent2[] = $row['parent'];
+ $name2[] = $row['name'];
+$lft2[] = $row['lft'];
+$rgt2[] = $row['rgt'];
+}
+}
+$send_array = array($id2, $parent2, $name2, $lft2, $rgt2);
 return $send_array;
 }
 function rgtColummnBuyPage($cat_id, $location_id, $coin_type, $price_slot){
@@ -170,7 +132,6 @@ if (!defined('READER_AGENTS')) {
 		include(dirname(__DIR__, 3)."/manna-configs/db_cfg/mysqli_connect.php");
 		
  $query = 'SELECT `id` FROM `links` WHERE category = '.$cat_id.'&& price_slot >= '.$price_slot.'&& coin_type=\''.$coin_type."'" ;
- //echo '<br>in member page class $query = ', $query;
 		$result= mysqli_query($mysqli, $query);
 		$row_cnt = $result->num_rows;
 		if($row_cnt >0){
@@ -197,16 +158,25 @@ $sql = "SELECT *
 FROM `categories`
 WHERE `parent` = '$parent_id' ";
 $result = mysqli_query($mysqli, $sql) or die("Couldn't execute 'Edit lftrgt Account' query");
+//echo '<br>$result->num_rows = ', $result->num_rows;
+
+//if ($result->num_rows > 0) {
  while($row = mysqli_fetch_assoc($result)){
+ //echo '<br>row = ';
+ //print_r($row);
  $id[] = $row['id'];
 $lft[] = $row['lft'];
 $rgt[] = $row['rgt'];
 $name[] = $row['name'];
 $parent[] = $row['parent'];
 $send_array = array($id,$name,$parent,$lft,$rgt);
-
+echo '<br>in function - print_r send array = <br>';
+print_r($send_array);
 return $send_array;
 }
+//}
+
+
 }
 
 function getCategoriesRow($category_id){
@@ -219,11 +189,19 @@ if (!defined('READER_AGENTS')) {
 $sql = "SELECT *
 FROM `categories`
 WHERE `id` = '$category_id' ";
+//echo '<br>', $sql;
 $result = mysqli_query($mysqli, $sql) or die("Couldn't execute 'Edit lftrgt Account' query");
+//echo '<br>$result->num_rows = ', $result->num_rows;
 
 if ($result->num_rows > 0) {
  while($row = mysqli_fetch_assoc($result)){
+ //echo '<br>row = ';
+ //print_r($row);
 $lft = $row['lft'];
+//echo '<br>$lft = ', $lft;
+//echo '<br>$row[lft] = ', $row['lft'];
+
+
 $rgt = $row['rgt'];
 return $row;
 }
@@ -331,38 +309,64 @@ if (!defined('READER_AGENTS')) {
 $sql = "SELECT *
 FROM `categories`
 WHERE `id` = '$category_id' ";
+echo '<br>In getCategoriesLftRgt - 1st query  ', $sql;
 $result = mysqli_query($mysqli, $sql) or die("Couldn't execute 'Edit lftrgt Account' query");
-	if ($result->num_rows > 0) {
-	 	while($row = mysqli_fetch_assoc($result)){
-		$lft = $row['lft'];
-		$rgt = $row['rgt'];
-		}
+//echo '<br>$result->num_rows = ', $result->num_rows;
 
-	$sql2 = "SELECT *
-	FROM `categories`
-	WHERE `lft` <= $lft AND `rgt` >= $rgt ";
-	$result = mysqli_query($mysqli, $sql2) or die("Couldn't execute 'Edit lftrgt2 Account' query");
-		if ($result->num_rows > 0) {
-		 	while($row = mysqli_fetch_assoc($result)){
-			$lft = $row['lft'];
-			$rgt = $row['rgt'];
-			}
-		}
-		else
-		{
-			while($row = mysqli_fetch_assoc($result)){
-			$lft[] = $row['lft'];
-			$rgt[] = $row['rgt'];
-			}
-		$send_array= array($lft, $rgt);
-		return $send_array;
-		}
-	}
-	else
-	{
-	return false;
-	}
+if ($result->num_rows > 0) {
+ while($row = mysqli_fetch_assoc($result)){
+ //echo '<br>row = ';
+// print_r($row);
+$lft = $row['lft'];
+echo '<br>$lft = ', $lft;
+//echo '<br>$row[lft] = ', $row['lft'];
+
+
+$rgt = $row['rgt'];
+echo '<br>$rgt = ', $rgt;
 }
+//echo '<br>row = ';
+//print_r($row);
+echo '<br>$lft = ', $lft;
+
+$sql2 = "SELECT *
+FROM `categories`
+WHERE `lft` <= $lft AND `rgt` >= $rgt ";
+echo '<br>In getCategoriesLftRgt - 2nd query  ', $sql2;
+$result = mysqli_query($mysqli, $sql2) or die("Couldn't execute 'Edit lftrgt2 Account' query");
+if ($result->num_rows > 0) {
+ while($row = mysqli_fetch_assoc($result)){
+ //echo '<br>row = ';
+ //print_r($row);
+$lft = $row['lft'];
+$rgt = $row['rgt'];
+}
+}
+else
+{
+while($row = mysqli_fetch_assoc($result)){
+$lft[] = $row['lft'];
+$rgt[] = $row['rgt'];
+}
+$send_array= array($lft, $rgt);
+//echo '<br>send array = ';
+//print_r($send_array);
+return $send_array;
+}
+}
+else
+{
+return false;
+}
+
+
+
+
+
+}
+
+
+
 
 // end new category hierarchy functions
 function getUsersRegistrationInfo($user_id){ //remote user id from registering site pulling from that agents users table db
@@ -445,11 +449,20 @@ if (!defined('READER_AGENTS')) {
 $sql = "SELECT *
 FROM `categories_regional2`
 WHERE `id` = '$regionalnum' ";
+//echo '<br>', $sql;
 $result = mysqli_query($mysqli, $sql) or die("Couldn't execute 'Edit lftrgt Account' query");
+//echo '<br>$result->num_rows = ', $result->num_rows;
+
 if ($result->num_rows > 0) {
  while($row = mysqli_fetch_assoc($result)){
- $lft = $row['lft'];
-	$rgt = $row['rgt'];
+ //echo '<br>row = ';
+ //print_r($row);
+$lft = $row['lft'];
+//echo '<br>$lft = ', $lft;
+//echo '<br>$row[lft] = ', $row['lft'];
+
+
+$rgt = $row['rgt'];
 return $row;
 }
 }
@@ -476,6 +489,7 @@ $sql = "SELECT *
 FROM `categories_regional2`
 WHERE `id` = '$regionalnum' ";
 
+//echo '<br>sql = ', $sql;
 $result = mysqli_query($mysqli, $sql) or die("Couldn't execute 'Edit 1 Account' query");
 $row_cnt = mysqli_num_rows($result);
 
@@ -708,6 +722,7 @@ $counter=49;
 	}
 
 function updateLocalPriceslotsSubscripts($user_id, $agent_ID, $link_id, $new_price, $old_price, $cat_id, $installer_id, $coin_type){
+//copyBuyAgentPriceslotsSubscripts($user_id, $agent_ID, $link_id, $price, $cat_id, $installer_id, $coin_type);
 date_default_timezone_set('America/New_York');
 //echo 'in func';
 if (!defined('WRITER_CUSTOMERS')) {
@@ -717,7 +732,9 @@ if (!defined('WRITER_CUSTOMERS')) {
 		include(dirname(__DIR__, 3)."/manna-configs/db_cfg/mysqli_connect.php");
 $subscribe = 0;//will will update this when the links table is updated from central
 $start_date = time();
-$query = "SELECT * FROM `price_slots_subscripts` WHERE `link_id` =  '".$link_id."'";
+//SELECT `id`, `user_id`, `link_id`, `price_slot_amnt`, `subscribe`, `coin_type`, `cat_id`, `t_timestamp`, `start_date`, `agent_ID`, `installer_id` FROM `price_slots_subscripts`
+$query = "SELECT * FROM `price_slots_subscripts` WHERE `link_id` =  '".$link_id."' AND `agent_ID` = '".$agent_ID."'";
+//echo '<br>', $query;
 $result = mysqli_query($mysqli, $query);
 $row_cnt = mysqli_num_rows($result);
 
@@ -738,8 +755,11 @@ $reason = 'increased';
 }
 
 $query = "UPDATE `price_slots_subscripts` set `price_slot_amnt`= '".$new_price."', `start_date`='".$start_date."' WHERE id='".$previous_id."'";
+//echo '<br>', $query;
 $result = mysqli_query($mysqli, $query);
 if (mysqli_affected_rows ( $mysqli )> 0){
+//echo '<h1>in if affected rows</h1>';
+
 $this->recordModifyPriceslotsSubscripts($previous_id,$user_id, $prev_link_id,$prev_agent_ID,$prev_start_date,$old_price,$new_price,$reason);;
 }
 }
@@ -1045,10 +1065,53 @@ return false;
 }
 }
 
+/* function updateBuyAgentPriceslotsSubscripts($user_id, $agent_ID, $link_id, $new_price, $cat_id, $installer_id, $coin_type,  $reason){
 
+date_default_timezone_set('America/New_York');
+//echo 'in func';
+if (!defined('WRITER_CUSTOMERS')) {
+		include(dirname(__DIR__, 3)."/manna-configs/db_cfg/auth_constants.php");
+		}
+		include(dirname(__DIR__, 3)."/manna-configs/db_cfg/".WRITER_CUSTOMERS);
+		include(dirname(__DIR__, 3)."/manna-configs/db_cfg/mysqli_connect.php");
+$subscribe = 0;//will will update this when the links table is updated from central
+$start_date = time();
+$query = "SELECT `id`, `user_id`, `link_id`, `price_slot_amnt`, `subscribe`, `coin_type`, `cat_id`, `t_timestamp`, `start_date`, `agent_ID`, `installer_id` FROM `price_slots_subscripts` WHERE `link_id` =  '".$link_id."' AND `agent_ID` = '".$agent_ID."'";
+//echo '<br>', $query;
+$result = mysqli_query($mysqli, $query);
+$row_cnt = mysqli_num_rows($result);
+
+if($row_cnt > 0){
+   while($row = mysqli_fetch_assoc($result)){
+$current_id = $row['id'];
+$user_id = $row['user_id'];
+	$current_link_id = $row['link_id'];
+$agent_ID = $row['agent_ID'];
+$prev_start_date = $row['start_date'];
+$prev_amount = $row['price_slot_amnt'];
+    }
+  }
+//this is all pretty loose. It needs something like a transaction or some better error checking
+$query = "UPDATE `price_slots_subscripts` set `price_slot_amnt`= '".$price."', `start_date`='".$start_date."'  WHERE id='".$current_id."'";
+//echo '<br>', $query;
+$result = mysqli_query($mysqli, $query);
+if (mysqli_affected_rows ( $mysqli )> 0){
+//echo '<h1>in if affected rows</h1>';
+if($row_cnt > 0){
+$this->modifyAgentPriceslotsSubscripts($user_id, $agent_ID, $link_id, $price, $cat_id, $installer_id, $coin_type, $links_approval_status, $users_balances_string, $reason);
+
+//first update the price slot table
+$this->sendModifyToCentral($current_id,$user_id,$current_link_id, $agent_ID,$prev_start_date,$prev_amount,$new_price, $coin_type, $reason);
+//then record there was a modification in the ledger type table
+$this->recordModifyPriceslotsSubscripts($current_id,$user_id,$current_link_id, $agent_ID,$prev_start_date,$prev_amount,$new_price, $reason);
+}
+
+
+}
+}  */
 
 function recordModifyPriceslotsSubscripts($previous_id,$user_id, $prev_link_id,$prev_agent_ID,$prev_start_date,$old_price,$new_price,$reason){
-//see DEV_NOTES_README.txt for issues related to modifications
+//copyBuyAgentPriceslotsSubscripts($user_id, $agent_ID, $link_id, $price, $cat_id, $installer_id, $coin_type);
 date_default_timezone_set('America/New_York');
 
 if (!defined('WRITER_CUSTOMERS')) {
@@ -1059,24 +1122,27 @@ if (!defined('WRITER_CUSTOMERS')) {
 $subscribe = 0;//will will update this when the links table is updated from central
 $start_date = time();
 $query = "SELECT * FROM `price_slots_subscripts` WHERE `link_id` =  '".$prev_link_id."' AND `agent_ID` = '".$prev_agent_ID."'";
-if ($result = mysqli_query($mysqli, $query)) {
-  while($row = $result->fetch_assoc()) {
- 	$now_dateandtime = date('Y-m-d H:i:s');
-	$query2 = "INSERT INTO `price_slots_modifications`(`orig_ps_id_local`, `user_id`, `link_id`, `orig_price_slot_amnt`, `new_amount`, `subscribe`, `coin_type`, `cat_id`, `rank_by_cat`, `orig_t_timestamp`, `orig_start_date`, `agent_ID`, `installer_id`, `reason`) VALUES ('".$previous_id."','".$user_id."','".$prev_link_id."','".$old_price."','".$new_price."','0','".$row['coin_type']."','".$row['cat_id']."','0','".$row['t_timestamp']."','".$row['start_date']."','".$row['agent_ID']."','".$row['installer_id']."','".$reason."')";
-	if ($result2 = mysqli_query($mysqli, $query2)) {
-		return "success";
-		}
-		else
-		{
-		return "<br>failed agent insert";
-		}
-	
+//echo '<br>', $query;
+$result = mysqli_query($mysqli, $query);
+foreach($result as $row){
+print_r($row);
 }
-}
-else
-{
-return "failed select";
-}
+/*
+/ Prints something like: Monday 8th of August 2005 03:12:46 PM
+echo date('l jS \of F Y h:i:s A');
+
+need 0000-00-00 00:00:00
+*/
+$now_dateandtime = date('Y-m-d H:i:s');
+
+$query2 = "INSERT INTO `price_slots_modifications`(`orig_ps_id`, `user_id`, `link_id`, `orig_price_slot_amnt`, `new_amount`, `subscribe`, `coin_type`, `cat_id`, `rank_by_cat`, `orig_t_timestamp`, `orig_start_date`, `agent_ID`, `installer_id`, `reason`) VALUES ('".$previous_id."','".$user_id."','".$prev_link_id."','".$old_price."','".$new_price."','0','".$row['coin_type']."','".$row['cat_id']."','0','".$row['t_timestamp']."','".$row['start_date']."','".$row['agent_ID']."','".$row['installer_id']."','".$reason."')";
+//echo '<br>', $query2;
+$result2 = mysqli_query($mysqli, $query2);
+/* need a separate delete function because archiving occurs for upgrades and downfrades as well as cancels
+$query = "DELETE FROM `price_slots_subscripts` WHERE `id` =  '".$previous_id."'";
+//echo '<br>Deleting a previous bid', $query;
+$result = mysqli_query($mysqli, $query);
+*/
 }
 
 function delete_opposite_bids($user_id,$link_id, $agent_ID, $opposite_coin_type, $reason){
@@ -1147,10 +1213,21 @@ return "error";
 }
 
 function copyBuyAgentPriceslotsSubscripts($user_id, $agent_ID, $link_id, $price, $cat_id, $installer_id, $coin_type,  $users_balance_string){
+
 $balance_pieces = explode("|", $users_balance_string);
+//these might be backwards?
 $balance = $balance_pieces[0];
 $tn_balance = $balance_pieces[1];
+/* dropping $links_approval_status, because it generates errors after a purchase
+
+function copyBuyAgentPriceslotsSubscripts($user_id, $agent_ID, $link_id, $price, $cat_id, $installer_id, $coin_type, $links_approval_status, $users_balances_string){
+*/
+//echo '<br>in func $users_balances_string = ', $users_balances_string;
+//echo '<br>in func $link_id = ', $link_id;
+
+//echo '<br> in copyBuyAgentPriceslotsSubscripts( func line 843 <br>$user_id = ',$user_id,'<br>agent ID =', $agent_ID, $link_id, $price, $cat_id, $installer_id, $coin_type;
 date_default_timezone_set('America/New_York');
+
 if (!defined('WRITER_CUSTOMERS')) {
 		include(dirname(__DIR__, 3)."/manna-configs/db_cfg/auth_constants.php");
 		}
@@ -1158,22 +1235,36 @@ if (!defined('WRITER_CUSTOMERS')) {
 		include(dirname(__DIR__, 3)."/manna-configs/db_cfg/mysqli_connect.php");
 $subscribe = 0;//will will update this when the links table is updated from central
 $start_date = time();
+//SELECT `id`, `user_id`, `link_id`, `price_slot_amnt`, `subscribe`, `coin_type`, `cat_id`, `t_timestamp`, `start_date`, `agent_ID`, `installer_id` FROM `price_slots_subscripts`
 $query = "SELECT * FROM `price_slots_subscripts` WHERE `link_id` =  '".$link_id."' AND `agent_ID` = '".$agent_ID."'";
+//echo '<br>', $query;
 $result = mysqli_query($mysqli, $query);
 $row_cnt = mysqli_num_rows($result);
+
+//we need to eventually delete these that we found but first need to copy them to the archive and then copy the new bid and then delete
+//SELECT `id`, `previous_id`, `pre_start_date`, `transfer_date`, `pre_amount`, `new_amount`, `reason`, `agent_ID`, `link_id` FROM `price_slots_archive`
 if($row_cnt > 0){
    return 'bid already exists';
+
+
 }
 else
 {
 $query = "INSERT INTO `price_slots_subscripts` (`user_id`,`link_id`,`price_slot_amnt`,`subscribe`,`coin_type`,`cat_id`, `start_date`, `agent_ID`,`installer_id`) VALUES (    '$user_id' ,  '$link_id','$price','$subscribe','$coin_type','$cat_id', '$start_date', '$agent_ID', '$installer_id') ";
-// the above generated an error - #1364 - Field 'rank_by_cat' doesn't have a default value Not sure how/when/where the rank_by_cat column is used elsewhere. I'll add it to the query and give it a value of 
-//echo '<br>line 1234 of member page class ', $query;;
+echo '<br>', $query;
 $result = mysqli_query($mysqli, $query);
 $purchase_id = mysqli_insert_id($mysqli);
-//echo '<br>mysqli_insert_id from the above query = $purchase_id = ', $purchase_id;
 $date = time();
 $purchase_datetime = date("Y-m-d H:i:s", $date);
+/* under construction
+status - it inserts but two variables fed here ($links_approval_status, $users_balances_string) aren't processed yet
+The first ($links_approval_status) was intend to deal with the differences between a temp bid (pending approval) and an already approved one BUT we probably can handle that from admin? Maybe when we approve a new link or move the temp subscripts to live.
+
+Alternate - I added a status column with a default of 'pending" to indicate on ALL bids that they were new and also haven't been charged yet Not until nightly cron). Could either do another duplicate entry when actually processed (then there would be the one entry flagging when the subscription started) or could run an update script from the agent.
+
+Does the cron insert into the agents db?
+
+	id 	user_id 	link_id 	balance 	tn_balance 	trans_time 	trans_type 	deposit 	deposit_id 	purchase 	purchase_id */
 $query = "INSERT INTO `price_slots_daily_ledger` (`user_id`,`link_id`,`balance`,`tn_balance`,`trans_time`,`trans_type`, `deposit`, `deposit_id`,`purchase`,`purchase_id`,`coin_type`,`status`) VALUES (    '$user_id' ,  '$link_id','$balance','$tn_balance','$purchase_datetime','purchase', 0, 0, '$price', '$purchase_id', '$coin_type', 'pending') ";
 $result = mysqli_query($mysqli, $query);
 }
@@ -1203,24 +1294,33 @@ echo($data);
 }
          function sendModifyToCentral ($user_id, $agent_ID, $link_id, $new_price, $old_price,$cat_id, $installer_id, $coin_type, $reason, $this_links_bid_status_on_Central){
 //now send user registration to central
+
+
+//echo'</h3>';
 if($reason === "cancel"){
-	if($this_links_bid_status_on_Central === "temp_bid"){
-	$file="https://exchange.manna-network.com/incoming/cancel_temp_bid.php";
-	}else
-	{
-	$file="https://exchange.manna-network.com/incoming/cancel_subs_bid.php";
-	}
+
+if($this_links_bid_status_on_Central === "temp_bid"){
+$file="https://exchange.manna-network.com/incoming/cancel_temp_bid.php";
+}else
+{
+echo '<br> $this_links_bid_status_on_Central after else = temp_bid', $this_links_status_on_Central;
+
+$file="https://exchange.manna-network.com/incoming/cancel_subs_bid.php";
+}
 }
 else
 {
+//echo '<br> in reason = else cancel';
+
 	if($this_links_bid_status_on_Central == "temp_bid"){
-		$file="https://exchange.manna-network.com/incoming/modify_temp_bid.php";
+//echo '<br> in reason = else cancel, $this_links_bid_status_on_Central == "temp_bid"';
+
+	$file="https://exchange.manna-network.com/incoming/modify_temp_bid.php";
 	}else
 	{
-		$file="https://exchange.manna-network.com/incoming/modify_subs_bid.php";
+	$file="https://exchange.manna-network.com/incoming/modify_subs_bid.php";
 	}
 }
-
 $args = http_build_query(array(
 'user_id' => $user_id,
 'link_id' => $link_id,
@@ -1238,9 +1338,8 @@ curl_setopt($ch, CURLOPT_POSTFIELDS,$args);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 $data = curl_exec($ch);
-return $data;
 curl_close($ch);
-
+echo($data);
 }
 
 function getUserBalanceFromCentral ($user_id, $agent_ID){
@@ -1639,16 +1738,28 @@ $result = mysqli_query($mysqli, $sql) or die("Couldn't execute 'Edit lftrgt Acco
 
 if ($result->num_rows > 0) {
  while($row = mysqli_fetch_assoc($result)){
+ //echo '<br>row = ';
+ print_r($row);
 $lft = $row['lft'];
+//echo '<br>$lft = ', $lft;
+//echo '<br>$row[lft] = ', $row['lft'];
+
+
 $rgt = $row['rgt'];
 }
+//echo '<br>row = ';
+//print_r($row);
+//echo '<br>$lft = ', $lft;
 
 $sql2 = "SELECT *
 FROM `categories_regional2`
 WHERE `lft` < $lft AND `rgt` > $rgt ";
+//echo '<br>', $sql2;
 $result = mysqli_query($mysqli, $sql2) or die("Couldn't execute 'Edit lftrgt2 Account' query");
 if ($result->num_rows > 0) {
  while($row = mysqli_fetch_assoc($result)){
+ //echo '<br>row = ';
+ //print_r($row);
 $lft = $row['lft'];
 $rgt = $row['rgt'];
 }
@@ -1771,34 +1882,6 @@ return false;
 
 }
 
-function getBidIDByLinkID($link_id){
-
-if (!defined('READER_CUSTOMERS')) {
-		include(dirname(__DIR__, 3)."/manna-configs/db_cfg/auth_constants.php");
-		}
-		include(dirname(__DIR__, 3)."/manna-configs/db_cfg/".READER_CUSTOMERS);
-		include(dirname(__DIR__, 3)."/manna-configs/db_cfg/mysqli_connect.php");
-
-$sql = "SELECT *
-FROM `price_slots_subscripts`
-WHERE `link_id` = '$link_id'";
-//echo '<br> ', $sql;
-//echo '<br>';
-$result = mysqli_query($mysqli, $sql) or die("Couldn't execute 'Edit 11b Account' query");
-if ($result->num_rows > 0) {
- while($row = mysqli_fetch_assoc($result)){
- $bidID = $row['id'];
- }
- $return_str = $bidID;
-return $return_str;
-}
-else
-{
-return 0;
-}
-
-}
-
 
 
 function getLinkByUserIdFree($user_id){
@@ -1831,9 +1914,6 @@ $map_link[] = $row['map_link'];
 $bridge_id[] = $row['bridge_id'];
 $user_registration_datetime[] = $row['user_registration_datetime'];
 $installer_id[] = $row['installer_id'];
-$catkeys[] = $row['catkeys'];
-$lockeys[] = $row['lockeys'];
-$status[] = $row['status'];
 }
 $num_links_this_user = count($id);
 }
@@ -1855,15 +1935,13 @@ $map_link = $row['map_link'];
 $bridge_id = $row['bridge_id'];
 $user_registration_datetime = $row['user_registration_datetime'];
 $installer_id = $row['installer_id'];
-$catkeys = $row['catkeys'];
-$lockeys = $row['lockeys'];
-$status = $row['status'];
+
 }
 $num_links_this_user = 1;
 }
-//needs $num_links_this_user, id`, `user_id`, `recruiter_lnk_num`, `website_title`, `website_description`, `protocol`, `website_url`, `page_name`, `category_id`, `location_id`, `website_street`, `map_link`, `bridge_id`, `user_registration_datetime`, `installer_id`, `catkeys`, `lockeys`, `status`
 
-$send_array = array($num_links_this_user, $id, $user_id, $recruiter_lnk_num, $website_title, $website_description, $protocol, $website_url, $page_name, $category_id, $location_id, $website_street, $map_link, $bridge_id, $user_registration_datetime, $installer_id, $catkeys, $lockeys, $status);
+
+$send_array = array($num_links_this_user, $id, $user_id, $recruiter_lnk_num, $website_title, $website_description, $protocol, $website_url, $category_id, $location_id, $website_street, $page_name, $map_link, $bridge_id, $user_registration_datetime, $installer_id);
 
 return $send_array;
 }

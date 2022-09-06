@@ -1,5 +1,5 @@
 <?php
-//orig from 7/20
+
 /**
  * Handles the user registration
  * @author Panique
@@ -44,9 +44,9 @@ class Registration
     
     public function __construct()
     {
-   //test deactivate - troubleshooting session failure in both sites
-   // Had no effect - restored it
- if ( ! session_id() ) @ session_start();
+    
+   echo $_SESSION;
+    if ( ! session_id() ) @ session_start();
         // Create internal reference to global array with translation of language strings
         $this->lang = & $GLOBALS['phplogin_lang'];
         // if we have such a POST request, call the registerNewUser() method
@@ -59,14 +59,18 @@ $captcha = "";
 $website_title = "";
  $website_description = "";
  $website_url = "";
-$page_name = "";
+
+ //$category_id = "";
+//new names of vars from add url and register forms
 $selected_cat_id = "";
 $selected_region_id = "";
+
+$newcatsuggestion = "";
  $location_id = "";
  $website_street = "";
 $map_link = "";
- $installer_id = "";
- // showing the register view (with the registration form, and messages/errors)
+ $website_district = "";
+// showing the register view (with the registration form, and messages/errors)
 
 if (!defined('AGENT_FOLDERNAME')) {
 include(dirname(__DIR__, 3)."/manna-configs/db_cfg/agent_config.php");
@@ -104,19 +108,19 @@ $website_title = (strlen($website_title) > 24) ? substr($website_title,0,22).'..
 }
 if (array_key_exists ( "website_description" , $_POST ) AND isset($_POST["website_description"])) {
 $website_description = $_POST["website_description"];
-$website_description = substr($website_description,0,254);}
-if (array_key_exists ( "website_url" , $_POST ) AND isset($_POST["website_url"])) {
-//dev note - was $website_url = $_POST["protocol"].$_POST["website_url"]; but removed concat - it was causing double protocol
-$website_url = $_POST["website_url"];
+$website_description = (strlen($website_description) > 224) ? substr($website_description,0,220).'...' : $website_description;
 }
-if (array_key_exists ( "page_name" , $_POST ) AND isset($_POST["page_name"])) {
-$page_name = $_POST["page_name"];
+if (array_key_exists ( "website_url" , $_POST ) AND isset($_POST["website_url"])) {
+$website_url = $_POST["website_url"];
+$website_url = (strlen($website_url) > 59) ? substr($website_url,0,55).'...' : $website_url;
 }
 if (array_key_exists ( "category_id" , $_POST ) AND isset($_POST["category_id"]) AND $_POST["category_id"] !== "" ) {
-echo '<br>wrongfully in Registration class "if"';
+//echo '<br>in Registration class "if" line 117 becuase POST var name is category id instead of selected_cat_id', print_r($_POST);
 $category_id = $_POST["category_id"];
 }
 elseif(array_key_exists ( "selected_cat_id" , $_POST ) AND isset($_POST["selected_cat_id"]) AND $_POST["selected_cat_id"] !== ""   ) {
+//echo '<br>correctly in Registration class "else"';
+
 $category_id = $_POST["selected_cat_id"];
 } 
 if (array_key_exists ( "flag" , $_POST ) AND isset($_POST["flag"])) {
@@ -126,8 +130,14 @@ else
 {
 $flag = 0;
 }
-
-
+if (array_key_exists ( "newcatsuggestion" , $_POST ) AND isset($_POST["newcatsuggestion"])) {
+$newcatsuggestion = $_POST["newcatsuggestion"];
+$newcatsuggestion = (strlen($newcatsuggestion) > 49) ? substr($newcatsuggestion,0,45).'...' : $newcatsuggestion;
+}
+/* if (array_key_exists ( "location_id" , $_POST ) AND isset($_POST["location_id"]) AND $_POST["location_id"] !== "" ) {
+$location_id = $_POST["location_id"];
+}
+else */
 if (array_key_exists ( "selected_region_id" , $_POST ) AND isset($_POST["selected_region_id"])) {
 $location_id = $_POST["selected_region_id"];
 }
@@ -139,14 +149,20 @@ if (array_key_exists ( "map_link" , $_POST ) AND isset($_POST["map_link"])) {
 $map_link = $_POST["map_link"];
 filter_var($map_link, FILTER_VALIDATE_URL);
 }
+/*if (array_key_exists ( "website_district" , $_POST ) AND isset($_POST["website_district"])) {
+$website_district = $_POST["website_district"];
+$website_district = (strlen($website_district) > 59) ? substr($website_district,0,55).'...' : $website_district;
+} */
 if (array_key_exists ( "installer_id" , $_POST ) AND isset($_POST["installer_id"])) {
 $installer_id = $_POST["installer_id"];
 }else
 {
 $installer_id = 0;
 }
-$website_description = substr($website_description,0,254);
-$this->registerNewUser($user_name, $user_email, $user_password_new, $user_password_repeat, $captcha, $recruiter_lnk_num, $website_title, $website_description, $website_url, $page_name, $category_id, $location_id, $website_street, $map_link, $installer_id, $flag);  
+/*
+$this->registerNewUser($user_name, $user_email, $user_password_new, $user_password_repeat, $captcha, $recruiter_lnk_num, $website_title, $website_description, $website_url, $category_id, $newcatsuggestion, $location_id, $website_street, $map_link, $website_district, $installer_id, $flag);  */
+
+$this->registerNewUser($user_name, $user_email, $user_password_new, $user_password_repeat, $captcha, $recruiter_lnk_num, $website_title, $website_description, $website_url, $category_id, $newcatsuggestion, $location_id, $website_street, $map_link, $website_district, $installer_id, $flag);  
 
 
         // if we have such a GET request, call the verifyNewUser() method
@@ -154,7 +170,8 @@ $this->registerNewUser($user_name, $user_email, $user_password_new, $user_passwo
  if (array_key_exists ( "flag" , $_GET ) AND isset($_GET["flag"])) {
 $flag = $_GET["flag"];
 } 
-    $this->verifyNewUser($_GET["id"], $_GET["verification_code"], $flag);
+
+            $this->verifyNewUser($_GET["id"], $_GET["verification_code"], $flag);
         }
     }
 
@@ -234,17 +251,21 @@ include(dirname(__DIR__, 3)."/manna-configs/db_cfg/writcus_auth.php");
 //temp setting -
 
 
-    private function registerNewUser($user_name, $user_email, $user_password, $user_password_repeat, $captcha, $recruiter_lnk_num, $website_title, $website_description, $website_url, $page_name, $category_id, $location_id, $website_street, $map_link, $installer_id, $flag)
+    private function registerNewUser($user_name, $user_email, $user_password, $user_password_repeat, $captcha, $recruiter_lnk_num, $website_title, $website_description, $website_url, $category_id, $newcatsuggestion, $location_id, $website_street, $map_link, $website_district, $installer_id, $flag)
 
+/*
+note the "9999" entry to temporairly test the idea of removing the $recruiter_lnk_num. It is empty but the values can all be retrieved through the installers (i.e. widget) id and the bridge table id (located there)
+ private function registerNewUser($user_name, $user_email, $user_password, $user_password_repeat, $captcha, $recruiter_lnk_num, $website_title, $website_description, $website_url, $category_id, $newcatsuggestion, $location_id, $website_street, $website_district, $installer_id, $flag)
+*/
     {
-$website_description = substr($website_description,0,254);
+
         // we just remove extra space on username and email
         $user_name  = trim($user_name);
         $user_email = trim($user_email);
 
         // check provided data validity
         // TODO: check for "return true" case early, so put this first
-
+echo '$_SESSION[\'captcha\'] = ', $_SESSION['captcha'];
      if (strtolower($captcha) != strtolower($_SESSION['captcha'])) {
             $this->errors[] = 'MESSAGE_CAPTCHA_WRONG';
         } elseif (empty($user_name)) {
@@ -302,7 +323,7 @@ echo '<h2>There Is An Error In The Data You Provided. Perhaps the user name is a
                 $user_activation_hash = sha1(uniqid(mt_rand(), true));
 
 
-$query_new_user_insert = $this->db_connection->prepare('INSERT INTO users (user_name, user_password_hash, user_email, user_activation_hash, user_registration_ip, user_registration_datetime, website_title, website_description, website_url, page_name, category_id, location_id, website_street, map_link, installer_id) VALUES(:user_name, :user_password_hash, :user_email, :user_activation_hash, :user_registration_ip, :user_registration_datetime, :website_title, :website_description, :website_url, :page_name, :category_id, :location_id, :website_street, :map_link, :installer_id)');
+$query_new_user_insert = $this->db_connection->prepare('INSERT INTO users (user_name, user_password_hash, user_email, user_activation_hash, user_registration_ip, user_registration_datetime, website_title, website_description, website_url, category_id, newcatsuggestion, location_id, website_street, map_link, website_district, installer_id) VALUES(:user_name, :user_password_hash, :user_email, :user_activation_hash, :user_registration_ip, :user_registration_datetime, :website_title, :website_description, :website_url, :category_id, :newcatsuggestion, :location_id, :website_street, :map_link, :website_district, :installer_id);');
                                                                         
       $query_new_user_insert->bindValue(':user_name', $user_name, PDO::PARAM_STR);
                 $query_new_user_insert->bindValue(':user_password_hash', $user_password_hash, PDO::PARAM_STR);
@@ -310,40 +331,53 @@ $query_new_user_insert = $this->db_connection->prepare('INSERT INTO users (user_
                 $query_new_user_insert->bindValue(':user_activation_hash', $user_activation_hash, PDO::PARAM_STR);
                 $query_new_user_insert->bindValue(':user_registration_ip', $_SERVER['REMOTE_ADDR'], PDO::PARAM_STR);
                 
+//$user_registration_datetime = mktime(0, 0, 0, date("m")  , date("d"), date("Y"));
 $user_registration_datetime = time();
  $query_new_user_insert->bindValue(':user_registration_datetime', $user_registration_datetime, PDO::PARAM_STR);
+
  $query_new_user_insert->bindValue(':website_title', $website_title, PDO::PARAM_STR);
-  $query_new_user_insert->bindValue(':website_description', $website_description, PDO::PARAM_STR);
+ $query_new_user_insert->bindValue(':website_description', $website_description, PDO::PARAM_STR);
  $query_new_user_insert->bindValue(':website_url', $website_url, PDO::PARAM_STR);
- $query_new_user_insert->bindValue(':page_name', $page_name, PDO::PARAM_STR);
 $query_new_user_insert->bindValue(':category_id', $category_id, PDO::PARAM_INT);
+$query_new_user_insert->bindValue(':newcatsuggestion',   $newcatsuggestion, PDO::PARAM_STR);
+
 $query_new_user_insert->bindValue(':location_id', $location_id, PDO::PARAM_INT);
+
  $query_new_user_insert->bindValue(':website_street', $website_street, PDO::PARAM_STR);
  $query_new_user_insert->bindValue(':map_link', $map_link, PDO::PARAM_STR);
- $query_new_user_insert->bindValue(':installer_id', $installer_id, PDO::PARAM_INT);
+ $query_new_user_insert->bindValue(':website_district', $website_district, PDO::PARAM_STR);
+$query_new_user_insert->bindValue(':installer_id', $installer_id, PDO::PARAM_INT);
                  $query_new_user_insert->execute();
+
 
 //$query_new_user_insert->debugDumpParams();
 
                 // id of new user
                 $user_id = $this->db_connection->lastInsertId();
 
+//echo '<h1>Last Insert ID = ', $user_id;
+
+
+
                 if ($query_new_user_insert) {
 
-$query_new_user_lnk_insert = $this->db_connection->prepare('INSERT INTO customer_links (user_id, user_registration_datetime, website_title, website_description, website_url, page_name, category_id, location_id, website_street, map_link, installer_id) VALUES(:user_id, :user_registration_datetime, :website_title, :website_description, :website_url, :page_name, :category_id, :location_id, :website_street, :map_link, :installer_id)');
+$query_new_user_lnk_insert = $this->db_connection->prepare('INSERT INTO customer_links (user_id, user_registration_datetime, website_title, website_description, website_url, category_id, newcatsuggestion, location_id, website_street, map_link, website_district, installer_id) VALUES(:user_id, :user_registration_datetime, :website_title, :website_description, :website_url, :category_id, :newcatsuggestion, :location_id, :website_street, :map_link, :website_district, :installer_id);');
        
 $query_new_user_lnk_insert->bindValue(':user_id', $user_id, PDO::PARAM_INT);
 $user_registration_datetime =  mktime(0, 0, 0, date("m")  , date("d"), date("Y"));
  $query_new_user_lnk_insert->bindValue(':user_registration_datetime', $user_registration_datetime, PDO::PARAM_STR);
  $query_new_user_lnk_insert->bindValue(':website_title', $website_title, PDO::PARAM_STR);
  $query_new_user_lnk_insert->bindValue(':website_description', $website_description, PDO::PARAM_STR);
- //$combo_website_address = $website_url."/".$page_name;
  $query_new_user_lnk_insert->bindValue(':website_url', $website_url, PDO::PARAM_STR);
- $query_new_user_lnk_insert->bindValue(':page_name', $page_name, PDO::PARAM_STR);
 $query_new_user_lnk_insert->bindValue(':category_id', $category_id, PDO::PARAM_INT);
+$query_new_user_lnk_insert->bindValue(':newcatsuggestion',   $newcatsuggestion, PDO::PARAM_STR);
+
 $query_new_user_lnk_insert->bindValue(':location_id', $location_id, PDO::PARAM_INT);
+
  $query_new_user_lnk_insert->bindValue(':website_street', $website_street, PDO::PARAM_STR);
 $query_new_user_lnk_insert->bindValue(':map_link', $map_link, PDO::PARAM_STR);
+
+ $query_new_user_lnk_insert->bindValue(':website_district', $website_district, PDO::PARAM_STR);
 $installer_id = intval($installer_id);
 $query_new_user_lnk_insert->bindValue(':installer_id', $installer_id, PDO::PARAM_INT);
 
@@ -362,31 +396,8 @@ $query_new_user_lnk_insert->bindValue(':installer_id', $installer_id, PDO::PARAM
 
                 // id of new user
                 $new_customer_link_id = $this->db_connection->lastInsertId();
-$file="https://exchange.manna-network.com/incoming/install_advertiser_agent_bridge.php";
-//The advertiser_agent_bridge is a temp table only used bewteen the time the user first registered until after they verified their email addess (then the entry is deleted)
-		$args = array(
-		'agent_id' => AGENT_ID,
-		'agent_url' => "https://".AGENT_URL,
-		'agent_folder' => AGENT_FOLDERNAME,
-		'remote_user_id' => $user_id,
-		'website_url' => $website_url,
-		'installer_id' => $installer_id
-		);
-		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL, $file);
-		curl_setopt($ch, CURLOPT_POSTFIELDS,$args);
-		curl_setopt($ch, CURLOPT_HEADER, 0);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		$data = curl_exec($ch);
-    		    $curl_errno = curl_errno($ch);
-//echo '<br>$curl_errno = ', $curl_errno;
-		    $curl_error = curl_error($ch);
-		    if ($curl_errno > 0) {
-			    echo "cURL Error line 575 ($curl_errno): $curl_error\n";
-		    } else {    
+
 echo MESSAGE_VERIFICATION_MAIL_SENT;
-}
-// Create the new curl to manna network's bridge table here. have the curl connect to a data base insertion of just the user id and agent id
                   } else {
                         // delete this users account immediately, as we could not send a verification email
                       $query_delete_user = $this->db_connection->prepare('DELETE FROM users WHERE user_id=:user_id');
@@ -410,7 +421,7 @@ echo MESSAGE_VERIFICATION_MAIL_SENT;
      */
     public function sendVerificationEmail($user_id, $user_email, $user_activation_hash, $flag)
     {
-include(dirname(__DIR__, 3)."/manna-configs/db_cfg/agent_config.php");
+
 
         $mail = new PHPMailer;
 
@@ -420,7 +431,7 @@ include(dirname(__DIR__, 3)."/manna-configs/db_cfg/agent_config.php");
             // Set mailer to use SMTP
             $mail->IsSMTP();
             //useful for debugging, shows full SMTP errors
-            $mail->SMTPDebug = 0; // debugging: 1 = errors and messages, 2 = messages only
+            $mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
             // Enable SMTP authentication
             $mail->SMTPAuth = EMAIL_SMTP_AUTH;
             // Enable encryption, usually SSL/TLS
@@ -448,7 +459,7 @@ include(dirname(__DIR__, 3)."/manna-configs/db_cfg/agent_config.php");
 
 
         // the link to your register.php, please set this value in config/email_verification.php
-       $mail->Body = EMAIL_VERIFICATION_CONTENT1.$link.EMAIL_VERIFICATION_CONTENT2.' https://'.AGENT_URL.'/'.AGENT_FOLDERNAME.'/members">';
+       $mail->Body = EMAIL_VERIFICATION_CONTENT.' '.$link;
 
       if(!$mail->Send()) {
        $this->errors[] = $this->lang['MESSAGE_VERIFICATION_MAIL_NOT_SENT'] . $mail->ErrorInfo;
@@ -462,52 +473,8 @@ include(dirname(__DIR__, 3)."/manna-configs/db_cfg/agent_config.php");
      * checks the id/verification code combination and set the user's activation status to true (=1) in the database
      */
 
-public function resendVerificationEmail($user_id, $user_email, $user_activation_hash, $flag)
-    {
 
 
-        $mail = new PHPMailer;
-
-        // please look into the config/config.php for much more info on how to use this!
-        // use SMTP or use mail()
-  if (EMAIL_USE_SMTP) {
-            // Set mailer to use SMTP
-            $mail->IsSMTP();
-            //useful for debugging, shows full SMTP errors
-            $mail->SMTPDebug = 0; // debugging: 1 = errors and messages, 2 = messages only
-            // Enable SMTP authentication
-            $mail->SMTPAuth = EMAIL_SMTP_AUTH;
-            // Enable encryption, usually SSL/TLS
-            if (defined(EMAIL_SMTP_ENCRYPTION)) {
-                $mail->SMTPSecure = EMAIL_SMTP_ENCRYPTION;
-            }
-            // Specify host server
-            $mail->Host = EMAIL_SMTP_HOST;
-            $mail->Username = EMAIL_SMTP_USERNAME;
-            $mail->Password = EMAIL_SMTP_PASSWORD;
-            $mail->Port = EMAIL_SMTP_PORT;
-        } else {
-            $mail->IsMail();
-        }
- 
-        $mail->From = EMAIL_VERIFICATION_FROM;
-        $mail->FromName = EMAIL_VERIFICATION_FROM_NAME;
-        $mail->AddAddress($user_email);
-        $mail->Subject = EMAIL_VERIFICATION_SUBJECT;
-
-    $link = "https://".AGENT_URL."/".AGENT_FOLDERNAME."/manna-network/members/register.php".'?id='.urlencode($user_id).'&verification_code='.urlencode($user_activation_hash).'&flag='.$flag;
-
-
-        // the link to your register.php, please set this value in config/email_verification.php
-       $mail->Body = EMAIL_VERIFICATION_CONTENT.' '.$link;
-
-      if(!$mail->Send()) {
-       $this->errors[] = $this->lang['MESSAGE_VERIFICATION_MAIL_NOT_SENT'] . $mail->ErrorInfo;
-       return false;
-         } else {
-            return true;
-        }
-    }
 
     public function verifyNewUser($user_id, $user_activation_hash, $flag)
     {
@@ -528,10 +495,7 @@ $user_active=1;
 //$query_check_update->debugDumpParams();
 //echo '<br>line 469 Registration class<br>';
 if (count($result) > 0) {
-if(!headers_sent())
-{
 header("Refresh:0; url=already_verified.php");
-}
 }
            // try to update user with specified information
             $query_update_user = $this->db_connection->prepare('UPDATE users SET user_active = 1, user_activation_hash = NULL WHERE user_id = :user_id AND user_activation_hash = :user_activation_hash');
@@ -558,7 +522,8 @@ if (count($result) > 0) {
                 $this->messages[] = $this->lang['MESSAGE_REGISTRATION_ACTIVATION_SUCCESSFUL'];
 		//Now that the user has verified their email, we retrieve their original info to submit it to the network
 
-		$query = $this->db_connection->prepare('SELECT id, recruiter_lnk_num,  user_registration_datetime, website_title, website_description, website_url, page_name, category_id, location_id, website_street, installer_id FROM customer_links WHERE user_id=:user_id');
+		$query = $this->db_connection->prepare('SELECT id, recruiter_lnk_num,  user_registration_datetime, website_title, website_description, website_url, category_id, newcatsuggestion, location_id, website_street, website_district, installer_id FROM customer_links
+		WHERE user_id=:user_id');
 		 $query->bindValue(':user_id', $user_id, PDO::PARAM_INT);
 		 $query->execute();
 		$row = $query->fetch();           
@@ -570,10 +535,11 @@ if (count($result) > 0) {
 		$website_title = $row['website_title'];
 		$website_description = $row['website_description'];
 		$website_url = $row['website_url'];
-		$page_name = $row['page_name'];
 		$category_id = $row['category_id'];
+		$newcatsuggestion = $row['newcatsuggestion'];
 		$location_id = $row['location_id'];
 		$website_street = $row['website_street'];
+		$website_district = $row['website_district'];
 		$installer_id = $row['installer_id'];
 
 
@@ -607,7 +573,7 @@ if (count($result) > 0) {
 		//now credit the user locally
 		 if ($this->databaseConnection()) {
 		
-		$query_new_user_insert = $this->db_connection->prepare('INSERT INTO balance (user_id, customer_id, amount_DMC, amount_BCH, txid) VALUES(:user_id, :customer_id, :amount_DMC, :amount_BCH, :txid)');
+		$query_new_user_insert = $this->db_connection->prepare('INSERT INTO balance (user_id, customer_id, amount_DMC, amount_BCH, txid) VALUES(:user_id, :customer_id, :amount_DMC, :amount_BCH, :txid);');
 				                                                        
 		      $query_new_user_insert->bindValue(':user_id', $user_id, PDO::PARAM_INT);
 				$query_new_user_insert->bindValue(':customer_id', $user_id, PDO::PARAM_INT);
@@ -626,7 +592,7 @@ if (count($result) > 0) {
 		}
 //Copy the regional array (cont, coun, state, city) to Regional Sign Ups?
 		//now send user registration to central 
-		$file="https://exchange.manna-network.com/incoming/register.php";
+		$file="http://exchange.manna-network.com/incoming/register.php";
 		$args = array(
 		'agent_id' => AGENT_ID,
 		'remote_user_id' => $user_id,
@@ -636,14 +602,14 @@ if (count($result) > 0) {
 		'website_title' => utf8_encode(stripslashes(trim($website_title))),
 		'website_description' => utf8_encode(stripslashes(trim($website_description))),
 		'website_url' => utf8_encode($website_url),
-		'page_name' => utf8_encode($page_name),
 		'category_id' => $category_id,
 'selected_cat_id' => $selected_cat_id,
 'selected_region_id' => $selected_region_id,
-		
+		'newcatsuggestion' => utf8_encode(stripslashes(trim($newcatsuggestion))),
 		'location_id' => $location_id,
 		'website_street' => utf8_encode(stripslashes(trim($website_street))),
 'map_link' => utf8_encode($map_link),
+		'website_district' => utf8_encode(stripslashes(trim($website_district))),
 		'installer_id' => $installer_id,
 		'promo_credit' => $promo_amount
 		);
@@ -652,37 +618,21 @@ if (count($result) > 0) {
 //print_r($args);
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $file);
+		//curl_setopt($ch, CURLOPT_POSTFIELDS, array('locus_array' => $locus_array,'link_record_num' => $link_record_num,'link_page_total' => $link_page_total, 'link_page_id' => $link_page_id, 'pagem_url_cat' => $pagem_url_cat,'link_page_num' => $link_page_num, 'cat_page_num' => $cat_page_num, 'url_cat' => $url_cat, 'affiliate_num' => $affiliate_num  ));
 		curl_setopt($ch, CURLOPT_POSTFIELDS,$args);
+
 		curl_setopt($ch, CURLOPT_HEADER, 0);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		$data = curl_exec($ch);
 //echo '<br> ........ <br>', $data;
 //echo '<br> ........ <br>';
-//echo '<br>$curl_errno = ', $curl_errno;
-			$curl_errno = curl_errno($ch);
-		        if ($curl_errno > 0) {
-			    echo "cURL Error line 575 ($curl_errno): $curl_error\n";
-		    } else {    
-echo '<h1>Successfully submitted the listing to the Manna Network Co-operative Ad Network for review and distribution.</h1>';
-$file="https://exchange.manna-network.com/incoming/install_advertiser_agent_bridge.php";
-		$args = array(
-		'agent_id' => AGENT_ID,
-		'remote_user_id' => $user_id
-		);
-		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL, $file);
-		curl_setopt($ch, CURLOPT_POSTFIELDS,$args);
-		curl_setopt($ch, CURLOPT_HEADER, 0);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		$data = curl_exec($ch);
     		    $curl_errno = curl_errno($ch);
 //echo '<br>$curl_errno = ', $curl_errno;
 		    $curl_error = curl_error($ch);
 		    if ($curl_errno > 0) {
 			    echo "cURL Error line 575 ($curl_errno): $curl_error\n";
 		    } else {    
-echo '<h1>Please allow 24-48 hours for the review process. Distribution of your ad will occur at that time.</h1>';
-}
+echo '<h1>Sucessfully submitted the listing to the Manna Network Co-operative Ad Network for review and distribution.</h1>';
 }
 
 
@@ -692,7 +642,7 @@ echo '<h1>Please allow 24-48 hours for the review process. Distribution of your 
 			//Leave a brief message to the new agent
 			echo '<h1>Your own link information was successfully added to your own database</h1>';
 echo '<p>Now your website is configured as an "agency" site in the network with your own agent ID and the #1 link id (within your own web directory). The two together provide your website a unique id in the manna network to credit you with all the users that register through your web directory and through their websites (if they, too, install our scripts)</p>';
-echo '<br>nbsp;<hr><p>You can now offer this web directory page to your website visitors and offer them FREE advertising and the opportunity to earn Bitcoin SV. Make a link to the directory page. Let your site visitors enjoy it as a feature of your site, offer free advertising to your friends and associates. promote it as much as you like!</p>
+echo '<br>nbsp;<hr><p>You can now offer this web directory page to your website visotors and offer them FREE advertising and the opportunity to earn Bitcoin SV. Make a link to the directory page. Let your site visitors enjoy it as a feature of your site, offer free advertising to your friends and associates. promote it as much as you like!</p>
 <h3>The url you want to send them to is the <a href="../../../../../agent-dir/index.php">agent-dir/index.php page</a>.</h3>
 <h4>Use the above link to add more websites if you wish and they will be submitted to the manna Network for inclusion and distribution to the other agent and members sites as well<h4>';
 
@@ -707,7 +657,7 @@ echo '<br>nbsp;<hr><p>You can now offer this web directory page to your website 
 		if($flag != 1){
 $precleaned_host = $_SERVER['HTTP_HOST'];
 $cleaned_host = str_replace("www.", "", $precleaned_host);
-			echo WORDING_EMAIL_VERIFIED1.WORDING_EMAIL_VERIFICATION3."?cat_id=".$category_id."&link_id=".$link_id.'">'.WORDING_EMAIL_VERIFICATION4;
+			echo WORDING_EMAIL_VERIFIED1.WORDING_AGENT_ID.AGENT_ID.WORDING_EMAIL_VERIFICATION2.$link_id.WORDING_EMAIL_VERIFICATION3."?cat_id=".$category_id."&link_id=".$link_id.'">'.WORDING_EMAIL_VERIFICATION4;
 		   }
 		} else {
                 $this->errors[] = $this->lang['MESSAGE_REGISTRATION_ACTIVATION_NOT_SUCCESSFUL'];
